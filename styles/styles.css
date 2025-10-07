@@ -5,7 +5,7 @@ body {
     background: #fff;
 }
 header {
-    background: #900; /* Crimson */
+    background: #900;
     color: #fff;
     padding: 1rem 2rem;
 }
@@ -13,7 +13,7 @@ nav {
     margin-top: 1rem;
 }
 nav a {
-    color: #fff; /* White for visibility */
+    color: #fff;
     text-decoration: none;
     margin-right: 1rem;
     font-weight: bold;
