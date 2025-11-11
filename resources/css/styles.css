@@ -41,6 +41,10 @@ footer {
   text-decoration: none;
 }
 
+.navbar a:visited {
+  color: white;
+}
+
 .dropdown {
   float: left;
   overflow: hidden;
@@ -85,4 +89,12 @@ footer {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.list-link {
+  color:#900;
+}
+
+.list-link:visited {
+  color: black;
 }
