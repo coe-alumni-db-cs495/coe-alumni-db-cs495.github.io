@@ -5,7 +5,7 @@ body {
     background: #fff;
 }
 header {
-    background: #900;
+    background: #772432;
     color: #fff;
     padding: 1rem 2rem;
 }
@@ -62,13 +62,13 @@ footer {
 }
 
 .navbar a:hover, .dropdown:hover .dropdown-button {
-  background-color: #333;
+  background-color: #5f6a72;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #900;
+  background-color: #772432;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -84,7 +84,7 @@ footer {
 }
 
 .dropdown-content a:hover {
-  background-color: #333;
+  background-color: #5f6a72;
 }
 
 .dropdown:hover .dropdown-content {
@@ -92,7 +92,7 @@ footer {
 }
 
 .list-link {
-  color:#900;
+  color:#772432;
 }
 
 .list-link:visited {
