@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operations & Maintenance - COE Alumni Database Documentation</title>
+  <link rel="stylesheet" href="../../resources/css/styles.css">
+  <link rel="stylesheet" href="../../resources/css/docs-styles.css">
+</head>
+<body>
+  <header>
+    <h1>College of Engineering Alumni Database</h1>
+    <nav>
+  <div class="navbar">
+    <a href="/index.html">Home</a>
+    <a href="/projectinfo.html">Project Info</a>
+    <div class="dropdown">
+      <button class="dropdown-button">Project Timeline</button>
+      <div class="dropdown-content">
+        <a href="/project-timeline/sprint1.html">Sprint 1</a>
+        <a href="/project-timeline/sprint2.html">Sprint 2</a>
+        <a href="/project-timeline/sprint3.html">Sprint 3</a>
+        <a href="/project-timeline/video.html">Project Demo</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-button">The Team</button>
+      <div class="dropdown-content">
+        <a href="/the-team/ethan.html">Ethan Busby</a>
+        <a href="/the-team/andy.html">Andy Fancher</a>
+        <a href="/the-team/marcus.html">Marcus Kelley</a>
+        <a href="/the-team/jacob.html">Jacob Santos</a>
+        <a href="/the-team/brodye.html">Brodye Stevens</a>
+      </div>  
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-button">Docs</button>
+      <div class="dropdown-content">
+        <a href="/docs/docs-index.html">Documentation Home</a>
+        <div class="nested-dropdown">
+          <a href="#" class="nested-trigger">Installation Guide</a>
+          <div class="nested-dropdown-content">
+            <a href="/docs/installation/overview.html">Installation Overview</a>
+            <a href="/docs/installation/server-setup.html">Server Setup</a>
+            <a href="/docs/installation/github-runner.html">GitHub Runner</a>
+            <a href="/docs/installation/deployment.html">Application Deployment</a>
+            <a href="/docs/installation/configuration.html">Configuration</a>
+            <a href="/docs/installation/operations.html">Operations & Maintenance</a>
+            <a href="/docs/installation/troubleshooting.html">Troubleshooting</a>
+            <a href="/docs/installation/quick-reference.html">Quick Reference</a>
+          </div>
+        </div>
+        <div class="nested-dropdown">
+          <a href="#" class="nested-trigger">Feature Guide</a>
+          <div class="nested-dropdown-content">
+            <a href="/docs/features-index.html">Features Overview</a>
+            <a href="/docs/features/register-signin.html">Register & Sign In</a>
+            <a href="/docs/features/profile.html">Profile Creation & Editing</a>
+            <a href="/docs/features/networking.html">Networking</a>
+            <a href="/docs/features/favorites.html">Favorites</a>
+          </div>
+        </div>
+        <a href="/docs/development-index.html">Development Guide</a>
+        <a href="/docs/faq.html">FAQs</a>
+      </div>
+    </div>
+  </div>
+</nav>
+  </header>
+  <div class="container">
+    <section>
+      <h2>Installation Guide: Operations & Maintenance</h2>
+      
+      <p>
+        This section covers day-to-day operations, including managing the service, monitoring the application, 
+        handling backups, and performing routine maintenance.
+      </p>
+
+      <h3>Service Management</h3>
+      <p>
+        The application runs as a systemd service. Use these commands to manage the service lifecycle.
+      </p>
+
+      <h4>Basic Service Commands</h4>
+      <table>
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><code>sudo systemctl start coe-alumni</code></td>
+          <td>Start the application service</td>
+        </tr>
+        <tr>
+          <td><code>sudo systemctl stop coe-alumni</code></td>
+          <td>Stop the application service</td>
+        </tr>
+        <tr>
+          <td><code>sudo systemctl restart coe-alumni</code></td>
+          <td>Restart the application service</td>
+        </tr>
+        <tr>
+          <td><code>sudo systemctl status coe-alumni</code></td>
+          <td>Check service status and recent logs</td>
+        </tr>
+        <tr>
+          <td><code>sudo systemctl enable coe-alumni</code></td>
+          <td>Enable service to start on boot</td>
+        </tr>
+        <tr>
+          <td><code>sudo systemctl disable coe-alumni</code></td>
+          <td>Disable service from starting on boot</td>
+        </tr>
+      </table>
+
+      <h4>Check Service Status</h4>
+      <div class="step">
+        <p>View the current status of the application:</p>
+        <div class="code-block">
+          <pre>sudo systemctl status coe-alumni</pre>
+        </div>
+        <p><strong>Key information in the output:</strong></p>
+        <ul>
+          <li><strong>Active:</strong> Shows if the service is running</li>
+          <li><strong>Main PID:</strong> Process ID of the application</li>
+          <li><strong>Memory/CPU:</strong> Resource usage</li>
+          <li><strong>Recent logs:</strong> Last few log entries</li>
+        </ul>
+      </div>
+
+      <h3>Viewing Logs</h3>
+      <p>
+        Application logs are managed by systemd's journal. Use <code>journalctl</code> to view logs.
+      </p>
+
+      <h4>Common Log Commands</h4>
+      <table>
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><code>sudo journalctl -u coe-alumni</code></td>
+          <td>View all logs for the service</td>
+        </tr>
+        <tr>
+          <td><code>sudo journalctl -u coe-alumni -n 50</code></td>
+          <td>View last 50 log entries</td>
+        </tr>
+        <tr>
+          <td><code>sudo journalctl -u coe-alumni -f</code></td>
+          <td>Follow logs in real-time (like tail -f)</td>
+        </tr>
+        <tr>
+          <td><code>sudo journalctl -u coe-alumni --since today</code></td>
+          <td>View logs from today</td>
+        </tr>
+        <tr>
+          <td><code>sudo journalctl -u coe-alumni --since "1 hour ago"</code></td>
+          <td>View logs from the last hour</td>
+        </tr>
+        <tr>
+          <td><code>sudo journalctl -u coe-alumni -p err</code></td>
+          <td>View only error-level logs</td>
+        </tr>
+      </table>
+
+      <h4>Export Logs to File</h4>
+      <div class="code-block">
+        <pre>sudo journalctl -u coe-alumni --since "2024-11-01" > application-logs.txt</pre>
+      </div>
+
+      <h3>GitHub Runner Management</h3>
+      <p>
+        Manage the GitHub Actions self-hosted runner that handles deployments.
+      </p>
+
+      <h4>Runner Service Commands</h4>
+      <table>
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><code>sudo systemctl status actions.runner.*</code></td>
+          <td>Check runner service status</td>
+        </tr>
+        <tr>
+          <td><code>sudo systemctl restart actions.runner.*</code></td>
+          <td>Restart the runner service</td>
+        </tr>
+        <tr>
+          <td><code>sudo journalctl -u actions.runner.* -n 50</code></td>
+          <td>View runner logs</td>
+        </tr>
+      </table>
+
+      <h4>Check Runner Status in GitHub</h4>
+      <ol>
+        <li>Go to your repository on GitHub</li>
+        <li>Navigate to <strong>Settings</strong> → <strong>Actions</strong> → <strong>Runners</strong></li>
+        <li>Your runner should show a green "Idle" status when available</li>
+      </ol>
+
+      <h3>Backup and Restore</h3>
+      <p>
+        Regular backups protect your data and allow you to recover from issues.
+      </p>
+
+      <h4>Automatic Deployment Backups</h4>
+      <p>
+        Every deployment automatically creates a backup of the previous version.
+      </p>
+
+      <div class="info-box">
+        <strong>Automatic Backup Details:</strong>
+        <ul>
+          <li><strong>Location:</strong> <code>/var/www/coe-alumniDB.backup.YYYYMMDD_HHMMSS/</code></li>
+          <li><strong>Triggered:</strong> Before every deployment</li>
+          <li><strong>Contents:</strong> Complete application directory</li>
+          <li><strong>Naming:</strong> Timestamped (e.g., coe-alumniDB.backup.20241130_143022)</li>
+        </ul>
+      </div>
+
+      <h4>View Available Backups</h4>
+      <div class="code-block">
+        <pre>ls -lah /var/www/ | grep backup</pre>
+      </div>
+
+      <h4>Manual Application Backup</h4>
+      <div class="step">
+        <h4>Create manual backup</h4>
+        <div class="code-block">
+          <pre>sudo cp -r /var/www/coe-alumniDB /var/www/coe-alumniDB.backup.$(date +%Y%m%d_%H%M%S)</pre>
+        </div>
+      </div>
+
+      <h4>Restore from Backup</h4>
+      <div class="step">
+        <p>To restore from a backup (replace timestamp with actual backup):</p>
+        <div class="code-block">
+          <pre># Stop the service
+sudo systemctl stop coe-alumni
+
+# Remove current deployment
+sudo rm -rf /var/www/coe-alumniDB
+
+# Restore from backup
+sudo cp -r /var/www/coe-alumniDB.backup.20241130_143022 /var/www/coe-alumniDB
+
+# Fix permissions
+sudo chown -R coe-alumni:coe-alumni /var/www/coe-alumniDB
+
+# Start the service
+sudo systemctl start coe-alumni</pre>
+        </div>
+      </div>
+
+      <h4>Database Backup</h4>
+      <div class="step">
+        <h4>Manual database backup</h4>
+        <div class="code-block">
+          <pre>sudo -u coe-alumni cp /var/www/coe-alumniDB/DB/AlumniDatabase.db \
+  /var/www/coe-alumniDB/DB/AlumniDatabase.db.backup.$(date +%Y%m%d_%H%M%S)</pre>
+        </div>
+      </div>
+
+      <h4>Clean Old Backups</h4>
+      <div class="step">
+        <p>Remove backups older than 30 days to free up disk space:</p>
+        <div class="code-block">
+          <pre>find /var/www/ -name "coe-alumniDB.backup.*" -mtime +30 -exec rm -rf {} \;</pre>
+        </div>
+        <div class="warning-box">
+          <strong>Warning:</strong> This permanently deletes old backups. Make sure you want to remove 
+          them before running this command.
+        </div>
+      </div>
+
+      <h3>Monitoring</h3>
+      <p>
+        Regular monitoring helps you catch issues before they become problems.
+      </p>
+
+      <h4>Disk Usage</h4>
+      <div class="step">
+        <h4>Check overall disk space</h4>
+        <div class="code-block">
+          <pre>df -h</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <h4>Check application directory size</h4>
+        <div class="code-block">
+          <pre>du -sh /var/www/coe-alumniDB</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <h4>Check all backup sizes</h4>
+        <div class="code-block">
+          <pre>du -sh /var/www/coe-alumniDB.backup.*</pre>
+        </div>
+      </div>
+
+      <h4>Resource Usage</h4>
+      <div class="step">
+        <h4>Check memory and CPU usage</h4>
+        <div class="code-block">
+          <pre>top -bn1 | grep coe-alumni</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <h4>Check service resource usage</h4>
+        <div class="code-block">
+          <pre>systemctl status coe-alumni</pre>
+        </div>
+        <p>This shows memory and CPU usage at the top of the output.</p>
+      </div>
+
+      <h4>Port Verification</h4>
+      <div class="step">
+        <h4>Verify application is listening on port 5000</h4>
+        <div class="code-block">
+          <pre>sudo lsof -i :5000</pre>
+        </div>
+      </div>
+
+      <h4>Test Application Locally</h4>
+      <div class="step">
+        <h4>Test HTTP endpoint</h4>
+        <div class="code-block">
+          <pre>curl http://localhost:5000</pre>
+        </div>
+        <p>You should receive HTML content from the application.</p>
+      </div>
+
+      <h3>Monitoring Deployments</h3>
+      <p>
+        Track deployments through GitHub Actions and verify they complete successfully.
+      </p>
+
+      <h4>View Workflow Runs in GitHub</h4>
+      <ol>
+        <li>Go to your repository on GitHub</li>
+        <li>Click the <strong>Actions</strong> tab</li>
+        <li>View the list of workflow runs</li>
+        <li>Click on a run to see detailed logs</li>
+      </ol>
+
+      <h4>Check Deployment Status on Server</h4>
+      <div class="code-block">
+        <pre>sudo systemctl status coe-alumni
+sudo journalctl -u coe-alumni -n 50</pre>
+      </div>
+
+      <h3>Updates and Maintenance</h3>
+      <p>
+        Keep your system and application dependencies up to date.
+      </p>
+
+      <h4>System Updates</h4>
+      <div class="step">
+        <p>Periodically update system packages:</p>
+        <div class="code-block">
+          <pre>sudo apt update
+sudo apt upgrade -y</pre>
+        </div>
+        <div class="note-box">
+          <strong>Recommendation:</strong> Schedule system updates monthly or when security patches are released.
+        </div>
+      </div>
+
+      <h4>Application Updates</h4>
+      <p>
+        Application updates happen automatically through GitHub Actions when code is pushed to the master branch. 
+        No manual intervention is needed.
+      </p>
+
+      <h4>Runner Updates</h4>
+      <div class="step">
+        <p>GitHub Actions runners occasionally need updates. Check for updates:</p>
+        <div class="code-block">
+          <pre>cd ~/actions-runner
+./run.sh --version</pre>
+        </div>
+        <p>To update the runner, download the latest version and reconfigure it following the 
+        <a href="github-runner.html" class="list-link">GitHub Runner Setup</a> guide.</p>
+      </div>
+
+      <h3>Routine Maintenance Checklist</h3>
+      
+      <h4>Daily</h4>
+      <ul>
+        <li>Check service status: <code>sudo systemctl status coe-alumni</code></li>
+        <li>Review recent logs for errors: <code>sudo journalctl -u coe-alumni -p err --since today</code></li>
+      </ul>
+
+      <h4>Weekly</h4>
+      <ul>
+        <li>Check disk usage: <code>df -h</code></li>
+        <li>Review deployment logs in GitHub Actions</li>
+        <li>Verify runner is online in GitHub</li>
+      </ul>
+
+      <h4>Monthly</h4>
+      <ul>
+        <li>Update system packages: <code>sudo apt update && sudo apt upgrade -y</code></li>
+        <li>Clean old backups: <code>find /var/www/ -name "coe-alumniDB.backup.*" -mtime +30 -exec rm -rf {} \;</code></li>
+        <li>Review and backup database if needed</li>
+        <li>Check for GitHub runner updates</li>
+      </ul>
+
+      <h4>As Needed</h4>
+      <ul>
+        <li>Restart service after configuration changes</li>
+        <li>Manual backups before major changes</li>
+        <li>Log analysis for troubleshooting</li>
+      </ul>
+
+      <h3>Security Best Practices</h3>
+      <ul>
+        <li>Keep system packages up to date with security patches</li>
+        <li>Regularly review application logs for suspicious activity</li>
+        <li>Maintain proper file permissions (database: 600, application: coe-alumni ownership)</li>
+        <li>Use firewall rules to restrict access (UFW or iptables)</li>
+        <li>Consider setting up SSL/TLS certificates for HTTPS</li>
+        <li>Regularly backup the database</li>
+      </ul>
+
+      <h3>Next Steps</h3>
+      <p>
+        If you encounter issues, refer to the troubleshooting guide for common problems and solutions.
+      </p>
+
+      <div class="nav-buttons">
+        <a href="configuration.html">← Previous: Configuration</a>
+        <a href="troubleshooting.html">Next: Troubleshooting →</a>
+      </div>
+    </section>
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

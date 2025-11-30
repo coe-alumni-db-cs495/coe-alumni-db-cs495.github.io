@@ -1,0 +1,170 @@
+/* Documentation-specific styles */
+
+/* Nested dropdown styles */
+.nested-dropdown {
+  position: relative;
+}
+
+.nested-trigger {
+  display: block;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.nested-trigger:hover {
+  background-color: #5f6a72;
+}
+
+.nested-dropdown-content {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: #772432;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.nested-dropdown:hover .nested-dropdown-content {
+  display: block;
+}
+
+.nested-dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nested-dropdown-content a:hover {
+  background-color: #5f6a72;
+}
+
+/* Info boxes */
+.info-box {
+  background-color: #f0f8ff;
+  border-left: 4px solid #772432;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.note-box {
+  background-color: #fffbf0;
+  border-left: 4px solid #ffa500;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.warning-box {
+  background-color: #fff5f5;
+  border-left: 4px solid #ff4444;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.success-box {
+  background-color: #f0fff0;
+  border-left: 4px solid #28a745;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Code blocks */
+.code-block {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+  font-family: 'Courier New', monospace;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.code-block pre {
+  margin: 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+table th {
+  background-color: #772432;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Navigation buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+.nav-buttons a {
+  color: #772432;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #772432;
+  border-radius: 4px;
+}
+
+.nav-buttons a:hover {
+  background-color: #772432;
+  color: white;
+}
+
+/* Diagrams */
+.diagram {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+}
+
+/* Step boxes */
+.step {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-left: 3px solid #772432;
+}
+
+.step h4 {
+  margin-top: 0;
+}
+
+/* Screenshot styling */
+.screenshot-container {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.doc-screenshot {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

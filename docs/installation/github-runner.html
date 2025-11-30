@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Runner Setup - COE Alumni Database Documentation</title>
+  <link rel="stylesheet" href="../../resources/css/styles.css">
+  <link rel="stylesheet" href="../../resources/css/docs-styles.css">
+</head>
+<body>
+  <header>
+    <h1>College of Engineering Alumni Database</h1>
+    <nav>
+  <div class="navbar">
+    <a href="/index.html">Home</a>
+    <a href="/projectinfo.html">Project Info</a>
+    <div class="dropdown">
+      <button class="dropdown-button">Project Timeline</button>
+      <div class="dropdown-content">
+        <a href="/project-timeline/sprint1.html">Sprint 1</a>
+        <a href="/project-timeline/sprint2.html">Sprint 2</a>
+        <a href="/project-timeline/sprint3.html">Sprint 3</a>
+        <a href="/project-timeline/video.html">Project Demo</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-button">The Team</button>
+      <div class="dropdown-content">
+        <a href="/the-team/ethan.html">Ethan Busby</a>
+        <a href="/the-team/andy.html">Andy Fancher</a>
+        <a href="/the-team/marcus.html">Marcus Kelley</a>
+        <a href="/the-team/jacob.html">Jacob Santos</a>
+        <a href="/the-team/brodye.html">Brodye Stevens</a>
+      </div>  
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-button">Docs</button>
+      <div class="dropdown-content">
+        <a href="/docs/docs-index.html">Documentation Home</a>
+        <div class="nested-dropdown">
+          <a href="#" class="nested-trigger">Installation Guide</a>
+          <div class="nested-dropdown-content">
+            <a href="/docs/installation/overview.html">Installation Overview</a>
+            <a href="/docs/installation/server-setup.html">Server Setup</a>
+            <a href="/docs/installation/github-runner.html">GitHub Runner</a>
+            <a href="/docs/installation/deployment.html">Application Deployment</a>
+            <a href="/docs/installation/configuration.html">Configuration</a>
+            <a href="/docs/installation/operations.html">Operations & Maintenance</a>
+            <a href="/docs/installation/troubleshooting.html">Troubleshooting</a>
+            <a href="/docs/installation/quick-reference.html">Quick Reference</a>
+          </div>
+        </div>
+        <div class="nested-dropdown">
+          <a href="#" class="nested-trigger">Feature Guide</a>
+          <div class="nested-dropdown-content">
+            <a href="/docs/features-index.html">Features Overview</a>
+            <a href="/docs/features/register-signin.html">Register & Sign In</a>
+            <a href="/docs/features/profile.html">Profile Creation & Editing</a>
+            <a href="/docs/features/networking.html">Networking</a>
+            <a href="/docs/features/favorites.html">Favorites</a>
+          </div>
+        </div>
+        <a href="/docs/development-index.html">Development Guide</a>
+        <a href="/docs/faq.html">FAQs</a>
+      </div>
+    </div>
+  </div>
+</nav>
+  </header>
+  <div class="container">
+    <section>
+      <h2>Installation Guide: GitHub Runner Setup</h2>
+      
+      <p>
+        The GitHub self-hosted runner allows GitHub Actions to deploy directly to your server. 
+        This enables automatic building and deployment whenever you push changes to your repository.
+      </p>
+
+      <div class="info-box">
+        <strong>What You'll Do:</strong>
+        <ul>
+          <li>Download and install the GitHub Actions runner</li>
+          <li>Configure the runner to connect to your repository</li>
+          <li>Install the runner as a system service</li>
+          <li>Grant necessary sudo privileges for deployment</li>
+        </ul>
+      </div>
+
+      <h3>Step 1: Create Runner Directory</h3>
+      <p>
+        Create a dedicated directory for the GitHub runner in your home folder.
+      </p>
+
+      <div class="code-block">
+        <pre>mkdir ~/actions-runner && cd ~/actions-runner</pre>
+      </div>
+
+      <h3>Step 2: Download the Runner</h3>
+      <p>
+        Download the latest GitHub Actions runner package. Check the 
+        <a href="https://github.com/actions/runner/releases" class="list-link" target="_blank">GitHub releases page</a> 
+        for the most current version.
+      </p>
+
+      <div class="step">
+        <h4>Download and extract</h4>
+        <div class="code-block">
+          <pre>curl -o actions-runner-linux-x64-2.311.0.tar.gz -L \
+  https://github.com/actions/runner/releases/download/v2.311.0/actions-runner-linux-x64-2.311.0.tar.gz
+
+tar xzf ./actions-runner-linux-x64-2.311.0.tar.gz</pre>
+        </div>
+        <div class="note-box">
+          <strong>Note:</strong> Replace <code>2.311.0</code> with the latest version number if a newer version is available.
+        </div>
+      </div>
+
+      <h3>Step 3: Get Registration Token from GitHub</h3>
+      <p>
+        Before configuring the runner, you need a registration token from GitHub.
+      </p>
+
+      <div class="step">
+        <h4>Steps to get the token:</h4>
+        <ol>
+          <li>Go to your repository on GitHub</li>
+          <li>Navigate to <strong>Settings</strong> → <strong>Actions</strong> → <strong>Runners</strong></li>
+          <li>Click <strong>New self-hosted runner</strong></li>
+          <li>Select <strong>Linux</strong> as the operating system</li>
+          <li>Copy the token provided in the configuration command</li>
+        </ol>
+        <div class="warning-box">
+          <strong>Important:</strong> The registration token expires after a short time. If it expires, 
+          generate a new one by following the same steps.
+        </div>
+      </div>
+
+      <h3>Step 4: Configure the Runner</h3>
+      <p>
+        Run the configuration script with your repository URL and token.
+      </p>
+
+      <div class="code-block">
+        <pre>./config.sh --url https://github.com/YOUR-ORG/YOUR-REPO --token YOUR-TOKEN</pre>
+      </div>
+
+      <div class="step">
+        <h4>Configuration prompts:</h4>
+        <p>You'll be asked several questions during configuration:</p>
+        <table>
+          <tr>
+            <th>Prompt</th>
+            <th>Recommended Response</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td>Enter the name of the runner</td>
+            <td>Choose a descriptive name<br>(e.g., <code>production-server</code>)</td>
+            <td>This helps identify the runner in GitHub</td>
+          </tr>
+          <tr>
+            <td>Enter the name of runner group</td>
+            <td>Press <strong>Enter</strong> for default</td>
+            <td>Uses the default runner group</td>
+          </tr>
+          <tr>
+            <td>Enter any additional labels</td>
+            <td>Press <strong>Enter</strong> for default</td>
+            <td>Default labels are sufficient</td>
+          </tr>
+          <tr>
+            <td>Enter name of work folder</td>
+            <td>Press <strong>Enter</strong> for default</td>
+            <td>Uses <code>_work</code> subdirectory</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="success-box">
+        <strong>Success!</strong> If configuration completes successfully, you'll see a message indicating 
+        the runner is connected.
+      </div>
+
+      <h3>Step 5: Install Runner as a Service</h3>
+      <p>
+        Installing the runner as a service ensures it starts automatically when the server boots.
+      </p>
+
+      <div class="step">
+        <h4>Install the service</h4>
+        <div class="code-block">
+          <pre>sudo ./svc.sh install</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <h4>Start the service</h4>
+        <div class="code-block">
+          <pre>sudo ./svc.sh start</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <h4>Verify the service is running</h4>
+        <div class="code-block">
+          <pre>sudo ./svc.sh status</pre>
+        </div>
+        <div class="success-box">
+          <strong>Expected output:</strong> You should see <code>active (running)</code> status.
+        </div>
+      </div>
+
+      <h3>Step 6: Grant Sudo Privileges</h3>
+      <p>
+        The runner needs sudo access to manage the application service and deploy files. We'll grant 
+        specific sudo permissions without requiring a password.
+      </p>
+
+      <div class="warning-box">
+        <strong>Warning:</strong> Be careful when editing the sudoers file. Syntax errors can lock you 
+        out of sudo access. Always use <code>visudo</code> to edit this file safely.
+      </div>
+
+      <div class="step">
+        <h4>Edit sudoers file</h4>
+        <div class="code-block">
+          <pre>sudo visudo</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <h4>Add sudo permissions</h4>
+        <p>
+          Add the following line at the end of the file. Replace <code>your-username</code> with 
+          your actual username (the user that runs the GitHub runner).
+        </p>
+        <div class="code-block">
+          <pre>your-username ALL=(ALL) NOPASSWD: /bin/systemctl start coe-alumni, /bin/systemctl stop coe-alumni, /bin/systemctl restart coe-alumni, /bin/systemctl enable coe-alumni, /bin/systemctl status coe-alumni, /bin/cp, /bin/mkdir, /bin/chown, /bin/chmod, /usr/bin/pkill</pre>
+        </div>
+        <p><strong>What this does:</strong></p>
+        <ul>
+          <li>Allows your user to run specific systemctl commands for the coe-alumni service</li>
+          <li>Allows file operations needed for deployment (cp, mkdir, chown, chmod)</li>
+          <li>Allows killing processes (pkill) for cleaning up before deployment</li>
+          <li><code>NOPASSWD:</code> means these commands won't require a password</li>
+        </ul>
+        <p>Save and exit (<code>Ctrl+X</code>, then <code>Y</code>, then <code>Enter</code> in nano).</p>
+      </div>
+
+      <h3>Step 7: Verify Runner Connection</h3>
+      <p>
+        Check that your runner appears in GitHub and is ready to accept jobs.
+      </p>
+
+      <div class="step">
+        <h4>In GitHub:</h4>
+        <ol>
+          <li>Go to your repository</li>
+          <li>Navigate to <strong>Settings</strong> → <strong>Actions</strong> → <strong>Runners</strong></li>
+          <li>You should see your runner listed with a green "Idle" status</li>
+        </ol>
+      </div>
+
+      <div class="step">
+        <h4>On your server:</h4>
+        <div class="code-block">
+          <pre>sudo systemctl status actions.runner.*</pre>
+        </div>
+        <div class="success-box">
+          <strong>Expected output:</strong> The service should be active and running.
+        </div>
+      </div>
+
+      <h3>Common Runner Commands</h3>
+      <p>
+        Here are useful commands for managing your GitHub runner:
+      </p>
+
+      <table>
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><code>sudo ./svc.sh status</code></td>
+          <td>Check runner service status</td>
+        </tr>
+        <tr>
+          <td><code>sudo ./svc.sh start</code></td>
+          <td>Start the runner service</td>
+        </tr>
+        <tr>
+          <td><code>sudo ./svc.sh stop</code></td>
+          <td>Stop the runner service</td>
+        </tr>
+        <tr>
+          <td><code>sudo ./svc.sh restart</code></td>
+          <td>Restart the runner service</td>
+        </tr>
+        <tr>
+          <td><code>sudo journalctl -u actions.runner.* -n 50</code></td>
+          <td>View runner logs (last 50 lines)</td>
+        </tr>
+      </table>
+
+      <h3>Troubleshooting</h3>
+      
+      <h4>Runner won't connect:</h4>
+      <ul>
+        <li>Verify the registration token hasn't expired (generate a new one)</li>
+        <li>Check your internet connection</li>
+        <li>Ensure the repository URL is correct</li>
+        <li>Check firewall settings allow outbound HTTPS connections</li>
+      </ul>
+
+      <h4>Service won't start:</h4>
+      <ul>
+        <li>Check logs: <code>sudo journalctl -u actions.runner.* -n 100</code></li>
+        <li>Verify the runner was configured successfully</li>
+        <li>Make sure no other runner service is already running</li>
+      </ul>
+
+      <h4>Permission denied errors:</h4>
+      <ul>
+        <li>Verify sudoers file was edited correctly</li>
+        <li>Run <code>sudo visudo -c</code> to check for syntax errors</li>
+        <li>Make sure you used the correct username in the sudoers entry</li>
+      </ul>
+
+      <h3>Next Steps</h3>
+      <p>
+        With the GitHub runner configured and running, you're ready to configure the systemd service 
+        and deploy the application for the first time.
+      </p>
+
+      <div class="nav-buttons">
+        <a href="server-setup.html">← Previous: Server Setup</a>
+        <a href="deployment.html">Next: Application Deployment →</a>
+      </div>
+    </section>
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>
