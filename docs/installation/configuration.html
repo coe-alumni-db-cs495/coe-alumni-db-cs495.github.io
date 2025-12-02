@@ -1,201 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Configuration - COE Alumni Database Documentation</title>
-  <link rel="stylesheet" href="../../resources/css/styles.css">
-  <link rel="stylesheet" href="../../resources/css/docs-styles.css">
-</head>
-<body>
-  <header>
-    <h1>College of Engineering Alumni Database</h1>
-    <nav>
-  <div class="navbar">
-    <a href="/index.html">Home</a>
-    <a href="/projectinfo.html">Project Info</a>
-    <div class="dropdown">
-      <button class="dropdown-button">Project Timeline</button>
-      <div class="dropdown-content">
-        <a href="/project-timeline/sprint1.html">Sprint 1</a>
-        <a href="/project-timeline/sprint2.html">Sprint 2</a>
-        <a href="/project-timeline/sprint3.html">Sprint 3</a>
-        <a href="/project-timeline/video.html">Project Demo</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-button">The Team</button>
-      <div class="dropdown-content">
-        <a href="/the-team/ethan.html">Ethan Busby</a>
-        <a href="/the-team/andy.html">Andy Fancher</a>
-        <a href="/the-team/marcus.html">Marcus Kelley</a>
-        <a href="/the-team/jacob.html">Jacob Santos</a>
-        <a href="/the-team/brodye.html">Brodye Stevens</a>
-      </div>  
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-button">Docs</button>
-      <div class="dropdown-content">
-        <a href="/docs/docs-index.html">Documentation Home</a>
-        <div class="nested-dropdown">
-          <a href="#" class="nested-trigger">Installation Guide</a>
-          <div class="nested-dropdown-content">
-            <a href="/docs/installation/overview.html">Installation Overview</a>
-            <a href="/docs/installation/server-setup.html">Server Setup</a>
-            <a href="/docs/installation/github-runner.html">GitHub Runner</a>
-            <a href="/docs/installation/deployment.html">Application Deployment</a>
-            <a href="/docs/installation/configuration.html">Configuration</a>
-            <a href="/docs/installation/operations.html">Operations & Maintenance</a>
-            <a href="/docs/installation/troubleshooting.html">Troubleshooting</a>
-            <a href="/docs/installation/quick-reference.html">Quick Reference</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configuration - COE Alumni Database Documentation</title>
+    <link rel="stylesheet" href="../../resources/css/styles.css" />
+    <link rel="stylesheet" href="../../resources/css/docs-styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>College of Engineering Alumni Database</h1>
+      <nav>
+        <div class="navbar">
+          <a href="/index.html">Home</a>
+          <a href="/projectinfo.html">Project Info</a>
+          <div class="dropdown">
+            <button class="dropdown-button">Project Timeline</button>
+            <div class="dropdown-content">
+              <a href="/project-timeline/sprint1.html">Sprint 1</a>
+              <a href="/project-timeline/sprint2.html">Sprint 2</a>
+              <a href="/project-timeline/sprint3.html">Sprint 3</a>
+              <a href="/project-timeline/video.html">Project Demo</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">The Team</button>
+            <div class="dropdown-content">
+              <a href="/the-team/ethan.html">Ethan Busby</a>
+              <a href="/the-team/andy.html">Andy Fancher</a>
+              <a href="/the-team/marcus.html">Marcus Kelley</a>
+              <a href="/the-team/jacob.html">Jacob Santos</a>
+              <a href="/the-team/brodye.html">Brodye Stevens</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Docs</button>
+            <div class="dropdown-content">
+              <a href="/docs/docs-index.html">Documentation Home</a>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Installation Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/installation/overview.html"
+                    >Installation Overview</a
+                  >
+                  <a href="/docs/installation/server-setup.html"
+                    >Server Setup</a
+                  >
+                  <a href="/docs/installation/github-runner.html"
+                    >GitHub Runner</a
+                  >
+                  <a href="/docs/installation/deployment.html"
+                    >Application Deployment</a
+                  >
+                  <a href="/docs/installation/configuration.html"
+                    >Configuration</a
+                  >
+                  <a href="/docs/installation/operations.html"
+                    >Operations & Maintenance</a
+                  >
+                  <a href="/docs/installation/troubleshooting.html"
+                    >Troubleshooting</a
+                  >
+                  <a href="/docs/installation/quick-reference.html"
+                    >Quick Reference</a
+                  >
+                </div>
+              </div>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Feature Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/features-index.html">Features Overview</a>
+                  <a href="/docs/features/register-signin.html"
+                    >Register & Sign In</a
+                  >
+                  <a href="/docs/features/profile.html"
+                    >Profile Creation & Editing</a
+                  >
+                  <a href="/docs/features/networking.html">Networking</a>
+                  <a href="/docs/features/favorites.html">Favorites</a>
+                </div>
+              </div>
+              <a href="/docs/development-index.html">Development Guide</a>
+              <a href="/docs/faq.html">FAQs</a>
+            </div>
           </div>
         </div>
-        <div class="nested-dropdown">
-          <a href="#" class="nested-trigger">Feature Guide</a>
-          <div class="nested-dropdown-content">
-            <a href="/docs/features-index.html">Features Overview</a>
-            <a href="/docs/features/register-signin.html">Register & Sign In</a>
-            <a href="/docs/features/profile.html">Profile Creation & Editing</a>
-            <a href="/docs/features/networking.html">Networking</a>
-            <a href="/docs/features/favorites.html">Favorites</a>
+      </nav>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Installation Guide: Configuration</h2>
+
+        <p>
+          This section covers optional configurations to enhance your
+          deployment, including database management, reverse proxy setup, and
+          Python automation scripts.
+        </p>
+
+        <div class="note-box">
+          <strong>Note:</strong> All configurations in this section are optional
+          but recommended for production deployments.
+        </div>
+
+        <h3>Database Configuration</h3>
+        <p>
+          The application uses SQLite for data storage. The database is
+          automatically created during the first run.
+        </p>
+
+        <h4>Database Details</h4>
+        <table>
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+          </tr>
+          <tr>
+            <td>Database Type</td>
+            <td>SQLite 3</td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td><code>/var/www/coe-alumniDB/DB/AlumniDatabase.db</code></td>
+          </tr>
+          <tr>
+            <td>Owner</td>
+            <td>coe-alumni user</td>
+          </tr>
+          <tr>
+            <td>Permissions</td>
+            <td>600 (owner read/write only)</td>
+          </tr>
+          <tr>
+            <td>Connection String</td>
+            <td><code>Data Source=DB/AlumniDatabase.db</code></td>
+          </tr>
+        </table>
+
+        <h4>Verify Database Permissions</h4>
+        <p>
+          Database permissions are set automatically during deployment, but you
+          can verify them:
+        </p>
+
+        <div class="code-block">
+          <pre>ls -la /var/www/coe-alumniDB/DB/</pre>
+        </div>
+
+        <div class="success-box">
+          <strong>Expected output:</strong> The database file should be owned by
+          <code>coe-alumni:coe-alumni</code> with permissions
+          <code>-rw-------</code> (600).
+        </div>
+
+        <div class="step">
+          <h4>Manually set permissions (if needed)</h4>
+          <div class="code-block">
+            <pre>
+sudo chown coe-alumni:coe-alumni /var/www/coe-alumniDB/DB/AlumniDatabase.db
+sudo chmod 600 /var/www/coe-alumniDB/DB/AlumniDatabase.db</pre
+            >
           </div>
         </div>
-        <a href="/docs/development-index.html">Development Guide</a>
-        <a href="/docs/faq.html">FAQs</a>
-      </div>
-    </div>
-  </div>
-</nav>
-  </header>
-  <div class="container">
-    <section>
-      <h2>Installation Guide: Configuration</h2>
-      
-      <p>
-        This section covers optional configurations to enhance your deployment, including database management, 
-        reverse proxy setup, and Python automation scripts.
-      </p>
 
-      <div class="note-box">
-        <strong>Note:</strong> All configurations in this section are optional but recommended for production deployments.
-      </div>
+        <h4>Accessing the Database</h4>
+        <p>
+          For maintenance or debugging, you can access the database directly
+          using SQLite:
+        </p>
 
-      <h3>Database Configuration</h3>
-      <p>
-        The application uses SQLite for data storage. The database is automatically created during the first run.
-      </p>
-
-      <h4>Database Details</h4>
-      <table>
-        <tr>
-          <th>Property</th>
-          <th>Value</th>
-        </tr>
-        <tr>
-          <td>Database Type</td>
-          <td>SQLite 3</td>
-        </tr>
-        <tr>
-          <td>Location</td>
-          <td><code>/var/www/coe-alumniDB/DB/AlumniDatabase.db</code></td>
-        </tr>
-        <tr>
-          <td>Owner</td>
-          <td>coe-alumni user</td>
-        </tr>
-        <tr>
-          <td>Permissions</td>
-          <td>600 (owner read/write only)</td>
-        </tr>
-        <tr>
-          <td>Connection String</td>
-          <td><code>Data Source=DB/AlumniDatabase.db</code></td>
-        </tr>
-      </table>
-
-      <h4>Verify Database Permissions</h4>
-      <p>
-        Database permissions are set automatically during deployment, but you can verify them:
-      </p>
-
-      <div class="code-block">
-        <pre>ls -la /var/www/coe-alumniDB/DB/</pre>
-      </div>
-
-      <div class="success-box">
-        <strong>Expected output:</strong> The database file should be owned by <code>coe-alumni:coe-alumni</code> 
-        with permissions <code>-rw-------</code> (600).
-      </div>
-
-      <div class="step">
-        <h4>Manually set permissions (if needed)</h4>
-        <div class="code-block">
-          <pre>sudo chown coe-alumni:coe-alumni /var/www/coe-alumniDB/DB/AlumniDatabase.db
-sudo chmod 600 /var/www/coe-alumniDB/DB/AlumniDatabase.db</pre>
+        <div class="step">
+          <h4>Connect to database</h4>
+          <div class="code-block">
+            <pre>
+sudo -u coe-alumni sqlite3 /var/www/coe-alumniDB/DB/AlumniDatabase.db</pre
+            >
+          </div>
         </div>
-      </div>
 
-      <h4>Accessing the Database</h4>
-      <p>
-        For maintenance or debugging, you can access the database directly using SQLite:
-      </p>
+        <h4>Database Backup</h4>
+        <p>Create manual backups of your database for safety:</p>
 
-      <div class="step">
-        <h4>Connect to database</h4>
         <div class="code-block">
-          <pre>sudo -u coe-alumni sqlite3 /var/www/coe-alumniDB/DB/AlumniDatabase.db</pre>
+          <pre>
+sudo -u coe-alumni cp /var/www/coe-alumniDB/DB/AlumniDatabase.db \
+  /var/www/coe-alumniDB/DB/AlumniDatabase.db.backup.$(date +%Y%m%d_%H%M%S)</pre
+          >
         </div>
-      </div>
 
-      <h4>Database Backup</h4>
-      <p>
-        Create manual backups of your database for safety:
-      </p>
-
-      <div class="code-block">
-        <pre>sudo -u coe-alumni cp /var/www/coe-alumniDB/DB/AlumniDatabase.db \
-  /var/www/coe-alumniDB/DB/AlumniDatabase.db.backup.$(date +%Y%m%d_%H%M%S)</pre>
-      </div>
-
-      <div class="info-box">
-        <strong>Backup Location:</strong> Backups are stored in the same directory as the database with 
-        a timestamp suffix (e.g., <code>AlumniDatabase.db.backup.20241130_143022</code>).
-      </div>
-
-      <h3>Reverse Proxy Setup (Optional)</h3>
-      <p>
-        If you want to access the application through a domain name instead of directly via IP and port, 
-        set up Nginx as a reverse proxy.
-      </p>
-
-      <div class="note-box">
-        <strong>When to use a reverse proxy:</strong>
-        <ul>
-          <li>You have a domain name pointing to your server</li>
-          <li>You want to access the app via standard HTTP/HTTPS ports</li>
-          <li>You want to add SSL/TLS encryption</li>
-          <li>You want to host multiple applications on the same server</li>
-        </ul>
-      </div>
-
-      <h4>Step 1: Install Nginx</h4>
-      <div class="code-block">
-        <pre>sudo apt install -y nginx</pre>
-      </div>
-
-      <h4>Step 2: Configure Nginx</h4>
-      <div class="step">
-        <h4>Create site configuration</h4>
-        <div class="code-block">
-          <pre>sudo nano /etc/nginx/sites-available/coe-alumni</pre>
+        <div class="info-box">
+          <strong>Backup Location:</strong> Backups are stored in the same
+          directory as the database with a timestamp suffix (e.g.,
+          <code>AlumniDatabase.db.backup.20241130_143022</code>).
         </div>
-      </div>
 
-      <div class="step">
-        <h4>Add configuration</h4>
-        <p>Replace <code>your-domain.com</code> with your actual domain name:</p>
+        <h3>Reverse Proxy Setup (Optional)</h3>
+        <p>
+          If you want to access the application through a domain name instead of
+          directly via IP and port, set up Nginx as a reverse proxy.
+        </p>
+
+        <div class="note-box">
+          <strong>When to use a reverse proxy:</strong>
+          <ul>
+            <li>You have a domain name pointing to your server</li>
+            <li>You want to access the app via standard HTTP/HTTPS ports</li>
+            <li>You want to add SSL/TLS encryption</li>
+            <li>You want to host multiple applications on the same server</li>
+          </ul>
+        </div>
+
+        <h4>Step 1: Install Nginx</h4>
         <div class="code-block">
-          <pre>server {
+          <pre>sudo apt install -y nginx</pre>
+        </div>
+
+        <h4>Step 2: Configure Nginx</h4>
+        <div class="step">
+          <h4>Create site configuration</h4>
+          <div class="code-block">
+            <pre>sudo nano /etc/nginx/sites-available/coe-alumni</pre>
+          </div>
+        </div>
+
+        <div class="step">
+          <h4>Add configuration</h4>
+          <p>
+            Replace <code>your-domain.com</code> with your actual domain name:
+          </p>
+          <div class="code-block">
+            <pre>
+server {
     listen 80;
     server_name your-domain.com;
 
@@ -209,177 +243,195 @@ sudo chmod 600 /var/www/coe-alumniDB/DB/AlumniDatabase.db</pre>
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
     }
-}</pre>
+}</pre
+            >
+          </div>
+          <p>
+            Save and exit (<code>Ctrl+X</code>, then <code>Y</code>, then
+            <code>Enter</code>).
+          </p>
         </div>
-        <p>Save and exit (<code>Ctrl+X</code>, then <code>Y</code>, then <code>Enter</code>).</p>
-      </div>
 
-      <h4>Step 3: Enable Site</h4>
-      <div class="step">
-        <h4>Create symbolic link</h4>
-        <div class="code-block">
-          <pre>sudo ln -s /etc/nginx/sites-available/coe-alumni /etc/nginx/sites-enabled/</pre>
+        <h4>Step 3: Enable Site</h4>
+        <div class="step">
+          <h4>Create symbolic link</h4>
+          <div class="code-block">
+            <pre>
+sudo ln -s /etc/nginx/sites-available/coe-alumni /etc/nginx/sites-enabled/</pre
+            >
+          </div>
         </div>
-      </div>
 
-      <div class="step">
-        <h4>Test configuration</h4>
-        <div class="code-block">
-          <pre>sudo nginx -t</pre>
+        <div class="step">
+          <h4>Test configuration</h4>
+          <div class="code-block">
+            <pre>sudo nginx -t</pre>
+          </div>
+          <div class="success-box">
+            <strong>Expected output:</strong> <code>syntax is ok</code> and
+            <code>test is successful</code>
+          </div>
         </div>
+
+        <div class="step">
+          <h4>Restart Nginx</h4>
+          <div class="code-block">
+            <pre>sudo systemctl restart nginx</pre>
+          </div>
+        </div>
+
+        <h4>Step 4: Configure Firewall (if applicable)</h4>
+        <p>If you're using UFW firewall, allow HTTP and HTTPS traffic:</p>
+
+        <div class="code-block">
+          <pre>
+sudo ufw allow 'Nginx Full'
+sudo ufw status</pre
+          >
+        </div>
+
         <div class="success-box">
-          <strong>Expected output:</strong> <code>syntax is ok</code> and <code>test is successful</code>
+          <strong>Success!</strong> Your application should now be accessible at
+          <code>http://your-domain.com</code>
         </div>
-      </div>
 
-      <div class="step">
-        <h4>Restart Nginx</h4>
+        <h3>Python Scripts Configuration (Optional)</h3>
+        <p>
+          If your application includes Python automation scripts (e.g., for
+          updating club data), you can configure them to run automatically.
+        </p>
+
+        <h4>Step 1: Install Python</h4>
         <div class="code-block">
-          <pre>sudo systemctl restart nginx</pre>
+          <pre>sudo apt install -y python3 python3-pip</pre>
         </div>
-      </div>
 
-      <h4>Step 4: Configure Firewall (if applicable)</h4>
-      <p>
-        If you're using UFW firewall, allow HTTP and HTTPS traffic:
-      </p>
+        <h4>Step 2: Install Script Dependencies</h4>
+        <p>If your Python scripts require additional packages, install them:</p>
 
-      <div class="code-block">
-        <pre>sudo ufw allow 'Nginx Full'
-sudo ufw status</pre>
-      </div>
-
-      <div class="success-box">
-        <strong>Success!</strong> Your application should now be accessible at <code>http://your-domain.com</code>
-      </div>
-
-      <h3>Python Scripts Configuration (Optional)</h3>
-      <p>
-        If your application includes Python automation scripts (e.g., for updating club data), 
-        you can configure them to run automatically.
-      </p>
-
-      <h4>Step 1: Install Python</h4>
-      <div class="code-block">
-        <pre>sudo apt install -y python3 python3-pip</pre>
-      </div>
-
-      <h4>Step 2: Install Script Dependencies</h4>
-      <p>
-        If your Python scripts require additional packages, install them:
-      </p>
-
-      <div class="code-block">
-        <pre>sudo pip3 install requests beautifulsoup4  # Example dependencies</pre>
-      </div>
-
-      <div class="note-box">
-        <strong>Note:</strong> Check your script files for specific requirements.
-      </div>
-
-      <h4>Step 3: Setup Cron Job</h4>
-      <p>
-        Schedule your Python script to run automatically using cron. For example, to run a script 
-        every Sunday at 2 AM:
-      </p>
-
-      <div class="step">
-        <h4>Edit crontab for coe-alumni user</h4>
         <div class="code-block">
-          <pre>sudo crontab -u coe-alumni -e</pre>
+          <pre>
+sudo pip3 install requests beautifulsoup4  # Example dependencies</pre
+          >
         </div>
-      </div>
 
-      <div class="step">
-        <h4>Add cron schedule</h4>
-        <p>Add this line to run the script every Sunday at 2 AM:</p>
+        <div class="note-box">
+          <strong>Note:</strong> Check your script files for specific
+          requirements.
+        </div>
+
+        <h4>Step 3: Setup Cron Job</h4>
+        <p>
+          Schedule your Python script to run automatically using cron. For
+          example, to run a script every Sunday at 2 AM:
+        </p>
+
+        <div class="step">
+          <h4>Edit crontab for coe-alumni user</h4>
+          <div class="code-block">
+            <pre>sudo crontab -u coe-alumni -e</pre>
+          </div>
+        </div>
+
+        <div class="step">
+          <h4>Add cron schedule</h4>
+          <p>Add this line to run the script every Sunday at 2 AM:</p>
+          <div class="code-block">
+            <pre>
+0 2 * * 0 /usr/bin/python3 /var/www/coe-alumniDB/DB/addNewClubs.py >> /var/log/coe-alumni-cron.log 2>&1</pre
+            >
+          </div>
+        </div>
+
+        <h4>Step 4: Create Log File</h4>
         <div class="code-block">
-          <pre>0 2 * * 0 /usr/bin/python3 /var/www/coe-alumniDB/DB/addNewClubs.py >> /var/log/coe-alumni-cron.log 2>&1</pre>
+          <pre>
+sudo touch /var/log/coe-alumni-cron.log
+sudo chown coe-alumni:coe-alumni /var/log/coe-alumni-cron.log</pre
+          >
         </div>
-      </div>
 
-      <h4>Step 4: Create Log File</h4>
-      <div class="code-block">
-        <pre>sudo touch /var/log/coe-alumni-cron.log
-sudo chown coe-alumni:coe-alumni /var/log/coe-alumni-cron.log</pre>
-      </div>
-
-      <h4>Step 5: Verify Cron Job</h4>
-      <div class="code-block">
-        <pre>sudo crontab -u coe-alumni -l</pre>
-      </div>
-
-      <h4>View Cron Logs</h4>
-      <div class="code-block">
-        <pre>sudo tail -f /var/log/coe-alumni-cron.log</pre>
-      </div>
-
-      <h3>Environment Variables</h3>
-      <p>
-        The application uses environment variables defined in the systemd service file. If you need to 
-        add custom environment variables:
-      </p>
-
-      <div class="step">
-        <h4>Edit service file</h4>
+        <h4>Step 5: Verify Cron Job</h4>
         <div class="code-block">
-          <pre>sudo nano /etc/systemd/system/coe-alumni.service</pre>
+          <pre>sudo crontab -u coe-alumni -l</pre>
         </div>
-      </div>
 
-      <div class="step">
-        <h4>Add environment variables</h4>
-        <p>Add new <code>Environment=</code> lines in the <code>[Service]</code> section:</p>
+        <h4>View Cron Logs</h4>
         <div class="code-block">
-          <pre>Environment=CUSTOM_VARIABLE=value
-Environment=ANOTHER_VARIABLE=value</pre>
+          <pre>sudo tail -f /var/log/coe-alumni-cron.log</pre>
         </div>
-      </div>
 
-      <div class="step">
-        <h4>Reload and restart</h4>
-        <div class="code-block">
-          <pre>sudo systemctl daemon-reload
-sudo systemctl restart coe-alumni</pre>
+        <h3>Environment Variables</h3>
+        <p>
+          The application uses environment variables defined in the systemd
+          service file. If you need to add custom environment variables:
+        </p>
+
+        <div class="step">
+          <h4>Edit service file</h4>
+          <div class="code-block">
+            <pre>sudo nano /etc/systemd/system/coe-alumni.service</pre>
+          </div>
         </div>
-      </div>
 
-      <h3>Configuration Checklist</h3>
-      <p>
-        Review this checklist to ensure your configuration is complete:
-      </p>
+        <div class="step">
+          <h4>Add environment variables</h4>
+          <p>
+            Add new <code>Environment=</code> lines in the
+            <code>[Service]</code> section:
+          </p>
+          <div class="code-block">
+            <pre>
+Environment=CUSTOM_VARIABLE=value
+Environment=ANOTHER_VARIABLE=value</pre
+            >
+          </div>
+        </div>
 
-      <div class="info-box">
-        <strong>Essential Configuration:</strong>
-        <ul>
-          <li>Database permissions verified (600, owned by coe-alumni)</li>
-          <li>Application accessible on localhost:5000</li>
-          <li>Service starts automatically on boot</li>
-        </ul>
-      </div>
+        <div class="step">
+          <h4>Reload and restart</h4>
+          <div class="code-block">
+            <pre>
+sudo systemctl daemon-reload
+sudo systemctl restart coe-alumni</pre
+            >
+          </div>
+        </div>
 
-      <div class="note-box">
-        <strong>Optional Configuration:</strong>
-        <ul>
-          <li>Nginx reverse proxy configured (if using domain name)</li>
-          <li>Firewall configured (if applicable)</li>
-          <li>Python scripts scheduled with cron (if needed)</li>
-          <li>SSL/TLS certificate installed (for HTTPS)</li>
-        </ul>
-      </div>
+        <h3>Configuration Checklist</h3>
+        <p>Review this checklist to ensure your configuration is complete:</p>
 
-      <h3>Next Steps</h3>
-      <p>
-        With configuration complete, learn how to manage and maintain your application in daily operations.
-      </p>
+        <div class="info-box">
+          <strong>Essential Configuration:</strong>
+          <ul>
+            <li>Database permissions verified (600, owned by coe-alumni)</li>
+            <li>Application accessible on localhost:5000</li>
+            <li>Service starts automatically on boot</li>
+          </ul>
+        </div>
 
-      <div class="nav-buttons">
-        <a href="deployment.html">← Previous: Application Deployment</a>
-        <a href="operations.html">Next: Operations & Maintenance →</a>
-      </div>
-    </section>
-  </div>
-  <footer>
-  </footer>
-</body>
+        <div class="note-box">
+          <strong>Optional Configuration:</strong>
+          <ul>
+            <li>Nginx reverse proxy configured (if using domain name)</li>
+            <li>Firewall configured (if applicable)</li>
+            <li>Python scripts scheduled with cron (if needed)</li>
+            <li>SSL/TLS certificate installed (for HTTPS)</li>
+          </ul>
+        </div>
+
+        <h3>Next Steps</h3>
+        <p>
+          With configuration complete, learn how to manage and maintain your
+          application in daily operations.
+        </p>
+
+        <div class="nav-buttons">
+          <a href="deployment.html">← Previous: Application Deployment</a>
+          <a href="operations.html">Next: Operations & Maintenance →</a>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+  </body>
 </html>

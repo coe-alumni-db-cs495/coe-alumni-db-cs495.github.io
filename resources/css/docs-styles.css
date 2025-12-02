@@ -23,7 +23,7 @@
   top: 0;
   background-color: #772432;
   min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
 
@@ -78,7 +78,7 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 1rem;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   overflow-x: auto;
   margin: 1rem 0;
 }
@@ -138,7 +138,7 @@ table tr:nth-child(even) {
   border: 1px solid #ddd;
   padding: 1rem;
   margin: 1rem 0;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   text-align: center;
 }
 
@@ -166,5 +166,5 @@ table tr:nth-child(even) {
   height: auto;
   border: 1px solid #ddd;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

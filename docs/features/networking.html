@@ -1,317 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Networking - COE Alumni Database Documentation</title>
-  <link rel="stylesheet" href="/resources/css/styles.css">
-  <link rel="stylesheet" href="/resources/css/docs-styles.css">
-</head>
-<body>
-  <header>
-    <h1>College of Engineering Alumni Database</h1>
-    <nav>
-  <div class="navbar">
-    <a href="/index.html">Home</a>
-    <a href="/projectinfo.html">Project Info</a>
-    <div class="dropdown">
-      <button class="dropdown-button">Project Timeline</button>
-      <div class="dropdown-content">
-        <a href="/project-timeline/sprint1.html">Sprint 1</a>
-        <a href="/project-timeline/sprint2.html">Sprint 2</a>
-        <a href="/project-timeline/sprint3.html">Sprint 3</a>
-        <a href="/project-timeline/video.html">Project Demo</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-button">The Team</button>
-      <div class="dropdown-content">
-        <a href="/the-team/ethan.html">Ethan Busby</a>
-        <a href="/the-team/andy.html">Andy Fancher</a>
-        <a href="/the-team/marcus.html">Marcus Kelley</a>
-        <a href="/the-team/jacob.html">Jacob Santos</a>
-        <a href="/the-team/brodye.html">Brodye Stevens</a>
-      </div>  
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-button">Docs</button>
-      <div class="dropdown-content">
-        <a href="/docs/docs-index.html">Documentation Home</a>
-        <div class="nested-dropdown">
-          <a href="#" class="nested-trigger">Installation Guide</a>
-          <div class="nested-dropdown-content">
-            <a href="/docs/installation/overview.html">Installation Overview</a>
-            <a href="/docs/installation/server-setup.html">Server Setup</a>
-            <a href="/docs/installation/github-runner.html">GitHub Runner</a>
-            <a href="/docs/installation/deployment.html">Application Deployment</a>
-            <a href="/docs/installation/configuration.html">Configuration</a>
-            <a href="/docs/installation/operations.html">Operations & Maintenance</a>
-            <a href="/docs/installation/troubleshooting.html">Troubleshooting</a>
-            <a href="/docs/installation/quick-reference.html">Quick Reference</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Networking - COE Alumni Database Documentation</title>
+    <link rel="stylesheet" href="/resources/css/styles.css" />
+    <link rel="stylesheet" href="/resources/css/docs-styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>College of Engineering Alumni Database</h1>
+      <nav>
+        <div class="navbar">
+          <a href="/index.html">Home</a>
+          <a href="/projectinfo.html">Project Info</a>
+          <div class="dropdown">
+            <button class="dropdown-button">Project Timeline</button>
+            <div class="dropdown-content">
+              <a href="/project-timeline/sprint1.html">Sprint 1</a>
+              <a href="/project-timeline/sprint2.html">Sprint 2</a>
+              <a href="/project-timeline/sprint3.html">Sprint 3</a>
+              <a href="/project-timeline/video.html">Project Demo</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">The Team</button>
+            <div class="dropdown-content">
+              <a href="/the-team/ethan.html">Ethan Busby</a>
+              <a href="/the-team/andy.html">Andy Fancher</a>
+              <a href="/the-team/marcus.html">Marcus Kelley</a>
+              <a href="/the-team/jacob.html">Jacob Santos</a>
+              <a href="/the-team/brodye.html">Brodye Stevens</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Docs</button>
+            <div class="dropdown-content">
+              <a href="/docs/docs-index.html">Documentation Home</a>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Installation Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/installation/overview.html"
+                    >Installation Overview</a
+                  >
+                  <a href="/docs/installation/server-setup.html"
+                    >Server Setup</a
+                  >
+                  <a href="/docs/installation/github-runner.html"
+                    >GitHub Runner</a
+                  >
+                  <a href="/docs/installation/deployment.html"
+                    >Application Deployment</a
+                  >
+                  <a href="/docs/installation/configuration.html"
+                    >Configuration</a
+                  >
+                  <a href="/docs/installation/operations.html"
+                    >Operations & Maintenance</a
+                  >
+                  <a href="/docs/installation/troubleshooting.html"
+                    >Troubleshooting</a
+                  >
+                  <a href="/docs/installation/quick-reference.html"
+                    >Quick Reference</a
+                  >
+                </div>
+              </div>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Feature Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/features-index.html">Features Overview</a>
+                  <a href="/docs/features/register-signin.html"
+                    >Register & Sign In</a
+                  >
+                  <a href="/docs/features/profile.html"
+                    >Profile Creation & Editing</a
+                  >
+                  <a href="/docs/features/networking.html">Networking</a>
+                  <a href="/docs/features/favorites.html">Favorites</a>
+                </div>
+              </div>
+              <a href="/docs/development-index.html">Development Guide</a>
+              <a href="/docs/faq.html">FAQs</a>
+            </div>
           </div>
         </div>
-        <div class="nested-dropdown">
-          <a href="#" class="nested-trigger">Feature Guide</a>
-          <div class="nested-dropdown-content">
-            <a href="/docs/features-index.html">Features Overview</a>
-            <a href="/docs/features/register-signin.html">Register & Sign In</a>
-            <a href="/docs/features/profile.html">Profile Creation & Editing</a>
-            <a href="/docs/features/networking.html">Networking</a>
-            <a href="/docs/features/favorites.html">Favorites</a>
-          </div>
+      </nav>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Feature Guide: Networking</h2>
+
+        <p>
+          The Networking feature allows you to search for and connect with
+          fellow alumni. Use powerful search and filtering tools to find alumni
+          based on name, company, location, academic background, and more.
+        </p>
+
+        <div class="screenshot-container">
+          <img
+            src="/resources/features-resources/features_networking.png"
+            alt="Networking page with search results screenshot"
+            class="doc-screenshot"
+          />
         </div>
-        <a href="/docs/development-index.html">Development Guide</a>
-        <a href="/docs/faq.html">FAQs</a>
-      </div>
+
+        <h3>Accessing the Networking Page</h3>
+        <p>
+          Navigate to the Networking page from the main menu. You'll see a
+          search bar at the top and a grid of alumni profiles below.
+        </p>
+
+        <h3>Basic Search</h3>
+        <p>
+          The search bar allows you to quickly find alumni by entering keywords.
+        </p>
+
+        <div class="screenshot-container">
+          <img
+            src="/resources/features-resources/features_search-bar.png"
+            alt="Search bar screenshot"
+            class="doc-screenshot"
+          />
+        </div>
+
+        <h4>What You Can Search For</h4>
+        <p>The basic search looks through multiple fields:</p>
+        <ul>
+          <li><strong>Names:</strong> First name and last name</li>
+          <li><strong>Companies:</strong> Current employer</li>
+          <li><strong>Job Titles:</strong> Current position</li>
+        </ul>
+
+        <h4>How to Search</h4>
+        <ol>
+          <li>
+            Type your search term in the search bar (e.g., "Microsoft" or
+            "John")
+          </li>
+          <li>Press <strong>Enter</strong> or click the search icon</li>
+          <li>Results appear below in a tiled grid layout</li>
+        </ol>
+
+        <h3>Advanced Filters</h3>
+        <p>
+          Click the filter icon next to the search bar to access advanced
+          filtering options.
+        </p>
+
+        <div class="screenshot-container">
+          <img
+            src="/resources/features-resources/features_networking-filter.png"
+            alt="Filter panel expanded screenshot"
+            class="doc-screenshot"
+          />
+        </div>
+
+        <h4>Available Filters</h4>
+
+        <h5>1. Clubs</h5>
+        <p>Filter by university clubs and organizations alumni were part of.</p>
+        <ul>
+          <li>Click the <strong>Clubs</strong> section to expand</li>
+          <li>Search for specific clubs or browse the list</li>
+          <li>Select one or multiple clubs</li>
+          <li>Engineering clubs are highlighted</li>
+        </ul>
+
+        <h5>2. Certifications</h5>
+        <p>Find alumni with specific professional certifications.</p>
+        <ul>
+          <li>Click the <strong>Certifications</strong> section to expand</li>
+          <li>Search for specific certifications</li>
+          <li>Select one or multiple certifications</li>
+        </ul>
+
+        <h5>3. Location</h5>
+        <p>Filter by where alumni currently live.</p>
+        <ul>
+          <li>Click the <strong>Location</strong> section to expand</li>
+          <li>Search for a city or state</li>
+          <li>Select a location from the results</li>
+        </ul>
+
+        <h5>4. Undergraduate</h5>
+        <p>Filter by undergraduate academic information.</p>
+        <ul>
+          <li>Click the <strong>Undergraduate</strong> section to expand</li>
+          <li><strong>Major:</strong> Select from dropdown of majors</li>
+          <li>
+            <strong>Minor:</strong> Select from dropdown of minors (optional)
+          </li>
+          <li><strong>Graduation Year:</strong> Enter a specific year</li>
+        </ul>
+
+        <h5>5. Graduate</h5>
+        <p>Filter by master's degree information.</p>
+        <ul>
+          <li>Click the <strong>Graduate</strong> section to expand</li>
+          <li><strong>Master's Degree:</strong> Select from dropdown</li>
+          <li><strong>Graduation Year:</strong> Enter a specific year</li>
+        </ul>
+
+        <h5>6. Doctorate</h5>
+        <p>Filter by doctoral degree information.</p>
+        <ul>
+          <li>Click the <strong>Doctorate</strong> section to expand</li>
+          <li><strong>Doctoral Degree:</strong> Select from dropdown</li>
+          <li><strong>Graduation Year:</strong> Enter a specific year</li>
+        </ul>
+
+        <h4>Combining Filters</h4>
+        <p>You can combine multiple filters to narrow your search:</p>
+        <ul>
+          <li>Use the search bar AND filters together</li>
+          <li>Select multiple clubs or certifications</li>
+          <li>
+            Combine academic filters (e.g., Computer Science major graduating in
+            2015)
+          </li>
+          <li>All selected filters work together (AND logic)</li>
+        </ul>
+
+        <h3>Search Results</h3>
+        <p>
+          Search results appear in a tiled grid layout showing key information
+          about each alumnus.
+        </p>
+
+        <div class="screenshot-container">
+          <img
+            src="/resources/features-resources/features_profile-card.png"
+            alt="Single profile card in search results screenshot"
+            class="doc-screenshot"
+          />
+        </div>
+
+        <h4>Profile Card Information</h4>
+        <p>Each card displays:</p>
+        <ul>
+          <li>
+            <strong>Name:</strong> Full name with initials in a colored circle
+          </li>
+          <li>
+            <strong>Company & Location:</strong> Current employer and city,
+            state
+          </li>
+          <li>
+            <strong>Academic Info:</strong> Major, minor, and undergraduate
+            graduation year
+          </li>
+          <li>
+            <strong>Tags:</strong> Badges showing clubs and certifications
+          </li>
+          <li>
+            <strong>Bookmark Icon:</strong> Button to add/remove from favorites
+          </li>
+        </ul>
+
+        <h4>Interacting with Results</h4>
+
+        <h5>View Full Profile</h5>
+        <ol>
+          <li>Click anywhere on a profile card</li>
+          <li>A modal (popup) opens showing the complete profile</li>
+          <li>View all personal, academic, and professional information</li>
+          <li>
+            Click outside the modal or the close button to return to results
+          </li>
+        </ol>
+
+        <div class="screenshot-container">
+          <img
+            src="/resources/features-resources/features_profile-modal.png"
+            alt="Profile modal popup screenshot"
+            class="doc-screenshot"
+          />
+        </div>
+
+        <h5>Add to Favorites</h5>
+        <ol>
+          <li>Click the bookmark icon on a profile card</li>
+          <li>The icon fills in to show it's been favorited</li>
+          <li>
+            The alumni is added to your
+            <a href="/docs/features/favorites.html" class="list-link"
+              >Favorites</a
+            >
+            list
+          </li>
+          <li>Click again to remove from favorites</li>
+        </ol>
+
+        <h3>Example Searches</h3>
+
+        <h4>Example 1: Find classmates from your graduation year</h4>
+        <ol>
+          <li>Click the filter icon</li>
+          <li>Expand <strong>Undergraduate</strong></li>
+          <li>Select your major</li>
+          <li>Enter your graduation year</li>
+          <li>
+            View results of alumni who graduated with the same major and year
+          </li>
+        </ol>
+
+        <h4>Example 2: Find alumni at a specific company</h4>
+        <ol>
+          <li>Type the company name in the search bar (e.g., "Google")</li>
+          <li>Press Enter</li>
+          <li>View all alumni currently working at that company</li>
+        </ol>
+
+        <h4>Example 3: Find alumni in your area</h4>
+        <ol>
+          <li>Click the filter icon</li>
+          <li>Expand <strong>Location</strong></li>
+          <li>Search for your city</li>
+          <li>Select your location</li>
+          <li>View alumni living nearby</li>
+        </ol>
+
+        <h4>Example 4: Find alumni from the same clubs</h4>
+        <ol>
+          <li>Click the filter icon</li>
+          <li>Expand <strong>Clubs</strong></li>
+          <li>Search for and select clubs you were part of</li>
+          <li>View alumni who shared the same club experiences</li>
+        </ol>
+
+        <h3>How Networking Links to Other Features</h3>
+
+        <h4>Profile Connection</h4>
+        <p>
+          The information displayed in search results comes from each alumni's
+          <a href="/docs/features/profile.html" class="list-link">Profile</a>.
+          Keep your own profile up to date so others can find you easily.
+        </p>
+
+        <h4>Favorites Connection</h4>
+        <p>
+          When you find interesting profiles, add them to your
+          <a href="/docs/features/favorites.html" class="list-link"
+            >Favorites</a
+          >
+          for quick access later. The bookmark icon on each card lets you save
+          alumni profiles instantly.
+        </p>
+
+        <h3>Search Tips</h3>
+        <ul>
+          <li>
+            <strong>Start broad:</strong> Begin with general searches, then
+            narrow with filters
+          </li>
+          <li>
+            <strong>Try different terms:</strong> If searching for a person, try
+            first name, last name, or both
+          </li>
+          <li>
+            <strong>Use filters strategically:</strong> Combine location with
+            academic info to find nearby classmates
+          </li>
+          <li>
+            <strong>Browse tags:</strong> Look at clubs and certifications on
+            cards to discover common interests
+          </li>
+          <li>
+            <strong>Favorite as you go:</strong> Add interesting profiles to
+            favorites rather than trying to remember them
+          </li>
+        </ul>
+
+        <h3>Next Steps</h3>
+        <p>
+          After finding alumni you'd like to connect with, add them to your
+          Favorites list for easy access.
+        </p>
+
+        <div class="nav-buttons">
+          <a href="/docs/features/profile.html"
+            >← Previous: Profile Creation & Editing</a
+          >
+          <a href="/docs/features/favorites.html">Next: Favorites →</a>
+        </div>
+      </section>
     </div>
-  </div>
-</nav>
-  </header>
-  <div class="container">
-    <section>
-      <h2>Feature Guide: Networking</h2>
-      
-      <p>
-        The Networking feature allows you to search for and connect with fellow alumni. Use powerful 
-        search and filtering tools to find alumni based on name, company, location, academic background, 
-        and more.
-      </p>
-
-      <div class="screenshot-container">
-        <img src="/resources/features-resources/features_networking.png" alt="Networking page with search results screenshot" class="doc-screenshot">
-      </div>
-
-      <h3>Accessing the Networking Page</h3>
-      <p>
-        Navigate to the Networking page from the main menu. You'll see a search bar at the top and 
-        a grid of alumni profiles below.
-      </p>
-
-      <h3>Basic Search</h3>
-      <p>
-        The search bar allows you to quickly find alumni by entering keywords.
-      </p>
-
-      <div class="screenshot-container">
-        <img src="/resources/features-resources/features_search-bar.png" alt="Search bar screenshot" class="doc-screenshot">
-      </div>
-
-      <h4>What You Can Search For</h4>
-      <p>The basic search looks through multiple fields:</p>
-      <ul>
-        <li><strong>Names:</strong> First name and last name</li>
-        <li><strong>Companies:</strong> Current employer</li>
-        <li><strong>Job Titles:</strong> Current position</li>
-      </ul>
-
-      <h4>How to Search</h4>
-      <ol>
-        <li>Type your search term in the search bar (e.g., "Microsoft" or "John")</li>
-        <li>Press <strong>Enter</strong> or click the search icon</li>
-        <li>Results appear below in a tiled grid layout</li>
-      </ol>
-
-      <h3>Advanced Filters</h3>
-      <p>
-        Click the filter icon next to the search bar to access advanced filtering options.
-      </p>
-
-      <div class="screenshot-container">
-        <img src="/resources/features-resources/features_networking-filter.png" alt="Filter panel expanded screenshot" class="doc-screenshot">
-      </div>
-
-      <h4>Available Filters</h4>
-
-      <h5>1. Clubs</h5>
-      <p>
-        Filter by university clubs and organizations alumni were part of.
-      </p>
-      <ul>
-        <li>Click the <strong>Clubs</strong> section to expand</li>
-        <li>Search for specific clubs or browse the list</li>
-        <li>Select one or multiple clubs</li>
-        <li>Engineering clubs are highlighted</li>
-      </ul>
-
-      <h5>2. Certifications</h5>
-      <p>
-        Find alumni with specific professional certifications.
-      </p>
-      <ul>
-        <li>Click the <strong>Certifications</strong> section to expand</li>
-        <li>Search for specific certifications</li>
-        <li>Select one or multiple certifications</li>
-      </ul>
-
-      <h5>3. Location</h5>
-      <p>
-        Filter by where alumni currently live.
-      </p>
-      <ul>
-        <li>Click the <strong>Location</strong> section to expand</li>
-        <li>Search for a city or state</li>
-        <li>Select a location from the results</li>
-      </ul>
-
-      <h5>4. Undergraduate</h5>
-      <p>
-        Filter by undergraduate academic information.
-      </p>
-      <ul>
-        <li>Click the <strong>Undergraduate</strong> section to expand</li>
-        <li><strong>Major:</strong> Select from dropdown of majors</li>
-        <li><strong>Minor:</strong> Select from dropdown of minors (optional)</li>
-        <li><strong>Graduation Year:</strong> Enter a specific year</li>
-      </ul>
-
-      <h5>5. Graduate</h5>
-      <p>
-        Filter by master's degree information.
-      </p>
-      <ul>
-        <li>Click the <strong>Graduate</strong> section to expand</li>
-        <li><strong>Master's Degree:</strong> Select from dropdown</li>
-        <li><strong>Graduation Year:</strong> Enter a specific year</li>
-      </ul>
-
-      <h5>6. Doctorate</h5>
-      <p>
-        Filter by doctoral degree information.
-      </p>
-      <ul>
-        <li>Click the <strong>Doctorate</strong> section to expand</li>
-        <li><strong>Doctoral Degree:</strong> Select from dropdown</li>
-        <li><strong>Graduation Year:</strong> Enter a specific year</li>
-      </ul>
-
-      <h4>Combining Filters</h4>
-      <p>
-        You can combine multiple filters to narrow your search:
-      </p>
-      <ul>
-        <li>Use the search bar AND filters together</li>
-        <li>Select multiple clubs or certifications</li>
-        <li>Combine academic filters (e.g., Computer Science major graduating in 2015)</li>
-        <li>All selected filters work together (AND logic)</li>
-      </ul>
-
-      <h3>Search Results</h3>
-      <p>
-        Search results appear in a tiled grid layout showing key information about each alumnus.
-      </p>
-
-      <div class="screenshot-container">
-        <img src="/resources/features-resources/features_profile-card.png" alt="Single profile card in search results screenshot" class="doc-screenshot">
-      </div>
-
-      <h4>Profile Card Information</h4>
-      <p>Each card displays:</p>
-      <ul>
-        <li><strong>Name:</strong> Full name with initials in a colored circle</li>
-        <li><strong>Company & Location:</strong> Current employer and city, state</li>
-        <li><strong>Academic Info:</strong> Major, minor, and undergraduate graduation year</li>
-        <li><strong>Tags:</strong> Badges showing clubs and certifications</li>
-        <li><strong>Bookmark Icon:</strong> Button to add/remove from favorites</li>
-      </ul>
-
-      <h4>Interacting with Results</h4>
-
-      <h5>View Full Profile</h5>
-      <ol>
-        <li>Click anywhere on a profile card</li>
-        <li>A modal (popup) opens showing the complete profile</li>
-        <li>View all personal, academic, and professional information</li>
-        <li>Click outside the modal or the close button to return to results</li>
-      </ol>
-
-      <div class="screenshot-container">
-        <img src="/resources/features-resources/features_profile-modal.png" alt="Profile modal popup screenshot" class="doc-screenshot">
-      </div>
-
-      <h5>Add to Favorites</h5>
-      <ol>
-        <li>Click the bookmark icon on a profile card</li>
-        <li>The icon fills in to show it's been favorited</li>
-        <li>The alumni is added to your <a href="/docs/features/favorites.html" class="list-link">Favorites</a> list</li>
-        <li>Click again to remove from favorites</li>
-      </ol>
-
-      <h3>Example Searches</h3>
-
-      <h4>Example 1: Find classmates from your graduation year</h4>
-      <ol>
-        <li>Click the filter icon</li>
-        <li>Expand <strong>Undergraduate</strong></li>
-        <li>Select your major</li>
-        <li>Enter your graduation year</li>
-        <li>View results of alumni who graduated with the same major and year</li>
-      </ol>
-
-      <h4>Example 2: Find alumni at a specific company</h4>
-      <ol>
-        <li>Type the company name in the search bar (e.g., "Google")</li>
-        <li>Press Enter</li>
-        <li>View all alumni currently working at that company</li>
-      </ol>
-
-      <h4>Example 3: Find alumni in your area</h4>
-      <ol>
-        <li>Click the filter icon</li>
-        <li>Expand <strong>Location</strong></li>
-        <li>Search for your city</li>
-        <li>Select your location</li>
-        <li>View alumni living nearby</li>
-      </ol>
-
-      <h4>Example 4: Find alumni from the same clubs</h4>
-      <ol>
-        <li>Click the filter icon</li>
-        <li>Expand <strong>Clubs</strong></li>
-        <li>Search for and select clubs you were part of</li>
-        <li>View alumni who shared the same club experiences</li>
-      </ol>
-
-      <h3>How Networking Links to Other Features</h3>
-
-      <h4>Profile Connection</h4>
-      <p>
-        The information displayed in search results comes from each alumni's 
-        <a href="/docs/features/profile.html" class="list-link">Profile</a>. Keep your own profile 
-        up to date so others can find you easily.
-      </p>
-
-      <h4>Favorites Connection</h4>
-      <p>
-        When you find interesting profiles, add them to your 
-        <a href="/docs/features/favorites.html" class="list-link">Favorites</a> for quick access later. 
-        The bookmark icon on each card lets you save alumni profiles instantly.
-      </p>
-
-      <h3>Search Tips</h3>
-      <ul>
-        <li><strong>Start broad:</strong> Begin with general searches, then narrow with filters</li>
-        <li><strong>Try different terms:</strong> If searching for a person, try first name, last name, 
-        or both</li>
-        <li><strong>Use filters strategically:</strong> Combine location with academic info to find 
-        nearby classmates</li>
-        <li><strong>Browse tags:</strong> Look at clubs and certifications on cards to discover common 
-        interests</li>
-        <li><strong>Favorite as you go:</strong> Add interesting profiles to favorites rather than 
-        trying to remember them</li>
-      </ul>
-
-      <h3>Next Steps</h3>
-      <p>
-        After finding alumni you'd like to connect with, add them to your Favorites list for easy access.
-      </p>
-
-      <div class="nav-buttons">
-        <a href="/docs/features/profile.html">← Previous: Profile Creation & Editing</a>
-        <a href="/docs/features/favorites.html">Next: Favorites →</a>
-      </div>
-    </section>
-  </div>
-  <footer>
-  </footer>
-</body>
+    <footer></footer>
+  </body>
 </html>

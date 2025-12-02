@@ -1,392 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Creation & Editing - COE Alumni Database Documentation</title>
-  <link rel="stylesheet" href="/resources/css/styles.css">
-  <link rel="stylesheet" href="/resources/css/docs-styles.css">
-</head>
-<body>
-  <header>
-    <h1>College of Engineering Alumni Database</h1>
-    <nav>
-  <div class="navbar">
-    <a href="/index.html">Home</a>
-    <a href="/projectinfo.html">Project Info</a>
-    <div class="dropdown">
-      <button class="dropdown-button">Project Timeline</button>
-      <div class="dropdown-content">
-        <a href="/project-timeline/sprint1.html">Sprint 1</a>
-        <a href="/project-timeline/sprint2.html">Sprint 2</a>
-        <a href="/project-timeline/sprint3.html">Sprint 3</a>
-        <a href="/project-timeline/video.html">Project Demo</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-button">The Team</button>
-      <div class="dropdown-content">
-        <a href="/the-team/ethan.html">Ethan Busby</a>
-        <a href="/the-team/andy.html">Andy Fancher</a>
-        <a href="/the-team/marcus.html">Marcus Kelley</a>
-        <a href="/the-team/jacob.html">Jacob Santos</a>
-        <a href="/the-team/brodye.html">Brodye Stevens</a>
-      </div>  
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-button">Docs</button>
-      <div class="dropdown-content">
-        <a href="/docs/docs-index.html">Documentation Home</a>
-        <div class="nested-dropdown">
-          <a href="#" class="nested-trigger">Installation Guide</a>
-          <div class="nested-dropdown-content">
-            <a href="/docs/installation/overview.html">Installation Overview</a>
-            <a href="/docs/installation/server-setup.html">Server Setup</a>
-            <a href="/docs/installation/github-runner.html">GitHub Runner</a>
-            <a href="/docs/installation/deployment.html">Application Deployment</a>
-            <a href="/docs/installation/configuration.html">Configuration</a>
-            <a href="/docs/installation/operations.html">Operations & Maintenance</a>
-            <a href="/docs/installation/troubleshooting.html">Troubleshooting</a>
-            <a href="/docs/installation/quick-reference.html">Quick Reference</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Profile Creation & Editing - COE Alumni Database Documentation
+    </title>
+    <link rel="stylesheet" href="/resources/css/styles.css" />
+    <link rel="stylesheet" href="/resources/css/docs-styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>College of Engineering Alumni Database</h1>
+      <nav>
+        <div class="navbar">
+          <a href="/index.html">Home</a>
+          <a href="/projectinfo.html">Project Info</a>
+          <div class="dropdown">
+            <button class="dropdown-button">Project Timeline</button>
+            <div class="dropdown-content">
+              <a href="/project-timeline/sprint1.html">Sprint 1</a>
+              <a href="/project-timeline/sprint2.html">Sprint 2</a>
+              <a href="/project-timeline/sprint3.html">Sprint 3</a>
+              <a href="/project-timeline/video.html">Project Demo</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">The Team</button>
+            <div class="dropdown-content">
+              <a href="/the-team/ethan.html">Ethan Busby</a>
+              <a href="/the-team/andy.html">Andy Fancher</a>
+              <a href="/the-team/marcus.html">Marcus Kelley</a>
+              <a href="/the-team/jacob.html">Jacob Santos</a>
+              <a href="/the-team/brodye.html">Brodye Stevens</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Docs</button>
+            <div class="dropdown-content">
+              <a href="/docs/docs-index.html">Documentation Home</a>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Installation Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/installation/overview.html"
+                    >Installation Overview</a
+                  >
+                  <a href="/docs/installation/server-setup.html"
+                    >Server Setup</a
+                  >
+                  <a href="/docs/installation/github-runner.html"
+                    >GitHub Runner</a
+                  >
+                  <a href="/docs/installation/deployment.html"
+                    >Application Deployment</a
+                  >
+                  <a href="/docs/installation/configuration.html"
+                    >Configuration</a
+                  >
+                  <a href="/docs/installation/operations.html"
+                    >Operations & Maintenance</a
+                  >
+                  <a href="/docs/installation/troubleshooting.html"
+                    >Troubleshooting</a
+                  >
+                  <a href="/docs/installation/quick-reference.html"
+                    >Quick Reference</a
+                  >
+                </div>
+              </div>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Feature Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/features-index.html">Features Overview</a>
+                  <a href="/docs/features/register-signin.html"
+                    >Register & Sign In</a
+                  >
+                  <a href="/docs/features/profile.html"
+                    >Profile Creation & Editing</a
+                  >
+                  <a href="/docs/features/networking.html">Networking</a>
+                  <a href="/docs/features/favorites.html">Favorites</a>
+                </div>
+              </div>
+              <a href="/docs/development-index.html">Development Guide</a>
+              <a href="/docs/faq.html">FAQs</a>
+            </div>
           </div>
         </div>
-        <div class="nested-dropdown">
-          <a href="#" class="nested-trigger">Feature Guide</a>
-          <div class="nested-dropdown-content">
-            <a href="/docs/features-index.html">Features Overview</a>
-            <a href="/docs/features/register-signin.html">Register & Sign In</a>
-            <a href="/docs/features/profile.html">Profile Creation & Editing</a>
-            <a href="/docs/features/networking.html">Networking</a>
-            <a href="/docs/features/favorites.html">Favorites</a>
-          </div>
+      </nav>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Feature Guide: Profile Creation & Editing</h2>
+
+        <p>
+          Your profile is your professional identity in the alumni database.
+          This guide covers how to create and maintain your profile information.
+        </p>
+
+        <div class="screenshot-container">
+          <img
+            src="/resources/features-resources/features_profile.png"
+            alt="Profile page screenshot"
+            class="doc-screenshot"
+          />
         </div>
-        <a href="/docs/development-index.html">Development Guide</a>
-        <a href="/docs/faq.html">FAQs</a>
-      </div>
+
+        <h3>Accessing Your Profile</h3>
+        <p>
+          After registering for the first time, you'll be automatically
+          redirected to the Profile page to enter your information. You can
+          access your profile anytime by clicking the Profile link in the
+          navigation menu.
+        </p>
+
+        <h3>Profile Sections</h3>
+        <p>
+          Your profile is organized into three main sections: Personal
+          Information, Academic Information, and Professional Information.
+        </p>
+
+        <h4>1. Personal Information</h4>
+        <p>This section contains your basic contact and personal details.</p>
+
+        <table>
+          <tr>
+            <th>Field</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>First Name</td>
+            <td>Yes</td>
+            <td>Your first name</td>
+          </tr>
+          <tr>
+            <td>Last Name</td>
+            <td>Yes</td>
+            <td>Your last name</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>Yes</td>
+            <td>Your email address (cannot be changed)</td>
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+            <td>No</td>
+            <td>Your contact phone number</td>
+          </tr>
+          <tr>
+            <td>City</td>
+            <td>Yes</td>
+            <td>Your current city</td>
+          </tr>
+          <tr>
+            <td>State</td>
+            <td>Yes</td>
+            <td>Your current state</td>
+          </tr>
+          <tr>
+            <td>Zip Code</td>
+            <td>Yes</td>
+            <td>Your current zip code</td>
+          </tr>
+          <tr>
+            <td>Bio</td>
+            <td>No</td>
+            <td>A brief description about yourself</td>
+          </tr>
+        </table>
+
+        <div class="info-box">
+          <strong>Privacy Note:</strong> You control what information you share.
+          Only fill out the fields you're comfortable sharing with other alumni.
+          Required fields are necessary for basic functionality.
+        </div>
+
+        <h4>2. Academic Information</h4>
+        <p>
+          This section captures your educational background at the University of
+          Alabama.
+        </p>
+
+        <table>
+          <tr>
+            <th>Field</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>Major</td>
+            <td>Yes</td>
+            <td>Your undergraduate major (select from dropdown)</td>
+          </tr>
+          <tr>
+            <td>Undergraduate Graduation Year</td>
+            <td>Yes</td>
+            <td>Year you graduated with your bachelor's degree</td>
+          </tr>
+          <tr>
+            <td>Minor</td>
+            <td>No</td>
+            <td>Your undergraduate minor (select from dropdown)</td>
+          </tr>
+          <tr>
+            <td>Master's Degree</td>
+            <td>No</td>
+            <td>Your master's degree (select from dropdown)</td>
+          </tr>
+          <tr>
+            <td>Master's Graduation Year</td>
+            <td>No</td>
+            <td>Year you graduated with your master's degree</td>
+          </tr>
+          <tr>
+            <td>Doctoral Degree</td>
+            <td>No</td>
+            <td>Your doctoral degree (select from dropdown)</td>
+          </tr>
+          <tr>
+            <td>Doctoral Graduation Year</td>
+            <td>No</td>
+            <td>Year you graduated with your doctoral degree</td>
+          </tr>
+          <tr>
+            <td>Clubs</td>
+            <td>No</td>
+            <td>University clubs and organizations you were part of</td>
+          </tr>
+        </table>
+
+        <div class="screenshot-container">
+          <img
+            src="/resources/features-resources/features_club-selection.png"
+            alt="Club selector in edit mode screenshot"
+            class="doc-screenshot"
+          />
+        </div>
+
+        <h5>Adding Clubs</h5>
+        <p>When editing your profile, you can add clubs you participated in:</p>
+        <ol>
+          <li>Click the <strong>Edit Profile</strong> button</li>
+          <li>Scroll to the Clubs section under Academic Information</li>
+          <li>Use the club selector to search and add clubs</li>
+          <li>Engineering clubs are marked with a special badge</li>
+          <li>Click <strong>Save All Changes</strong> when done</li>
+        </ol>
+
+        <h4>3. Professional Information</h4>
+        <p>This section highlights your current professional status.</p>
+
+        <table>
+          <tr>
+            <th>Field</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>Company</td>
+            <td>No</td>
+            <td>Your current employer</td>
+          </tr>
+          <tr>
+            <td>Job Title</td>
+            <td>No</td>
+            <td>Your current position or role</td>
+          </tr>
+          <tr>
+            <td>Certifications</td>
+            <td>No</td>
+            <td>Professional certifications you hold</td>
+          </tr>
+        </table>
+
+        <div class="screenshot-container">
+          <img
+            src="/resources/features-resources/features_cert-selection.png"
+            alt="Certification selector in edit mode screenshot"
+            class="doc-screenshot"
+          />
+        </div>
+
+        <h5>Adding Certifications</h5>
+        <p>
+          When editing your profile, you can add professional certifications:
+        </p>
+        <ol>
+          <li>Click the <strong>Edit Profile</strong> button</li>
+          <li>
+            Scroll to the Certifications section under Professional Information
+          </li>
+          <li>
+            Use the certification selector to search and add certifications
+          </li>
+          <li>Click <strong>Save All Changes</strong> when done</li>
+        </ol>
+
+        <h3>Creating Your Profile (First Time)</h3>
+        <p>
+          When you register for the first time, you'll be automatically taken to
+          the Profile page in edit mode. Here's what to do:
+        </p>
+
+        <ol>
+          <li>
+            Fill in all required fields (marked as required in the tables above)
+          </li>
+          <li>Add optional information you're comfortable sharing</li>
+          <li>Select your major from the dropdown (required)</li>
+          <li>Enter your undergraduate graduation year (required)</li>
+          <li>Add any clubs, certifications, or other optional information</li>
+          <li>
+            Click <strong>Save All Changes</strong> to create your profile
+          </li>
+        </ol>
+
+        <div class="warning-box">
+          <strong>Important:</strong> You must select a major before saving your
+          profile. This is required for the system to create your profile
+          successfully.
+        </div>
+
+        <h3>Editing Your Profile</h3>
+        <p>You can update your profile information at any time.</p>
+
+        <div class="screenshot-container">
+          <img
+            src="/resources/features-resources/features_edit-profile.png"
+            alt="Edit Profile button screenshot"
+            class="doc-screenshot"
+          />
+        </div>
+
+        <h4>Edit Mode Steps</h4>
+        <ol>
+          <li>Navigate to your Profile page</li>
+          <li>Click the <strong>Edit Profile</strong> button</li>
+          <li>Make your desired changes to any fields</li>
+          <li>Update clubs or certifications as needed</li>
+          <li>Click <strong>Save All Changes</strong> to save your updates</li>
+          <li>Or click <strong>Cancel</strong> to discard changes</li>
+        </ol>
+
+        <h4>What You Can't Change</h4>
+        <ul>
+          <li>
+            <strong>Email Address:</strong> Your email cannot be changed after
+            registration. This is your unique identifier in the system.
+          </li>
+        </ul>
+
+        <h3>View Mode vs Edit Mode</h3>
+
+        <h4>View Mode</h4>
+        <p>When not editing, your profile displays as read-only:</p>
+        <ul>
+          <li>All fields are displayed but cannot be changed</li>
+          <li>Clubs and certifications appear as simple lists</li>
+          <li>
+            An <strong>Edit Profile</strong> button is available at the bottom
+          </li>
+        </ul>
+
+        <div class="screenshot-container">
+          <img
+            src="/resources/features-resources/features_profile-view.png"
+            alt="Profile in view mode screenshot"
+            class="doc-screenshot"
+          />
+        </div>
+
+        <h4>Edit Mode</h4>
+        <p>When editing, the interface changes:</p>
+        <ul>
+          <li>Text fields become editable</li>
+          <li>Dropdowns become selectable</li>
+          <li>Clubs and certifications show interactive selectors</li>
+          <li>
+            <strong>Save All Changes</strong> and
+            <strong>Cancel</strong> buttons appear
+          </li>
+        </ul>
+
+        <div class="screenshot-container">
+          <img
+            src="/resources/features-resources/features_profile-edit.png"
+            alt="Profile in edit mode screenshot"
+            class="doc-screenshot"
+          />
+        </div>
+
+        <h3>Profile Visibility</h3>
+        <p>
+          Your profile information is visible to other registered alumni when
+          they search for connections. Other alumni can view:
+        </p>
+        <ul>
+          <li>Your name, location, and bio</li>
+          <li>Your academic information (major, graduation year, clubs)</li>
+          <li>
+            Your professional information (company, job title, certifications)
+          </li>
+          <li>Any other information you've chosen to fill out</li>
+        </ul>
+
+        <div class="info-box">
+          <strong>Privacy Control:</strong> The best way to control your privacy
+          is to only fill out the information you're comfortable sharing. Leave
+          optional fields blank if you prefer not to share that information.
+        </div>
+
+        <h3>How Profile Links to Other Features</h3>
+        <p>Your profile information is used throughout the application:</p>
+        <ul>
+          <li>
+            <strong>Search:</strong> Other alumni can find you based on your
+            profile information (major, company, clubs, etc.)
+          </li>
+          <li>
+            <strong>Favorites:</strong> When someone views your profile from
+            search results, they can add you to their favorites list
+          </li>
+          <li>
+            <strong>Networking:</strong> Your profile appears in search results
+            and can be viewed by other alumni looking to connect
+          </li>
+        </ul>
+
+        <h3>Tips for a Great Profile</h3>
+        <ul>
+          <li>
+            Keep your profile up to date, especially your company and job title
+          </li>
+          <li>
+            Add clubs you were part of - this helps alumni find you based on
+            shared experiences
+          </li>
+          <li>
+            Include professional certifications to showcase your expertise
+          </li>
+          <li>
+            Write a brief, professional bio that highlights your interests or
+            career path
+          </li>
+          <li>
+            Fill out as much information as you're comfortable with to make
+            networking easier
+          </li>
+        </ul>
+
+        <h3>Next Steps</h3>
+        <p>
+          Once your profile is complete, you're ready to start searching for and
+          connecting with fellow alumni.
+        </p>
+
+        <div class="nav-buttons">
+          <a href="/docs/features/register-signin.html"
+            >← Previous: Register & Sign In</a
+          >
+          <a href="/docs/features/networking.html"
+            >Next: Search For Fellow Alumni →</a
+          >
+        </div>
+      </section>
     </div>
-  </div>
-</nav>
-  </header>
-  <div class="container">
-    <section>
-      <h2>Feature Guide: Profile Creation & Editing</h2>
-      
-      <p>
-        Your profile is your professional identity in the alumni database. This guide covers how to 
-        create and maintain your profile information.
-      </p>
-
-      <div class="screenshot-container">
-        <img src="/resources/features-resources/features_profile.png" alt="Profile page screenshot" class="doc-screenshot">
-      </div>
-
-      <h3>Accessing Your Profile</h3>
-      <p>
-        After registering for the first time, you'll be automatically redirected to the Profile page 
-        to enter your information. You can access your profile anytime by clicking the Profile link 
-        in the navigation menu.
-      </p>
-
-      <h3>Profile Sections</h3>
-      <p>
-        Your profile is organized into three main sections: Personal Information, Academic Information, 
-        and Professional Information.
-      </p>
-
-      <h4>1. Personal Information</h4>
-      <p>
-        This section contains your basic contact and personal details.
-      </p>
-
-      <table>
-        <tr>
-          <th>Field</th>
-          <th>Required</th>
-          <th>Description</th>
-        </tr>
-        <tr>
-          <td>First Name</td>
-          <td>Yes</td>
-          <td>Your first name</td>
-        </tr>
-        <tr>
-          <td>Last Name</td>
-          <td>Yes</td>
-          <td>Your last name</td>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td>Yes</td>
-          <td>Your email address (cannot be changed)</td>
-        </tr>
-        <tr>
-          <td>Phone Number</td>
-          <td>No</td>
-          <td>Your contact phone number</td>
-        </tr>
-        <tr>
-          <td>City</td>
-          <td>Yes</td>
-          <td>Your current city</td>
-        </tr>
-        <tr>
-          <td>State</td>
-          <td>Yes</td>
-          <td>Your current state</td>
-        </tr>
-        <tr>
-          <td>Zip Code</td>
-          <td>Yes</td>
-          <td>Your current zip code</td>
-        </tr>
-        <tr>
-          <td>Bio</td>
-          <td>No</td>
-          <td>A brief description about yourself</td>
-        </tr>
-      </table>
-
-      <div class="info-box">
-        <strong>Privacy Note:</strong> You control what information you share. Only fill out the fields 
-        you're comfortable sharing with other alumni. Required fields are necessary for basic functionality.
-      </div>
-
-      <h4>2. Academic Information</h4>
-      <p>
-        This section captures your educational background at the University of Alabama.
-      </p>
-
-      <table>
-        <tr>
-          <th>Field</th>
-          <th>Required</th>
-          <th>Description</th>
-        </tr>
-        <tr>
-          <td>Major</td>
-          <td>Yes</td>
-          <td>Your undergraduate major (select from dropdown)</td>
-        </tr>
-        <tr>
-          <td>Undergraduate Graduation Year</td>
-          <td>Yes</td>
-          <td>Year you graduated with your bachelor's degree</td>
-        </tr>
-        <tr>
-          <td>Minor</td>
-          <td>No</td>
-          <td>Your undergraduate minor (select from dropdown)</td>
-        </tr>
-        <tr>
-          <td>Master's Degree</td>
-          <td>No</td>
-          <td>Your master's degree (select from dropdown)</td>
-        </tr>
-        <tr>
-          <td>Master's Graduation Year</td>
-          <td>No</td>
-          <td>Year you graduated with your master's degree</td>
-        </tr>
-        <tr>
-          <td>Doctoral Degree</td>
-          <td>No</td>
-          <td>Your doctoral degree (select from dropdown)</td>
-        </tr>
-        <tr>
-          <td>Doctoral Graduation Year</td>
-          <td>No</td>
-          <td>Year you graduated with your doctoral degree</td>
-        </tr>
-        <tr>
-          <td>Clubs</td>
-          <td>No</td>
-          <td>University clubs and organizations you were part of</td>
-        </tr>
-      </table>
-
-      <div class="screenshot-container">
-        <img src="/resources/features-resources/features_club-selection.png" alt="Club selector in edit mode screenshot" class="doc-screenshot">
-      </div>
-
-      <h5>Adding Clubs</h5>
-      <p>When editing your profile, you can add clubs you participated in:</p>
-      <ol>
-        <li>Click the <strong>Edit Profile</strong> button</li>
-        <li>Scroll to the Clubs section under Academic Information</li>
-        <li>Use the club selector to search and add clubs</li>
-        <li>Engineering clubs are marked with a special badge</li>
-        <li>Click <strong>Save All Changes</strong> when done</li>
-      </ol>
-
-      <h4>3. Professional Information</h4>
-      <p>
-        This section highlights your current professional status.
-      </p>
-
-      <table>
-        <tr>
-          <th>Field</th>
-          <th>Required</th>
-          <th>Description</th>
-        </tr>
-        <tr>
-          <td>Company</td>
-          <td>No</td>
-          <td>Your current employer</td>
-        </tr>
-        <tr>
-          <td>Job Title</td>
-          <td>No</td>
-          <td>Your current position or role</td>
-        </tr>
-        <tr>
-          <td>Certifications</td>
-          <td>No</td>
-          <td>Professional certifications you hold</td>
-        </tr>
-      </table>
-
-      <div class="screenshot-container">
-        <img src="/resources/features-resources/features_cert-selection.png" alt="Certification selector in edit mode screenshot" class="doc-screenshot">
-      </div>
-
-      <h5>Adding Certifications</h5>
-      <p>When editing your profile, you can add professional certifications:</p>
-      <ol>
-        <li>Click the <strong>Edit Profile</strong> button</li>
-        <li>Scroll to the Certifications section under Professional Information</li>
-        <li>Use the certification selector to search and add certifications</li>
-        <li>Click <strong>Save All Changes</strong> when done</li>
-      </ol>
-
-      <h3>Creating Your Profile (First Time)</h3>
-      <p>
-        When you register for the first time, you'll be automatically taken to the Profile page in 
-        edit mode. Here's what to do:
-      </p>
-
-      <ol>
-        <li>Fill in all required fields (marked as required in the tables above)</li>
-        <li>Add optional information you're comfortable sharing</li>
-        <li>Select your major from the dropdown (required)</li>
-        <li>Enter your undergraduate graduation year (required)</li>
-        <li>Add any clubs, certifications, or other optional information</li>
-        <li>Click <strong>Save All Changes</strong> to create your profile</li>
-      </ol>
-
-      <div class="warning-box">
-        <strong>Important:</strong> You must select a major before saving your profile. This is required 
-        for the system to create your profile successfully.
-      </div>
-
-      <h3>Editing Your Profile</h3>
-      <p>
-        You can update your profile information at any time.
-      </p>
-
-      <div class="screenshot-container">
-        <img src="/resources/features-resources/features_edit-profile.png" alt="Edit Profile button screenshot" class="doc-screenshot">
-      </div>
-
-      <h4>Edit Mode Steps</h4>
-      <ol>
-        <li>Navigate to your Profile page</li>
-        <li>Click the <strong>Edit Profile</strong> button</li>
-        <li>Make your desired changes to any fields</li>
-        <li>Update clubs or certifications as needed</li>
-        <li>Click <strong>Save All Changes</strong> to save your updates</li>
-        <li>Or click <strong>Cancel</strong> to discard changes</li>
-      </ol>
-
-      <h4>What You Can't Change</h4>
-      <ul>
-        <li><strong>Email Address:</strong> Your email cannot be changed after registration. This is 
-        your unique identifier in the system.</li>
-      </ul>
-
-      <h3>View Mode vs Edit Mode</h3>
-      
-      <h4>View Mode</h4>
-      <p>
-        When not editing, your profile displays as read-only:
-      </p>
-      <ul>
-        <li>All fields are displayed but cannot be changed</li>
-        <li>Clubs and certifications appear as simple lists</li>
-        <li>An <strong>Edit Profile</strong> button is available at the bottom</li>
-      </ul>
-
-      <div class="screenshot-container">
-        <img src="/resources/features-resources/features_profile-view.png" alt="Profile in view mode screenshot" class="doc-screenshot">
-      </div>
-
-      <h4>Edit Mode</h4>
-      <p>
-        When editing, the interface changes:
-      </p>
-      <ul>
-        <li>Text fields become editable</li>
-        <li>Dropdowns become selectable</li>
-        <li>Clubs and certifications show interactive selectors</li>
-        <li><strong>Save All Changes</strong> and <strong>Cancel</strong> buttons appear</li>
-      </ul>
-
-      <div class="screenshot-container">
-        <img src="/resources/features-resources/features_profile-edit.png" alt="Profile in edit mode screenshot" class="doc-screenshot">
-      </div>
-
-      <h3>Profile Visibility</h3>
-      <p>
-        Your profile information is visible to other registered alumni when they search for connections. 
-        Other alumni can view:
-      </p>
-      <ul>
-        <li>Your name, location, and bio</li>
-        <li>Your academic information (major, graduation year, clubs)</li>
-        <li>Your professional information (company, job title, certifications)</li>
-        <li>Any other information you've chosen to fill out</li>
-      </ul>
-
-      <div class="info-box">
-        <strong>Privacy Control:</strong> The best way to control your privacy is to only fill out the 
-        information you're comfortable sharing. Leave optional fields blank if you prefer not to share 
-        that information.
-      </div>
-
-      <h3>How Profile Links to Other Features</h3>
-      <p>
-        Your profile information is used throughout the application:
-      </p>
-      <ul>
-        <li><strong>Search:</strong> Other alumni can find you based on your profile information (major, 
-        company, clubs, etc.)</li>
-        <li><strong>Favorites:</strong> When someone views your profile from search results, they can 
-        add you to their favorites list</li>
-        <li><strong>Networking:</strong> Your profile appears in search results and can be viewed by 
-        other alumni looking to connect</li>
-      </ul>
-
-      <h3>Tips for a Great Profile</h3>
-      <ul>
-        <li>Keep your profile up to date, especially your company and job title</li>
-        <li>Add clubs you were part of - this helps alumni find you based on shared experiences</li>
-        <li>Include professional certifications to showcase your expertise</li>
-        <li>Write a brief, professional bio that highlights your interests or career path</li>
-        <li>Fill out as much information as you're comfortable with to make networking easier</li>
-      </ul>
-
-      <h3>Next Steps</h3>
-      <p>
-        Once your profile is complete, you're ready to start searching for and connecting with fellow alumni.
-      </p>
-
-      <div class="nav-buttons">
-        <a href="/docs/features/register-signin.html">← Previous: Register & Sign In</a>
-        <a href="/docs/features/networking.html">Next: Search For Fellow Alumni →</a>
-      </div>
-    </section>
-  </div>
-  <footer>
-  </footer>
-</body>
+    <footer></footer>
+  </body>
 </html>

@@ -1,120 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Installation Overview & Prerequisites - COE Alumni Database Documentation</title>
-  <link rel="stylesheet" href="../../resources/css/styles.css">
-  <link rel="stylesheet" href="../../resources/css/docs-styles.css">
-</head>
-<body>
-  <header>
-    <h1>College of Engineering Alumni Database</h1>
-    <nav>
-  <div class="navbar">
-    <a href="/index.html">Home</a>
-    <a href="/projectinfo.html">Project Info</a>
-    <div class="dropdown">
-      <button class="dropdown-button">Project Timeline</button>
-      <div class="dropdown-content">
-        <a href="/project-timeline/sprint1.html">Sprint 1</a>
-        <a href="/project-timeline/sprint2.html">Sprint 2</a>
-        <a href="/project-timeline/sprint3.html">Sprint 3</a>
-        <a href="/project-timeline/video.html">Project Demo</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-button">The Team</button>
-      <div class="dropdown-content">
-        <a href="/the-team/ethan.html">Ethan Busby</a>
-        <a href="/the-team/andy.html">Andy Fancher</a>
-        <a href="/the-team/marcus.html">Marcus Kelley</a>
-        <a href="/the-team/jacob.html">Jacob Santos</a>
-        <a href="/the-team/brodye.html">Brodye Stevens</a>
-      </div>  
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-button">Docs</button>
-      <div class="dropdown-content">
-        <a href="/docs/docs-index.html">Documentation Home</a>
-        <div class="nested-dropdown">
-          <a href="#" class="nested-trigger">Installation Guide</a>
-          <div class="nested-dropdown-content">
-            <a href="/docs/installation/overview.html">Installation Overview</a>
-            <a href="/docs/installation/server-setup.html">Server Setup</a>
-            <a href="/docs/installation/github-runner.html">GitHub Runner</a>
-            <a href="/docs/installation/deployment.html">Application Deployment</a>
-            <a href="/docs/installation/configuration.html">Configuration</a>
-            <a href="/docs/installation/operations.html">Operations & Maintenance</a>
-            <a href="/docs/installation/troubleshooting.html">Troubleshooting</a>
-            <a href="/docs/installation/quick-reference.html">Quick Reference</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Installation Overview & Prerequisites - COE Alumni Database Documentation
+    </title>
+    <link rel="stylesheet" href="../../resources/css/styles.css" />
+    <link rel="stylesheet" href="../../resources/css/docs-styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>College of Engineering Alumni Database</h1>
+      <nav>
+        <div class="navbar">
+          <a href="/index.html">Home</a>
+          <a href="/projectinfo.html">Project Info</a>
+          <div class="dropdown">
+            <button class="dropdown-button">Project Timeline</button>
+            <div class="dropdown-content">
+              <a href="/project-timeline/sprint1.html">Sprint 1</a>
+              <a href="/project-timeline/sprint2.html">Sprint 2</a>
+              <a href="/project-timeline/sprint3.html">Sprint 3</a>
+              <a href="/project-timeline/video.html">Project Demo</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">The Team</button>
+            <div class="dropdown-content">
+              <a href="/the-team/ethan.html">Ethan Busby</a>
+              <a href="/the-team/andy.html">Andy Fancher</a>
+              <a href="/the-team/marcus.html">Marcus Kelley</a>
+              <a href="/the-team/jacob.html">Jacob Santos</a>
+              <a href="/the-team/brodye.html">Brodye Stevens</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Docs</button>
+            <div class="dropdown-content">
+              <a href="/docs/docs-index.html">Documentation Home</a>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Installation Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/installation/overview.html"
+                    >Installation Overview</a
+                  >
+                  <a href="/docs/installation/server-setup.html"
+                    >Server Setup</a
+                  >
+                  <a href="/docs/installation/github-runner.html"
+                    >GitHub Runner</a
+                  >
+                  <a href="/docs/installation/deployment.html"
+                    >Application Deployment</a
+                  >
+                  <a href="/docs/installation/configuration.html"
+                    >Configuration</a
+                  >
+                  <a href="/docs/installation/operations.html"
+                    >Operations & Maintenance</a
+                  >
+                  <a href="/docs/installation/troubleshooting.html"
+                    >Troubleshooting</a
+                  >
+                  <a href="/docs/installation/quick-reference.html"
+                    >Quick Reference</a
+                  >
+                </div>
+              </div>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Feature Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/features-index.html">Features Overview</a>
+                  <a href="/docs/features/register-signin.html"
+                    >Register & Sign In</a
+                  >
+                  <a href="/docs/features/profile.html"
+                    >Profile Creation & Editing</a
+                  >
+                  <a href="/docs/features/networking.html">Networking</a>
+                  <a href="/docs/features/favorites.html">Favorites</a>
+                </div>
+              </div>
+              <a href="/docs/development-index.html">Development Guide</a>
+              <a href="/docs/faq.html">FAQs</a>
+            </div>
           </div>
         </div>
-        <div class="nested-dropdown">
-          <a href="#" class="nested-trigger">Feature Guide</a>
-          <div class="nested-dropdown-content">
-            <a href="/docs/features-index.html">Features Overview</a>
-            <a href="/docs/features/register-signin.html">Register & Sign In</a>
-            <a href="/docs/features/profile.html">Profile Creation & Editing</a>
-            <a href="/docs/features/networking.html">Networking</a>
-            <a href="/docs/features/favorites.html">Favorites</a>
-          </div>
-        </div>
-        <a href="/docs/development-index.html">Development Guide</a>
-        <a href="/docs/faq.html">FAQs</a>
-      </div>
-    </div>
-  </div>
-</nav>
-  </header>
-  <div class="container">
-    <section>
-      <h2>Installation Guide: Overview & Prerequisites</h2>
-      
-      <h3>About This Application</h3>
-      <p>
-        The COE Alumni Database is an ASP.NET Core 8 application with a React TypeScript frontend. 
-        This installation guide will walk you through deploying the application on your own Ubuntu server.
-      </p>
+      </nav>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Installation Guide: Overview & Prerequisites</h2>
 
-      <h3>Technology Stack</h3>
-      <table>
-        <tr>
-          <th>Component</th>
-          <th>Technology</th>
-          <th>Version</th>
-        </tr>
-        <tr>
-          <td>Backend</td>
-          <td>ASP.NET Core</td>
-          <td>8.0</td>
-        </tr>
-        <tr>
-          <td>Frontend</td>
-          <td>React with TypeScript</td>
-          <td>Latest</td>
-        </tr>
-        <tr>
-          <td>Runtime</td>
-          <td>Node.js</td>
-          <td>20.x</td>
-        </tr>
-        <tr>
-          <td>Database</td>
-          <td>SQLite</td>
-          <td>3.x</td>
-        </tr>
-        <tr>
-          <td>Deployment</td>
-          <td>GitHub Actions</td>
-          <td>Self-hosted runner</td>
-        </tr>
+        <h3>About This Application</h3>
+        <p>
+          The COE Alumni Database is an ASP.NET Core 8 application with a React
+          TypeScript frontend. This installation guide will walk you through
+          deploying the application on your own Ubuntu server.
+        </p>
 
-      </table>
+        <h3>Technology Stack</h3>
+        <table>
+          <tr>
+            <th>Component</th>
+            <th>Technology</th>
+            <th>Version</th>
+          </tr>
+          <tr>
+            <td>Backend</td>
+            <td>ASP.NET Core</td>
+            <td>8.0</td>
+          </tr>
+          <tr>
+            <td>Frontend</td>
+            <td>React with TypeScript</td>
+            <td>Latest</td>
+          </tr>
+          <tr>
+            <td>Runtime</td>
+            <td>Node.js</td>
+            <td>20.x</td>
+          </tr>
+          <tr>
+            <td>Database</td>
+            <td>SQLite</td>
+            <td>3.x</td>
+          </tr>
+          <tr>
+            <td>Deployment</td>
+            <td>GitHub Actions</td>
+            <td>Self-hosted runner</td>
+          </tr>
+        </table>
 
-      <h3>Architecture Overview</h3>
-      <div class="diagram">
-        <pre>
+        <h3>Architecture Overview</h3>
+        <div class="diagram">
+          <pre>
 ┌─────────────────┐
 │  GitHub Repo    │
 │   (Your Code)   │
@@ -139,95 +161,157 @@
 │  SQLite DB      │
 │ AlumniDatabase  │
 └─────────────────┘
-        </pre>
-      </div>
+        </pre
+          >
+        </div>
 
-      <h3>Prerequisites</h3>
-      <p>Before you begin, make sure you have:</p>
-      
-      <div class="info-box">
-        <strong>Required:</strong>
+        <h3>Prerequisites</h3>
+        <p>Before you begin, make sure you have:</p>
+
+        <div class="info-box">
+          <strong>Required:</strong>
+          <ul>
+            <li>
+              An Ubuntu server (18.04 or later recommended) with sudo access
+            </li>
+            <li>Basic command line knowledge</li>
+            <li>A GitHub account with access to the repository</li>
+            <li>At least 2GB of RAM and 10GB of disk space</li>
+          </ul>
+        </div>
+
+        <div class="note-box">
+          <strong>Optional:</strong>
+          <ul>
+            <li>
+              A domain name pointed to your server (for production deployments)
+            </li>
+            <li>SSL/TLS certificate (for HTTPS access)</li>
+          </ul>
+        </div>
+
+        <h3>What You'll Install</h3>
+        <p>
+          This installation guide will help you set up the following components:
+        </p>
+
+        <ol>
+          <li>
+            <strong>System Dependencies:</strong> .NET 8 SDK, Node.js 20, SQLite
+            3, Git
+          </li>
+          <li>
+            <strong>Service Account:</strong> A dedicated user (coe-alumni) to
+            run the application
+          </li>
+          <li>
+            <strong>GitHub Self-Hosted Runner:</strong> For automated
+            deployments
+          </li>
+          <li>
+            <strong>Systemd Service:</strong> To manage the application
+            lifecycle
+          </li>
+          <li>
+            <strong>Application Files:</strong> Deployed to
+            /var/www/coe-alumniDB/
+          </li>
+          <li>
+            <strong>Database:</strong> SQLite database at
+            /var/www/coe-alumniDB/DB/AlumniDatabase.db
+          </li>
+          <li>
+            <strong>Optional: Nginx:</strong> Reverse proxy for domain-based
+            access
+          </li>
+        </ol>
+
+        <h3>Installation Time</h3>
+        <p>
+          Expect the complete installation to take approximately
+          <strong>30-45 minutes</strong>, depending on your server's internet
+          connection and your familiarity with Linux administration.
+        </p>
+
+        <h3>Installation Steps</h3>
+        <p>
+          The installation process is broken down into the following sections:
+        </p>
+
+        <ol>
+          <li>
+            <strong>Server Setup</strong> - Create service account and install
+            dependencies
+          </li>
+          <li>
+            <strong>GitHub Runner Setup</strong> - Configure automated
+            deployment
+          </li>
+          <li>
+            <strong>Application Deployment</strong> - Deploy and start the
+            application
+          </li>
+          <li>
+            <strong>Configuration</strong> - Optional database and web server
+            setup
+          </li>
+          <li>
+            <strong>Operations & Maintenance</strong> - Learn how to manage the
+            application
+          </li>
+          <li>
+            <strong>Troubleshooting</strong> - Common issues and solutions
+          </li>
+          <li><strong>Quick Reference</strong> - Command cheat sheet</li>
+        </ol>
+
+        <h3>Security Considerations</h3>
+        <div class="note-box">
+          <strong>Important Security Notes:</strong>
+          <ul>
+            <li>
+              The application runs under a dedicated service account with
+              limited privileges
+            </li>
+            <li>
+              Database file permissions are set to 600 (owner read/write only)
+            </li>
+            <li>
+              The application listens on localhost:5000 by default (not exposed
+              to the internet)
+            </li>
+            <li>
+              Consider setting up a firewall (ufw) and configuring Nginx with
+              SSL for production use
+            </li>
+          </ul>
+        </div>
+
+        <h3>Getting Help</h3>
+        <p>If you encounter issues during installation:</p>
         <ul>
-          <li>An Ubuntu server (18.04 or later recommended) with sudo access</li>
-          <li>Basic command line knowledge</li>
-          <li>A GitHub account with access to the repository</li>
-          <li>At least 2GB of RAM and 10GB of disk space</li>
+          <li>
+            Check the
+            <a href="troubleshooting.html" class="list-link"
+              >Troubleshooting Guide</a
+            >
+          </li>
+          <li>Review the <a href="../faq.html" class="list-link">FAQs</a></li>
+          <li>Contact the development team</li>
         </ul>
-      </div>
 
-      <div class="note-box">
-        <strong>Optional:</strong>
-        <ul>
-          <li>A domain name pointed to your server (for production deployments)</li>
-          <li>SSL/TLS certificate (for HTTPS access)</li>
-        </ul>
-      </div>
+        <h3>Ready to Begin?</h3>
+        <p>
+          Once you have all the prerequisites ready, proceed to the next section
+          to begin setting up your server.
+        </p>
 
-      <h3>What You'll Install</h3>
-      <p>This installation guide will help you set up the following components:</p>
-      
-      <ol>
-        <li><strong>System Dependencies:</strong> .NET 8 SDK, Node.js 20, SQLite 3, Git</li>
-        <li><strong>Service Account:</strong> A dedicated user (coe-alumni) to run the application</li>
-        <li><strong>GitHub Self-Hosted Runner:</strong> For automated deployments</li>
-        <li><strong>Systemd Service:</strong> To manage the application lifecycle</li>
-        <li><strong>Application Files:</strong> Deployed to /var/www/coe-alumniDB/</li>
-        <li><strong>Database:</strong> SQLite database at /var/www/coe-alumniDB/DB/AlumniDatabase.db</li>
-        <li><strong>Optional: Nginx:</strong> Reverse proxy for domain-based access</li>
-      </ol>
-
-      <h3>Installation Time</h3>
-      <p>
-        Expect the complete installation to take approximately <strong>30-45 minutes</strong>, 
-        depending on your server's internet connection and your familiarity with Linux administration.
-      </p>
-
-      <h3>Installation Steps</h3>
-      <p>The installation process is broken down into the following sections:</p>
-      
-      <ol>
-        <li><strong>Server Setup</strong> - Create service account and install dependencies</li>
-        <li><strong>GitHub Runner Setup</strong> - Configure automated deployment</li>
-        <li><strong>Application Deployment</strong> - Deploy and start the application</li>
-        <li><strong>Configuration</strong> - Optional database and web server setup</li>
-        <li><strong>Operations & Maintenance</strong> - Learn how to manage the application</li>
-        <li><strong>Troubleshooting</strong> - Common issues and solutions</li>
-        <li><strong>Quick Reference</strong> - Command cheat sheet</li>
-      </ol>
-
-      <h3>Security Considerations</h3>
-      <div class="note-box">
-        <strong>Important Security Notes:</strong>
-        <ul>
-          <li>The application runs under a dedicated service account with limited privileges</li>
-          <li>Database file permissions are set to 600 (owner read/write only)</li>
-          <li>The application listens on localhost:5000 by default (not exposed to the internet)</li>
-          <li>Consider setting up a firewall (ufw) and configuring Nginx with SSL for production use</li>
-        </ul>
-      </div>
-
-      <h3>Getting Help</h3>
-      <p>
-        If you encounter issues during installation:
-      </p>
-      <ul>
-        <li>Check the <a href="troubleshooting.html" class="list-link">Troubleshooting Guide</a></li>
-        <li>Review the <a href="../faq.html" class="list-link">FAQs</a></li>
-        <li>Contact the development team</li>
-      </ul>
-
-      <h3>Ready to Begin?</h3>
-      <p>
-        Once you have all the prerequisites ready, proceed to the next section to begin setting up your server.
-      </p>
-
-      <div class="nav-buttons">
-        <a href="../docs-index.html">← Back to Documentation</a>
-        <a href="server-setup.html">Next: Server Setup →</a>
-      </div>
-    </section>
-  </div>
-  <footer>
-  </footer>
-</body>
+        <div class="nav-buttons">
+          <a href="../docs-index.html">← Back to Documentation</a>
+          <a href="server-setup.html">Next: Server Setup →</a>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+  </body>
 </html>

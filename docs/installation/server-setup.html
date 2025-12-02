@@ -1,278 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Server Setup - COE Alumni Database Documentation</title>
-  <link rel="stylesheet" href="../../resources/css/styles.css">
-  <link rel="stylesheet" href="../../resources/css/docs-styles.css">
-</head>
-<body>
-  <header>
-    <h1>College of Engineering Alumni Database</h1>
-    <nav>
-  <div class="navbar">
-    <a href="/index.html">Home</a>
-    <a href="/projectinfo.html">Project Info</a>
-    <div class="dropdown">
-      <button class="dropdown-button">Project Timeline</button>
-      <div class="dropdown-content">
-        <a href="/project-timeline/sprint1.html">Sprint 1</a>
-        <a href="/project-timeline/sprint2.html">Sprint 2</a>
-        <a href="/project-timeline/sprint3.html">Sprint 3</a>
-        <a href="/project-timeline/video.html">Project Demo</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-button">The Team</button>
-      <div class="dropdown-content">
-        <a href="/the-team/ethan.html">Ethan Busby</a>
-        <a href="/the-team/andy.html">Andy Fancher</a>
-        <a href="/the-team/marcus.html">Marcus Kelley</a>
-        <a href="/the-team/jacob.html">Jacob Santos</a>
-        <a href="/the-team/brodye.html">Brodye Stevens</a>
-      </div>  
-    </div>
-    <div class="dropdown">
-      <button class="dropdown-button">Docs</button>
-      <div class="dropdown-content">
-        <a href="/docs/docs-index.html">Documentation Home</a>
-        <div class="nested-dropdown">
-          <a href="#" class="nested-trigger">Installation Guide</a>
-          <div class="nested-dropdown-content">
-            <a href="/docs/installation/overview.html">Installation Overview</a>
-            <a href="/docs/installation/server-setup.html">Server Setup</a>
-            <a href="/docs/installation/github-runner.html">GitHub Runner</a>
-            <a href="/docs/installation/deployment.html">Application Deployment</a>
-            <a href="/docs/installation/configuration.html">Configuration</a>
-            <a href="/docs/installation/operations.html">Operations & Maintenance</a>
-            <a href="/docs/installation/troubleshooting.html">Troubleshooting</a>
-            <a href="/docs/installation/quick-reference.html">Quick Reference</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Server Setup - COE Alumni Database Documentation</title>
+    <link rel="stylesheet" href="../../resources/css/styles.css" />
+    <link rel="stylesheet" href="../../resources/css/docs-styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>College of Engineering Alumni Database</h1>
+      <nav>
+        <div class="navbar">
+          <a href="/index.html">Home</a>
+          <a href="/projectinfo.html">Project Info</a>
+          <div class="dropdown">
+            <button class="dropdown-button">Project Timeline</button>
+            <div class="dropdown-content">
+              <a href="/project-timeline/sprint1.html">Sprint 1</a>
+              <a href="/project-timeline/sprint2.html">Sprint 2</a>
+              <a href="/project-timeline/sprint3.html">Sprint 3</a>
+              <a href="/project-timeline/video.html">Project Demo</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">The Team</button>
+            <div class="dropdown-content">
+              <a href="/the-team/ethan.html">Ethan Busby</a>
+              <a href="/the-team/andy.html">Andy Fancher</a>
+              <a href="/the-team/marcus.html">Marcus Kelley</a>
+              <a href="/the-team/jacob.html">Jacob Santos</a>
+              <a href="/the-team/brodye.html">Brodye Stevens</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Docs</button>
+            <div class="dropdown-content">
+              <a href="/docs/docs-index.html">Documentation Home</a>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Installation Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/installation/overview.html"
+                    >Installation Overview</a
+                  >
+                  <a href="/docs/installation/server-setup.html"
+                    >Server Setup</a
+                  >
+                  <a href="/docs/installation/github-runner.html"
+                    >GitHub Runner</a
+                  >
+                  <a href="/docs/installation/deployment.html"
+                    >Application Deployment</a
+                  >
+                  <a href="/docs/installation/configuration.html"
+                    >Configuration</a
+                  >
+                  <a href="/docs/installation/operations.html"
+                    >Operations & Maintenance</a
+                  >
+                  <a href="/docs/installation/troubleshooting.html"
+                    >Troubleshooting</a
+                  >
+                  <a href="/docs/installation/quick-reference.html"
+                    >Quick Reference</a
+                  >
+                </div>
+              </div>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Feature Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/features-index.html">Features Overview</a>
+                  <a href="/docs/features/register-signin.html"
+                    >Register & Sign In</a
+                  >
+                  <a href="/docs/features/profile.html"
+                    >Profile Creation & Editing</a
+                  >
+                  <a href="/docs/features/networking.html">Networking</a>
+                  <a href="/docs/features/favorites.html">Favorites</a>
+                </div>
+              </div>
+              <a href="/docs/development-index.html">Development Guide</a>
+              <a href="/docs/faq.html">FAQs</a>
+            </div>
           </div>
         </div>
-        <div class="nested-dropdown">
-          <a href="#" class="nested-trigger">Feature Guide</a>
-          <div class="nested-dropdown-content">
-            <a href="/docs/features-index.html">Features Overview</a>
-            <a href="/docs/features/register-signin.html">Register & Sign In</a>
-            <a href="/docs/features/profile.html">Profile Creation & Editing</a>
-            <a href="/docs/features/networking.html">Networking</a>
-            <a href="/docs/features/favorites.html">Favorites</a>
+      </nav>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Installation Guide: Server Setup</h2>
+
+        <p>
+          This section will guide you through setting up your Ubuntu server with
+          all the necessary dependencies and configurations needed to run the
+          COE Alumni Database application.
+        </p>
+
+        <div class="info-box">
+          <strong>What You'll Do:</strong>
+          <ul>
+            <li>Create a dedicated service account</li>
+            <li>Update your system</li>
+            <li>Install .NET 8 SDK</li>
+            <li>Install Node.js 20</li>
+            <li>Install SQLite 3</li>
+            <li>Install Git</li>
+          </ul>
+        </div>
+
+        <h3>Step 1: Create Service Account</h3>
+        <p>
+          The application runs under a dedicated system user for security. This
+          user has no interactive login and limited permissions.
+        </p>
+
+        <div class="step">
+          <h4>Create the coe-alumni user</h4>
+          <div class="code-block">
+            <pre>sudo useradd -r -s /bin/false coe-alumni</pre>
           </div>
+          <p><strong>What this does:</strong></p>
+          <ul>
+            <li>
+              <code>-r</code> creates a system user (no home directory by
+              default)
+            </li>
+            <li><code>-s /bin/false</code> prevents interactive login</li>
+            <li><code>coe-alumni</code> is the username</li>
+          </ul>
         </div>
-        <a href="/docs/development-index.html">Development Guide</a>
-        <a href="/docs/faq.html">FAQs</a>
-      </div>
-    </div>
-  </div>
-</nav>
-  </header>
-  <div class="container">
-    <section>
-      <h2>Installation Guide: Server Setup</h2>
-      
-      <p>
-        This section will guide you through setting up your Ubuntu server with all the necessary dependencies 
-        and configurations needed to run the COE Alumni Database application.
-      </p>
 
-      <div class="info-box">
-        <strong>What You'll Do:</strong>
-        <ul>
-          <li>Create a dedicated service account</li>
-          <li>Update your system</li>
-          <li>Install .NET 8 SDK</li>
-          <li>Install Node.js 20</li>
-          <li>Install SQLite 3</li>
-          <li>Install Git</li>
-        </ul>
-      </div>
-
-      <h3>Step 1: Create Service Account</h3>
-      <p>
-        The application runs under a dedicated system user for security. This user has no interactive login 
-        and limited permissions.
-      </p>
-
-      <div class="step">
-        <h4>Create the coe-alumni user</h4>
-        <div class="code-block">
-          <pre>sudo useradd -r -s /bin/false coe-alumni</pre>
+        <div class="step">
+          <h4>Create application directory</h4>
+          <div class="code-block">
+            <pre>
+sudo mkdir -p /var/www/coe-alumniDB/DB
+sudo chown -R coe-alumni:coe-alumni /var/www/coe-alumniDB</pre
+            >
+          </div>
+          <p><strong>What this does:</strong></p>
+          <ul>
+            <li>
+              Creates the application directory at
+              <code>/var/www/coe-alumniDB/</code>
+            </li>
+            <li>Creates the database subdirectory <code>/DB</code></li>
+            <li>Sets ownership to the coe-alumni user</li>
+          </ul>
         </div>
-        <p><strong>What this does:</strong></p>
-        <ul>
-          <li><code>-r</code> creates a system user (no home directory by default)</li>
-          <li><code>-s /bin/false</code> prevents interactive login</li>
-          <li><code>coe-alumni</code> is the username</li>
-        </ul>
-      </div>
 
-      <div class="step">
-        <h4>Create application directory</h4>
+        <h3>Step 2: Update System</h3>
+        <p>
+          Before installing new packages, update your system's package list and
+          upgrade existing packages.
+        </p>
+
         <div class="code-block">
-          <pre>sudo mkdir -p /var/www/coe-alumniDB/DB
-sudo chown -R coe-alumni:coe-alumni /var/www/coe-alumniDB</pre>
+          <pre>
+sudo apt update
+sudo apt upgrade -y</pre
+          >
         </div>
-        <p><strong>What this does:</strong></p>
-        <ul>
-          <li>Creates the application directory at <code>/var/www/coe-alumniDB/</code></li>
-          <li>Creates the database subdirectory <code>/DB</code></li>
-          <li>Sets ownership to the coe-alumni user</li>
-        </ul>
-      </div>
 
-      <h3>Step 2: Update System</h3>
-      <p>
-        Before installing new packages, update your system's package list and upgrade existing packages.
-      </p>
+        <div class="note-box">
+          <strong>Note:</strong> This may take a few minutes depending on how
+          many packages need updating.
+        </div>
 
-      <div class="code-block">
-        <pre>sudo apt update
-sudo apt upgrade -y</pre>
-      </div>
+        <h3>Step 3: Install .NET 8 SDK</h3>
+        <p>
+          The application backend requires .NET 8. We'll add Microsoft's
+          official package repository and install from there.
+        </p>
 
-      <div class="note-box">
-        <strong>Note:</strong> This may take a few minutes depending on how many packages need updating.
-      </div>
-
-      <h3>Step 3: Install .NET 8 SDK</h3>
-      <p>
-        The application backend requires .NET 8. We'll add Microsoft's official package repository and install from there.
-      </p>
-
-      <div class="step">
-        <h4>Add Microsoft package repository</h4>
-        <div class="code-block">
-          <pre>wget https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+        <div class="step">
+          <h4>Add Microsoft package repository</h4>
+          <div class="code-block">
+            <pre>
+wget https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
-rm packages-microsoft-prod.deb</pre>
+rm packages-microsoft-prod.deb</pre
+            >
+          </div>
         </div>
-      </div>
 
-      <div class="step">
-        <h4>Install .NET 8 SDK</h4>
+        <div class="step">
+          <h4>Install .NET 8 SDK</h4>
+          <div class="code-block">
+            <pre>
+sudo apt update
+sudo apt install -y dotnet-sdk-8.0</pre
+            >
+          </div>
+        </div>
+
+        <div class="step">
+          <h4>Verify installation</h4>
+          <div class="code-block">
+            <pre>dotnet --version</pre>
+          </div>
+          <div class="success-box">
+            <strong>Expected output:</strong> You should see something like
+            <code>8.0.xxx</code>
+          </div>
+        </div>
+
+        <h3>Step 4: Install Node.js 20</h3>
+        <p>
+          Node.js is required to build the React frontend. We'll install version
+          20 using the NodeSource repository.
+        </p>
+
+        <div class="step">
+          <h4>Add NodeSource repository and install</h4>
+          <div class="code-block">
+            <pre>
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs</pre
+            >
+          </div>
+        </div>
+
+        <div class="step">
+          <h4>Verify installation</h4>
+          <div class="code-block">
+            <pre>
+node --version
+npm --version</pre
+            >
+          </div>
+          <div class="success-box">
+            <strong>Expected output:</strong><br />
+            Node version: <code>v20.x.x</code><br />
+            npm version: <code>10.x.x</code> (or similar)
+          </div>
+        </div>
+
+        <h3>Step 5: Install SQLite 3</h3>
+        <p>SQLite is the database engine used by the application.</p>
+
+        <div class="step">
+          <h4>Install SQLite</h4>
+          <div class="code-block">
+            <pre>sudo apt install -y sqlite3</pre>
+          </div>
+        </div>
+
+        <div class="step">
+          <h4>Verify installation</h4>
+          <div class="code-block">
+            <pre>sqlite3 --version</pre>
+          </div>
+          <div class="success-box">
+            <strong>Expected output:</strong> Version information like
+            <code>3.x.x</code>
+          </div>
+        </div>
+
+        <h3>Step 6: Install Git</h3>
+        <p>
+          Git is required for the GitHub Actions runner to pull code from your
+          repository.
+        </p>
+
         <div class="code-block">
-          <pre>sudo apt update
-sudo apt install -y dotnet-sdk-8.0</pre>
+          <pre>sudo apt install -y git</pre>
         </div>
-      </div>
 
-      <div class="step">
-        <h4>Verify installation</h4>
-        <div class="code-block">
-          <pre>dotnet --version</pre>
-        </div>
-        <div class="success-box">
-          <strong>Expected output:</strong> You should see something like <code>8.0.xxx</code>
-        </div>
-      </div>
+        <h3>Verification Checklist</h3>
+        <p>
+          Before proceeding to the next step, verify all components are
+          installed:
+        </p>
 
-      <h3>Step 4: Install Node.js 20</h3>
-      <p>
-        Node.js is required to build the React frontend. We'll install version 20 using the NodeSource repository.
-      </p>
-
-      <div class="step">
-        <h4>Add NodeSource repository and install</h4>
-        <div class="code-block">
-          <pre>curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt install -y nodejs</pre>
-        </div>
-      </div>
-
-      <div class="step">
-        <h4>Verify installation</h4>
-        <div class="code-block">
-          <pre>node --version
-npm --version</pre>
-        </div>
-        <div class="success-box">
-          <strong>Expected output:</strong><br>
-          Node version: <code>v20.x.x</code><br>
-          npm version: <code>10.x.x</code> (or similar)
-        </div>
-      </div>
-
-      <h3>Step 5: Install SQLite 3</h3>
-      <p>
-        SQLite is the database engine used by the application.
-      </p>
-
-      <div class="step">
-        <h4>Install SQLite</h4>
-        <div class="code-block">
-          <pre>sudo apt install -y sqlite3</pre>
-        </div>
-      </div>
-
-      <div class="step">
-        <h4>Verify installation</h4>
-        <div class="code-block">
-          <pre>sqlite3 --version</pre>
-        </div>
-        <div class="success-box">
-          <strong>Expected output:</strong> Version information like <code>3.x.x</code>
-        </div>
-      </div>
-
-      <h3>Step 6: Install Git</h3>
-      <p>
-        Git is required for the GitHub Actions runner to pull code from your repository.
-      </p>
-
-      <div class="code-block">
-        <pre>sudo apt install -y git</pre>
-      </div>
-
-      <h3>Verification Checklist</h3>
-      <p>Before proceeding to the next step, verify all components are installed:</p>
-
-      <div class="info-box">
-        <strong>Run these commands to verify:</strong>
-        <div class="code-block">
-          <pre>dotnet --version    # Should show 8.0.xxx
+        <div class="info-box">
+          <strong>Run these commands to verify:</strong>
+          <div class="code-block">
+            <pre>
+dotnet --version    # Should show 8.0.xxx
 node --version      # Should show v20.x.x
 npm --version       # Should show 10.x.x
 sqlite3 --version   # Should show 3.x.x
 git --version       # Should show git version
-ls -la /var/www/coe-alumniDB/  # Should show directory owned by coe-alumni</pre>
+ls -la /var/www/coe-alumniDB/  # Should show directory owned by coe-alumni</pre
+            >
+          </div>
         </div>
-      </div>
 
-      <h3>Troubleshooting</h3>
-      
-      <h4>If .NET installation fails:</h4>
-      <ul>
-        <li>Make sure you're using a supported Ubuntu version (18.04 or later)</li>
-        <li>Check that the Microsoft repository was added correctly</li>
-        <li>Try running <code>sudo apt update</code> again</li>
-      </ul>
+        <h3>Troubleshooting</h3>
 
-      <h4>If Node.js installation fails:</h4>
-      <ul>
-        <li>Verify curl is installed: <code>sudo apt install curl</code></li>
-        <li>Check your internet connection</li>
-        <li>Make sure the NodeSource script downloaded successfully</li>
-      </ul>
+        <h4>If .NET installation fails:</h4>
+        <ul>
+          <li>
+            Make sure you're using a supported Ubuntu version (18.04 or later)
+          </li>
+          <li>Check that the Microsoft repository was added correctly</li>
+          <li>Try running <code>sudo apt update</code> again</li>
+        </ul>
 
-      <h4>Permission errors:</h4>
-      <ul>
-        <li>Make sure you're running commands with <code>sudo</code> where indicated</li>
-        <li>Verify you have sudo privileges on the server</li>
-      </ul>
+        <h4>If Node.js installation fails:</h4>
+        <ul>
+          <li>Verify curl is installed: <code>sudo apt install curl</code></li>
+          <li>Check your internet connection</li>
+          <li>Make sure the NodeSource script downloaded successfully</li>
+        </ul>
 
-      <h3>Next Steps</h3>
-      <p>
-        With all dependencies installed, you're ready to set up the GitHub self-hosted runner for automated deployments.
-      </p>
+        <h4>Permission errors:</h4>
+        <ul>
+          <li>
+            Make sure you're running commands with <code>sudo</code> where
+            indicated
+          </li>
+          <li>Verify you have sudo privileges on the server</li>
+        </ul>
 
-      <div class="nav-buttons">
-        <a href="overview.html">← Previous: Overview</a>
-        <a href="github-runner.html">Next: GitHub Runner Setup →</a>
-      </div>
-    </section>
-  </div>
-  <footer>
-  </footer>
-</body>
+        <h3>Next Steps</h3>
+        <p>
+          With all dependencies installed, you're ready to set up the GitHub
+          self-hosted runner for automated deployments.
+        </p>
+
+        <div class="nav-buttons">
+          <a href="overview.html">← Previous: Overview</a>
+          <a href="github-runner.html">Next: GitHub Runner Setup →</a>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+  </body>
 </html>
