@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Development Guide - COE Alumni Database Documentation</title>
+    <link rel="stylesheet" href="/resources/css/styles.css" />
+    <link rel="stylesheet" href="/resources/css/docs-styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>College of Engineering Alumni Database</h1>
+      <nav>
+        <div class="navbar">
+          <a href="/index.html">Home</a>
+          <a href="/projectinfo.html">Project Info</a>
+          <div class="dropdown">
+            <button class="dropdown-button">Project Timeline</button>
+            <div class="dropdown-content">
+              <a href="/project-timeline/sprint1.html">Sprint 1</a>
+              <a href="/project-timeline/sprint2.html">Sprint 2</a>
+              <a href="/project-timeline/sprint3.html">Sprint 3</a>
+              <a href="/project-timeline/video.html">Project Demo</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">The Team</button>
+            <div class="dropdown-content">
+              <a href="/the-team/ethan.html">Ethan Busby</a>
+              <a href="/the-team/andy.html">Andy Fancher</a>
+              <a href="/the-team/marcus.html">Marcus Kelley</a>
+              <a href="/the-team/jacob.html">Jacob Santos</a>
+              <a href="/the-team/brodye.html">Brodye Stevens</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Docs</button>
+            <div class="dropdown-content">
+              <a href="/docs/docs-index.html">Documentation Home</a>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Installation Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/installation/overview.html"
+                    >Installation Overview</a
+                  >
+                  <a href="/docs/installation/server-setup.html"
+                    >Server Setup</a
+                  >
+                  <a href="/docs/installation/github-runner.html"
+                    >GitHub Runner</a
+                  >
+                  <a href="/docs/installation/deployment.html"
+                    >Application Deployment</a
+                  >
+                  <a href="/docs/installation/configuration.html"
+                    >Configuration</a
+                  >
+                  <a href="/docs/installation/operations.html"
+                    >Operations & Maintenance</a
+                  >
+                  <a href="/docs/installation/troubleshooting.html"
+                    >Troubleshooting</a
+                  >
+                  <a href="/docs/installation/quick-reference.html"
+                    >Quick Reference</a
+                  >
+                </div>
+              </div>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Feature Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/features-index.html">Features Overview</a>
+                  <a href="/docs/features/register-signin.html"
+                    >Register & Sign In</a
+                  >
+                  <a href="/docs/features/profile.html"
+                    >Profile Creation & Editing</a
+                  >
+                  <a href="/docs/features/networking.html">Networking</a>
+                  <a href="/docs/features/favorites.html">Favorites</a>
+                </div>
+              </div>
+              <a href="/docs/development-index.html">Development Guide</a>
+              <a href="/docs/faq.html">FAQs</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Development Guide: How to Modify & Extend the Software</h2>
+
+        <p>
+          This guide is for developers who want to modify or extend the COE
+          Alumni Database application. It covers the development environment
+          setup, project structure, build processes, and contribution workflow.
+        </p>
+
+        <h3>Prerequisites</h3>
+        <p>Before you begin, make sure you have:</p>
+        <ul>
+          <li>.NET 8 SDK installed</li>
+          <li>Node.js 20.x installed</li>
+          <li>Git installed</li>
+          <li>
+            A code editor (Visual Studio 2022 or Visual Studio Code recommended)
+          </li>
+          <li>Basic knowledge of C#, React, and TypeScript</li>
+        </ul>
+
+        <h3>Technology Stack</h3>
+        <table>
+          <tr>
+            <th>Component</th>
+            <th>Technology</th>
+            <th>Version</th>
+          </tr>
+          <tr>
+            <td>Backend Framework</td>
+            <td>ASP.NET Core</td>
+            <td>8.0</td>
+          </tr>
+          <tr>
+            <td>Backend Language</td>
+            <td>C#</td>
+            <td>12.0 (.NET 8)</td>
+          </tr>
+          <tr>
+            <td>Frontend Framework</td>
+            <td>React</td>
+            <td>19.2.0</td>
+          </tr>
+          <tr>
+            <td>Frontend Language</td>
+            <td>TypeScript</td>
+            <td>Latest</td>
+          </tr>
+          <tr>
+            <td>Database</td>
+            <td>SQLite with Entity Framework Core</td>
+            <td>9.0</td>
+          </tr>
+          <tr>
+            <td>Authentication</td>
+            <td>JWT (JSON Web Tokens)</td>
+            <td>8.14.0</td>
+          </tr>
+          <tr>
+            <td>UI Framework</td>
+            <td>React Bootstrap</td>
+            <td>2.10.10</td>
+          </tr>
+        </table>
+
+        <h3>Project Structure</h3>
+        <div class="code-block">
+          <pre>
+coe-alumni-db-cs495/
+├── coe-alumni-db-cs495.Server/      # Backend (.NET)
+│   ├── Controllers/                  # API endpoints
+│   ├── Models/                       # Data models
+│   ├── Data/                         # Database context
+│   ├── Migrations/                   # EF Core migrations
+│   ├── Services/                     # Business logic
+│   ├── appsettings.json             # Development configuration
+│   ├── appsettings.Production.json  # Production configuration
+│   └── coe-alumni-db-cs495.Server.csproj
+├── coe-alumni-db-cs495.client/      # Frontend (React)
+│   ├── src/
+│   │   ├── components/              # React components
+│   │   ├── pages/                   # Page components
+│   │   ├── services/                # API service layer
+│   │   ├── hooks/                   # Custom React hooks
+│   │   ├── types/                   # TypeScript type definitions
+│   │   └── App.tsx                  # Main app component
+│   ├── package.json                 # npm dependencies
+│   └── coe-alumni-db-cs495.client.esproj
+├── coe-alumni-db-cs495.DB/          # Database scripts
+│   ├── AlumniDatabase.db           # SQLite database (gitignored)
+│   └── *.py                        # Python automation scripts
+└── .github/
+    └── workflows/
+        └── build.yml                # CI/CD pipeline</pre
+          >
+        </div>
+
+        <h3>Setting Up Your Development Environment</h3>
+
+        <h4>Step 1: Clone the Repository</h4>
+        <div class="code-block">
+          <pre>
+git clone [repository-url]
+cd coe-alumni-db-cs495</pre
+          >
+        </div>
+
+        <h4>Step 2: Install Backend Dependencies</h4>
+        <div class="code-block">
+          <pre>
+cd coe-alumni-db-cs495.Server
+dotnet restore</pre
+          >
+        </div>
+
+        <h4>Step 3: Install Frontend Dependencies</h4>
+        <div class="code-block">
+          <pre>
+cd ../coe-alumni-db-cs495.client
+npm install</pre
+          >
+        </div>
+
+        <h4>Step 4: Set Up the Database</h4>
+        <p>
+          The database file is gitignored, so you'll need to create it locally:
+        </p>
+        <div class="code-block">
+          <pre>
+cd ../coe-alumni-db-cs495.Server
+dotnet ef database update</pre
+          >
+        </div>
+        <p>
+          This creates the SQLite database at
+          <code>../coe-alumni-db-cs495.DB/AlumniDatabase.db</code> with all
+          necessary tables.
+        </p>
+
+        <div class="info-box">
+          <strong>Database Location:</strong> The connection string in
+          <code>appsettings.json</code> points to
+          <code>../coe-alumni-db-cs495.DB/AlumniDatabase.db</code>. Make sure
+          the DB directory exists before running migrations.
+        </div>
+
+        <h3>Running the Application Locally</h3>
+
+        <h4>Option 1: Run from Visual Studio</h4>
+        <ol>
+          <li>Open the solution file in Visual Studio 2022</li>
+          <li>
+            Set <code>coe-alumni-db-cs495.Server</code> as the startup project
+          </li>
+          <li>
+            Press <strong>F5</strong> or click <strong>Start Debugging</strong>
+          </li>
+          <li>
+            The backend will start and automatically launch the React dev server
+          </li>
+        </ol>
+
+        <h4>Option 2: Run from Visual Studio Code</h4>
+        <ol>
+          <li>Open the project folder in VS Code</li>
+          <li>Open two terminals</li>
+          <li>
+            <strong>Terminal 1 (Backend):</strong>
+            <div class="code-block">
+              <pre>
+cd coe-alumni-db-cs495.Server
+dotnet run</pre
+              >
+            </div>
+          </li>
+          <li>
+            <strong>Terminal 2 (Frontend):</strong>
+            <div class="code-block">
+              <pre>
+cd coe-alumni-db-cs495.client
+npm run dev</pre
+              >
+            </div>
+          </li>
+        </ol>
+
+        <h4>Option 3: Run Separately</h4>
+        <p>
+          You can also run backend and frontend in separate terminal windows:
+        </p>
+        <div class="code-block">
+          <pre>
+# Terminal 1: Backend
+cd coe-alumni-db-cs495.Server
+dotnet run
+
+# Terminal 2: Frontend
+cd coe-alumni-db-cs495.client
+npm run dev</pre
+          >
+        </div>
+
+        <h4>Access Points</h4>
+        <ul>
+          <li><strong>Frontend:</strong> https://localhost:52953</li>
+          <li>
+            <strong>Backend API:</strong> https://localhost:5001 (or
+            http://localhost:5000)
+          </li>
+          <li>
+            <strong>Swagger API Docs:</strong> https://localhost:5001/swagger
+          </li>
+        </ul>
+
+        <h3>Dependencies</h3>
+
+        <h4>Backend Dependencies (.NET)</h4>
+        <p>
+          Backend dependencies are listed in
+          <code
+            >coe-alumni-db-cs495.Server/coe-alumni-db-cs495.Server.csproj</code
+          >:
+        </p>
+        <ul>
+          <li><strong>BCrypt.Net-Next (4.0.3):</strong> Password hashing</li>
+          <li>
+            <strong
+              >Microsoft.AspNetCore.Authentication.JwtBearer (8.0.11):</strong
+            >
+            JWT authentication
+          </li>
+          <li>
+            <strong>Microsoft.EntityFrameworkCore (9.0.10):</strong> ORM
+            framework
+          </li>
+          <li>
+            <strong>Microsoft.EntityFrameworkCore.Sqlite (9.0.9):</strong>
+            SQLite database provider
+          </li>
+          <li>
+            <strong>Microsoft.EntityFrameworkCore.Tools (9.0.9):</strong> EF
+            Core CLI tools
+          </li>
+          <li>
+            <strong>System.IdentityModel.Tokens.Jwt (8.14.0):</strong> JWT token
+            generation
+          </li>
+          <li>
+            <strong>Swashbuckle.AspNetCore (6.6.2):</strong> Swagger API
+            documentation
+          </li>
+        </ul>
+
+        <h4>Frontend Dependencies (npm)</h4>
+        <p>
+          Frontend dependencies are listed in
+          <code>coe-alumni-db-cs495.client/package.json</code>:
+        </p>
+        <ul>
+          <li><strong>react (19.2.0):</strong> UI framework</li>
+          <li><strong>react-dom (19.1.1):</strong> React DOM renderer</li>
+          <li>
+            <strong>react-router-dom (7.9.1):</strong> Client-side routing
+          </li>
+          <li><strong>axios (1.12.2):</strong> HTTP client for API calls</li>
+          <li><strong>bootstrap (5.3.8):</strong> CSS framework</li>
+          <li>
+            <strong>react-bootstrap (2.10.10):</strong> React Bootstrap
+            components
+          </li>
+          <li><strong>react-icons (5.5.0):</strong> Icon library</li>
+        </ul>
+
+        <h3>Build Management</h3>
+
+        <h4>Backend Build</h4>
+        <p>The backend uses the .NET CLI and MSBuild:</p>
+        <div class="code-block">
+          <pre>
+# Restore dependencies
+dotnet restore
+
+# Build the project
+dotnet build
+
+# Build for production
+dotnet publish -c Release -o ./publish</pre
+          >
+        </div>
+
+        <h4>Frontend Build</h4>
+        <p>The frontend uses npm scripts defined in package.json:</p>
+        <div class="code-block">
+          <pre>
+# Development mode with hot reload
+npm run dev
+
+# Production build
+npm run build</pre
+          >
+        </div>
+
+        <h4>Automated Builds</h4>
+        <p>
+          GitHub Actions automatically builds and deploys the application when
+          code is pushed to the master branch. The workflow is defined in
+          <code>.github/workflows/build.yml</code>.
+        </p>
+
+        <p>The automated build process:</p>
+        <ol>
+          <li>Installs npm dependencies</li>
+          <li>Builds the React frontend (<code>npm run build</code>)</li>
+          <li>Copies frontend build to backend's wwwroot folder</li>
+          <li>Restores .NET dependencies</li>
+          <li>Publishes the .NET application</li>
+          <li>Deploys to the server (on push to master)</li>
+        </ol>
+
+        <div class="info-box">
+          <strong>Testing Builds:</strong> Always test your changes in build
+          mode locally before pushing to master:
+          <div class="code-block">
+            <pre>
+cd coe-alumni-db-cs495.client
+npm run build</pre
+            >
+          </div>
+          The deployment runs in production mode, which may behave differently
+          than development mode.
+        </div>
+
+        <h3>Database Management</h3>
+
+        <h4>Entity Framework Core Migrations</h4>
+        <p>
+          The project uses EF Core migrations to manage database schema changes.
+        </p>
+
+        <div class="code-block">
+          <pre>
+# Create a new migration
+dotnet ef migrations add MigrationName
+
+# Apply migrations to database
+dotnet ef database update
+
+# Remove last migration (if not applied)
+dotnet ef migrations remove
+
+# View migration SQL
+dotnet ef migrations script</pre
+          >
+        </div>
+
+        <h4>Database Connection String</h4>
+        <p>Connection string is configured in <code>appsettings.json</code>:</p>
+        <div class="code-block">
+          <pre>
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=../coe-alumni-db-cs495.DB/AlumniDatabase.db"
+  }
+}</pre
+          >
+        </div>
+
+        <h3>Authentication & Security</h3>
+        <p>The application uses JWT (JSON Web Tokens) for authentication:</p>
+        <ul>
+          <li>JWT secret key is configured in <code>appsettings.json</code></li>
+          <li>Passwords are hashed using BCrypt before storage</li>
+          <li>Tokens are sent in the Authorization header as Bearer tokens</li>
+          <li>Protected routes require valid JWT tokens</li>
+        </ul>
+
+        <div class="warning-box">
+          <strong>Security Note:</strong> The JWT key in
+          <code>appsettings.json</code> is for development only. Production uses
+          a different key stored securely. Never commit production secrets to
+          the repository.
+        </div>
+
+        <h3>Making Changes</h3>
+
+        <h4>Adding a New Feature</h4>
+        <ol>
+          <li>Create a new branch from master</li>
+          <li>Implement your changes in both backend and frontend as needed</li>
+          <li>Test locally in both dev and build modes</li>
+          <li>Create a Pull Request to master</li>
+          <li>The PR triggers a build-only workflow to check for errors</li>
+          <li>After review and approval, merge to master</li>
+          <li>Merging to master triggers automatic deployment</li>
+        </ol>
+
+        <h4>Adding a Backend Endpoint</h4>
+        <ol>
+          <li>Create or modify a controller in <code>Controllers/</code></li>
+          <li>Add data models in <code>Models/</code> if needed</li>
+          <li>Update database context if database changes are needed</li>
+          <li>Create and apply EF Core migration</li>
+          <li>Test the endpoint using Swagger or Postman</li>
+        </ol>
+
+        <h4>Adding a Frontend Component</h4>
+        <ol>
+          <li>
+            Create component file in <code>src/components/</code> or
+            <code>src/pages/</code>
+          </li>
+          <li>Add TypeScript types in <code>src/types/</code> if needed</li>
+          <li>Connect to backend API via <code>src/services/api.ts</code></li>
+          <li>Add routing in <code>App.tsx</code> if it's a new page</li>
+          <li>Test in development mode</li>
+        </ol>
+
+        <h4>Modifying the Database Schema</h4>
+        <ol>
+          <li>Update your model classes in <code>Models/</code></li>
+          <li>
+            Create a new migration:
+            <code>dotnet ef migrations add YourMigrationName</code>
+          </li>
+          <li>
+            Review the generated migration file in <code>Migrations/</code>
+          </li>
+          <li>Apply the migration: <code>dotnet ef database update</code></li>
+          <li>Test that your changes work correctly</li>
+          <li>Commit both the model changes and migration files</li>
+        </ol>
+
+        <h3>Project Backlog & Issues</h3>
+        <p>The project backlog is tracked on the project website:</p>
+        <ul>
+          <li>
+            <a
+              href="https://coe-alumni-db.github.io/backlog.html"
+              class="list-link"
+              target="_blank"
+              >Project Backlog</a
+            >
+          </li>
+        </ul>
+
+        <p>
+          Sprint-specific backlogs are also available in the Sprint Timeline
+          pages:
+        </p>
+        <ul>
+          <li>
+            <a href="/project-timeline/sprint1.html" class="list-link"
+              >Sprint 1 Timeline</a
+            >
+          </li>
+          <li>
+            <a href="/project-timeline/sprint2.html" class="list-link"
+              >Sprint 2 Timeline</a
+            >
+          </li>
+          <li>
+            <a href="/project-timeline/sprint3.html" class="list-link"
+              >Sprint 3 Timeline</a
+            >
+          </li>
+        </ul>
+
+        <p>
+          For bug reports and feature requests, check the main backlog or
+          contact the development team.
+        </p>
+
+        <h4>Known Issues & Technical Debt</h4>
+        <p>
+          Currently, there are no major known issues or technical debt items.
+        </p>
+
+        <h3>Code Style & Standards</h3>
+        <p>
+          While there are no formal style guidelines currently enforced, follow
+          these general practices:
+        </p>
+
+        <h4>C# Backend</h4>
+        <ul>
+          <li>
+            Follow standard C# naming conventions (PascalCase for
+            classes/methods, camelCase for parameters)
+          </li>
+          <li>Use meaningful variable and method names</li>
+          <li>Keep controllers thin - move business logic to services</li>
+          <li>Use async/await for database operations</li>
+          <li>Add XML comments to public APIs</li>
+        </ul>
+
+        <h4>TypeScript/React Frontend</h4>
+        <ul>
+          <li>Use functional components with hooks</li>
+          <li>Define TypeScript interfaces for props and state</li>
+          <li>Keep components focused and single-responsibility</li>
+          <li>Use meaningful component and file names</li>
+          <li>Extract reusable logic into custom hooks</li>
+        </ul>
+
+        <h3>Testing</h3>
+        <p>
+          Automated testing is not currently implemented. When adding tests in
+          the future, consider:
+        </p>
+        <ul>
+          <li>
+            <strong>Backend:</strong> xUnit or NUnit for unit and integration
+            tests
+          </li>
+          <li>
+            <strong>Frontend:</strong> Vitest (already configured in .esproj) or
+            Jest for component tests
+          </li>
+          <li>
+            <strong>E2E:</strong> Playwright or Cypress for end-to-end testing
+          </li>
+        </ul>
+
+        <h3>Deployment</h3>
+        <p>
+          Deployment is handled automatically through GitHub Actions. See the
+          <a href="/docs/installation/deployment.html" class="list-link"
+            >Application Deployment</a
+          >
+          guide for details on how the CI/CD pipeline works.
+        </p>
+
+        <h3>Useful Commands Reference</h3>
+        <table>
+          <tr>
+            <th>Task</th>
+            <th>Command</th>
+          </tr>
+          <tr>
+            <td>Restore .NET dependencies</td>
+            <td><code>dotnet restore</code></td>
+          </tr>
+          <tr>
+            <td>Build .NET project</td>
+            <td><code>dotnet build</code></td>
+          </tr>
+          <tr>
+            <td>Run .NET project</td>
+            <td><code>dotnet run</code></td>
+          </tr>
+          <tr>
+            <td>Install npm dependencies</td>
+            <td><code>npm install</code></td>
+          </tr>
+          <tr>
+            <td>Run React dev server</td>
+            <td><code>npm run dev</code></td>
+          </tr>
+          <tr>
+            <td>Build React for production</td>
+            <td><code>npm run build</code></td>
+          </tr>
+          <tr>
+            <td>Create EF migration</td>
+            <td><code>dotnet ef migrations add MigrationName</code></td>
+          </tr>
+          <tr>
+            <td>Apply EF migrations</td>
+            <td><code>dotnet ef database update</code></td>
+          </tr>
+          <tr>
+            <td>Remove last migration</td>
+            <td><code>dotnet ef migrations remove</code></td>
+          </tr>
+        </table>
+
+        <h3>Additional Resources</h3>
+        <ul>
+          <li>
+            <a
+              href="https://learn.microsoft.com/en-us/aspnet/core/"
+              class="list-link"
+              target="_blank"
+              >ASP.NET Core Documentation</a
+            >
+          </li>
+          <li>
+            <a href="https://react.dev/" class="list-link" target="_blank"
+              >React Documentation</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.typescriptlang.org/docs/"
+              class="list-link"
+              target="_blank"
+              >TypeScript Documentation</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://learn.microsoft.com/en-us/ef/core/"
+              class="list-link"
+              target="_blank"
+              >Entity Framework Core Documentation</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://react-bootstrap.github.io/"
+              class="list-link"
+              target="_blank"
+              >React Bootstrap Documentation</a
+            >
+          </li>
+        </ul>
+
+        <div class="nav-buttons">
+          <a href="/docs/docs-index.html">← Back to Documentation</a>
+          <div></div>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+  </body>
+</html>

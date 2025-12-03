@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register & Sign In - COE Alumni Database Documentation</title>
+    <link rel="stylesheet" href="../../resources/css/styles.css" />
+    <link rel="stylesheet" href="../../resources/css/docs-styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>College of Engineering Alumni Database</h1>
+      <nav>
+        <div class="navbar">
+          <a href="/index.html">Home</a>
+          <a href="/projectinfo.html">Project Info</a>
+          <div class="dropdown">
+            <button class="dropdown-button">Project Timeline</button>
+            <div class="dropdown-content">
+              <a href="/project-timeline/sprint1.html">Sprint 1</a>
+              <a href="/project-timeline/sprint2.html">Sprint 2</a>
+              <a href="/project-timeline/sprint3.html">Sprint 3</a>
+              <a href="/project-timeline/video.html">Project Demo</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">The Team</button>
+            <div class="dropdown-content">
+              <a href="/the-team/ethan.html">Ethan Busby</a>
+              <a href="/the-team/andy.html">Andy Fancher</a>
+              <a href="/the-team/marcus.html">Marcus Kelley</a>
+              <a href="/the-team/jacob.html">Jacob Santos</a>
+              <a href="/the-team/brodye.html">Brodye Stevens</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Docs</button>
+            <div class="dropdown-content">
+              <a href="/docs/docs-index.html">Documentation Home</a>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Installation Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/installation/overview.html"
+                    >Installation Overview</a
+                  >
+                  <a href="/docs/installation/server-setup.html"
+                    >Server Setup</a
+                  >
+                  <a href="/docs/installation/github-runner.html"
+                    >GitHub Runner</a
+                  >
+                  <a href="/docs/installation/deployment.html"
+                    >Application Deployment</a
+                  >
+                  <a href="/docs/installation/configuration.html"
+                    >Configuration</a
+                  >
+                  <a href="/docs/installation/operations.html"
+                    >Operations & Maintenance</a
+                  >
+                  <a href="/docs/installation/troubleshooting.html"
+                    >Troubleshooting</a
+                  >
+                  <a href="/docs/installation/quick-reference.html"
+                    >Quick Reference</a
+                  >
+                </div>
+              </div>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Feature Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/features-index.html">Features Overview</a>
+                  <a href="/docs/features/register-signin.html"
+                    >Register & Sign In</a
+                  >
+                  <a href="/docs/features/profile.html"
+                    >Profile Creation & Editing</a
+                  >
+                  <a href="/docs/features/networking.html">Networking</a>
+                  <a href="/docs/features/favorites.html">Favorites</a>
+                </div>
+              </div>
+              <a href="/docs/development-index.html">Development Guide</a>
+              <a href="/docs/faq.html">FAQs</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Feature Guide: Register & Sign In</h2>
+
+        <p>
+          This guide covers how to create an account, sign in, and sign out of
+          the COE Alumni Database.
+        </p>
+
+        <h3>Registering for an Account</h3>
+        <p>To access the alumni database, you'll need to create an account.</p>
+
+        <div class="screenshot-container">
+          <img
+            src="../../resources/features-resources/features_register.png"
+            alt="Registration page screenshot"
+            class="doc-screenshot"
+          />
+        </div>
+
+        <h4>Registration Requirements</h4>
+        <table>
+          <tr>
+            <th>Field</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>Email Address</td>
+            <td>Yes</td>
+            <td>Your email address (used for signing in)</td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td>Yes</td>
+            <td>Secure password for your account</td>
+          </tr>
+        </table>
+
+        <div class="note-box">
+          <strong>Note:</strong> Email verification is not currently enabled.
+          You can sign in immediately after registering.
+        </div>
+
+        <h4>Step-by-Step Registration</h4>
+        <ol>
+          <li>Navigate to the registration page</li>
+          <li>Enter your email address</li>
+          <li>Create a secure password</li>
+          <li>Click the <strong>Register</strong> button</li>
+          <li>
+            You'll be automatically redirected to the Profile page to complete
+            your information
+          </li>
+        </ol>
+
+        <div class="info-box">
+          <strong>What Happens Next:</strong> After registering, you're
+          immediately taken to the
+          <a href="profile.html" class="list-link">Profile page</a> where you'll
+          enter your personal, academic, and professional information. This
+          ensures your profile is complete before you start networking with
+          other alumni.
+        </div>
+
+        <h3>Signing In</h3>
+        <p>Use your registered email and password to access your account.</p>
+
+        <div class="screenshot-container">
+          <img
+            src="../../resources/features-resources/features_sign-in.png"
+            alt="Sign in page screenshot"
+            class="doc-screenshot"
+          />
+        </div>
+
+        <h4>Sign In Steps</h4>
+        <ol>
+          <li>Navigate to the sign-in page</li>
+          <li>Enter your email address</li>
+          <li>Enter your password</li>
+          <li>Click the <strong>Sign In</strong> button</li>
+          <li>
+            You'll be taken to your dashboard or the last page you visited
+          </li>
+        </ol>
+
+        <h3>Signing Out</h3>
+        <p>
+          Always sign out when you're finished using the application, especially
+          on shared computers.
+        </p>
+
+        <div class="screenshot-container">
+          <img
+            src="../../resources/features-resources/features_sign-out.png"
+            alt="Sign out button location screenshot"
+            class="doc-screenshot"
+          />
+        </div>
+
+        <h4>Sign Out Steps</h4>
+        <ol>
+          <li>Click your profile icon or menu in the navigation bar</li>
+          <li>Select <strong>Sign Out</strong></li>
+          <li>You'll be redirected to the sign-in page</li>
+        </ol>
+
+        <h3>Password Management</h3>
+        <div class="note-box">
+          <strong>Note:</strong> Password reset functionality is not currently
+          available. If you forget your password, contact the system
+          administrator for assistance.
+        </div>
+
+        <h3>Privacy & Security</h3>
+        <ul>
+          <li>
+            Your password is encrypted and cannot be viewed by anyone, including
+            administrators
+          </li>
+          <li>Never share your password with anyone</li>
+          <li>Use a strong, unique password for your account</li>
+          <li>Always sign out on shared or public computers</li>
+        </ul>
+
+        <h3>Next Steps</h3>
+        <p>
+          After registering and signing in, you'll want to complete your profile
+          with your academic and professional information.
+        </p>
+
+        <div class="nav-buttons">
+          <a href="../features-index.html">← Back to Feature Guide</a>
+          <a href="profile.html">Next: Profile Creation & Editing →</a>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+  </body>
+</html>

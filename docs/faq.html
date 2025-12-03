@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQs - COE Alumni Database Documentation</title>
+    <link rel="stylesheet" href="/resources/css/styles.css" />
+    <link rel="stylesheet" href="/resources/css/docs-styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>College of Engineering Alumni Database</h1>
+      <nav>
+        <div class="navbar">
+          <a href="/index.html">Home</a>
+          <a href="/projectinfo.html">Project Info</a>
+          <div class="dropdown">
+            <button class="dropdown-button">Project Timeline</button>
+            <div class="dropdown-content">
+              <a href="/project-timeline/sprint1.html">Sprint 1</a>
+              <a href="/project-timeline/sprint2.html">Sprint 2</a>
+              <a href="/project-timeline/sprint3.html">Sprint 3</a>
+              <a href="/project-timeline/video.html">Project Demo</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">The Team</button>
+            <div class="dropdown-content">
+              <a href="/the-team/ethan.html">Ethan Busby</a>
+              <a href="/the-team/andy.html">Andy Fancher</a>
+              <a href="/the-team/marcus.html">Marcus Kelley</a>
+              <a href="/the-team/jacob.html">Jacob Santos</a>
+              <a href="/the-team/brodye.html">Brodye Stevens</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Docs</button>
+            <div class="dropdown-content">
+              <a href="/docs/docs-index.html">Documentation Home</a>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Installation Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/installation/overview.html"
+                    >Installation Overview</a
+                  >
+                  <a href="/docs/installation/server-setup.html"
+                    >Server Setup</a
+                  >
+                  <a href="/docs/installation/github-runner.html"
+                    >GitHub Runner</a
+                  >
+                  <a href="/docs/installation/deployment.html"
+                    >Application Deployment</a
+                  >
+                  <a href="/docs/installation/configuration.html"
+                    >Configuration</a
+                  >
+                  <a href="/docs/installation/operations.html"
+                    >Operations & Maintenance</a
+                  >
+                  <a href="/docs/installation/troubleshooting.html"
+                    >Troubleshooting</a
+                  >
+                  <a href="/docs/installation/quick-reference.html"
+                    >Quick Reference</a
+                  >
+                </div>
+              </div>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Feature Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/features-index.html">Features Overview</a>
+                  <a href="/docs/features/register-signin.html"
+                    >Register & Sign In</a
+                  >
+                  <a href="/docs/features/profile.html"
+                    >Profile Creation & Editing</a
+                  >
+                  <a href="/docs/features/networking.html">Networking</a>
+                  <a href="/docs/features/favorites.html">Favorites</a>
+                </div>
+              </div>
+              <a href="/docs/development-index.html">Development Guide</a>
+              <a href="/docs/faq.html">FAQs</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Frequently Asked Questions</h2>
+
+        <p>
+          Find answers to common questions about using the COE Alumni Database.
+          Questions are organized by feature.
+        </p>
+
+        <h3>Register & Sign In</h3>
+
+        <h4>Why can't I register with my email?</h4>
+        <ul>
+          <li>
+            <strong>Email already registered:</strong> This email is already
+            associated with an account. Use the sign-in page instead
+          </li>
+          <li>
+            <strong>Invalid email format:</strong> Make sure you're entering a
+            valid email address (e.g., user@example.com)
+          </li>
+        </ul>
+
+        <h4>Why can't I sign in?</h4>
+        <ul>
+          <li>
+            <strong>Incorrect email or password:</strong> Double-check your
+            credentials. Passwords are case-sensitive
+          </li>
+          <li>
+            <strong>Account not found:</strong> Make sure you've registered
+            first, or check for typos in your email address
+          </li>
+          <li>
+            <strong>Session expired:</strong> If you've been signed out
+            automatically, simply sign in again
+          </li>
+        </ul>
+
+        <h3>Profile</h3>
+
+        <h4>Why can't I save my profile?</h4>
+        <ul>
+          <li>
+            <strong>Major not selected:</strong> You must select a major before
+            saving
+          </li>
+          <li>
+            <strong>Required fields empty:</strong> Fill in all required fields
+            (first name, last name, city, state, zip code, major, graduation
+            year)
+          </li>
+          <li>
+            <strong>Invalid data:</strong> Check that zip codes are numeric and
+            years are valid
+          </li>
+        </ul>
+
+        <h4>Why aren't my profile changes appearing?</h4>
+        <ul>
+          <li>
+            Make sure you clicked <strong>Save All Changes</strong> instead of
+            <strong>Cancel</strong>
+          </li>
+          <li>Refresh the page to see your updated information</li>
+          <li>If still not appearing, try editing and saving again</li>
+        </ul>
+
+        <h4>Why can't I add clubs or certifications?</h4>
+        <ul>
+          <li>
+            Make sure you're in edit mode (click <strong>Edit Profile</strong>)
+          </li>
+          <li>
+            Use the search function in the selector to find clubs/certifications
+          </li>
+          <li>
+            If you can't find a club or certification, it may not be in the
+            system yet
+          </li>
+        </ul>
+
+        <h3>Networking</h3>
+
+        <h4>Why am I not getting any search results?</h4>
+        <ul>
+          <li>
+            <strong>Too many filters:</strong> Try removing some filters to
+            broaden your search
+          </li>
+          <li>
+            <strong>Spelling errors:</strong> Check that names and companies are
+            spelled correctly
+          </li>
+          <li>
+            <strong>No matching alumni:</strong> The specific combination you're
+            searching for may not exist in the database
+          </li>
+        </ul>
+
+        <h4>Why isn't the search working?</h4>
+        <ul>
+          <li>
+            Make sure you're entering at least one search term or selecting at
+            least one filter
+          </li>
+          <li>
+            Press <strong>Enter</strong> or click the search icon after typing
+          </li>
+          <li>Try refreshing the page if results don't appear</li>
+        </ul>
+
+        <h3>Favorites</h3>
+
+        <h4>Why isn't my favorite saving?</h4>
+        <ul>
+          <li>Make sure you're signed in to your account</li>
+          <li>Check that the bookmark icon fills in after clicking</li>
+          <li>Refresh the Favorites page to verify it was added</li>
+          <li>Try adding again if it didn't save the first time</li>
+        </ul>
+
+        <h4>Why can't I remove a favorite?</h4>
+        <ul>
+          <li>
+            Click directly on the red bookmark icon, not elsewhere on the card
+          </li>
+          <li>The card should disappear immediately when removed</li>
+          <li>Refresh the page if the card doesn't disappear</li>
+        </ul>
+
+        <h3>Still Need Help?</h3>
+        <p>If your question isn't answered here, you can:</p>
+        <ul>
+          <li>
+            Check the
+            <a href="/docs/features-index.html" class="list-link"
+              >Feature Guide</a
+            >
+            for detailed instructions on using each feature
+          </li>
+          <li>
+            Review the
+            <a href="/docs/installation/troubleshooting.html" class="list-link"
+              >Installation Troubleshooting</a
+            >
+            if you're experiencing technical issues with your deployment
+          </li>
+          <li>Contact the development team for additional support</li>
+        </ul>
+
+        <div class="nav-buttons">
+          <a href="/docs/docs-index.html">← Back to Documentation</a>
+          <div></div>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+  </body>
+</html>

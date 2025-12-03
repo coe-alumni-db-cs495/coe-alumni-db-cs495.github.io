@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Troubleshooting - COE Alumni Database Documentation</title>
+    <link rel="stylesheet" href="../../resources/css/styles.css" />
+    <link rel="stylesheet" href="../../resources/css/docs-styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>College of Engineering Alumni Database</h1>
+      <nav>
+        <div class="navbar">
+          <a href="/index.html">Home</a>
+          <a href="/projectinfo.html">Project Info</a>
+          <div class="dropdown">
+            <button class="dropdown-button">Project Timeline</button>
+            <div class="dropdown-content">
+              <a href="/project-timeline/sprint1.html">Sprint 1</a>
+              <a href="/project-timeline/sprint2.html">Sprint 2</a>
+              <a href="/project-timeline/sprint3.html">Sprint 3</a>
+              <a href="/project-timeline/video.html">Project Demo</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">The Team</button>
+            <div class="dropdown-content">
+              <a href="/the-team/ethan.html">Ethan Busby</a>
+              <a href="/the-team/andy.html">Andy Fancher</a>
+              <a href="/the-team/marcus.html">Marcus Kelley</a>
+              <a href="/the-team/jacob.html">Jacob Santos</a>
+              <a href="/the-team/brodye.html">Brodye Stevens</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Docs</button>
+            <div class="dropdown-content">
+              <a href="/docs/docs-index.html">Documentation Home</a>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Installation Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/installation/overview.html"
+                    >Installation Overview</a
+                  >
+                  <a href="/docs/installation/server-setup.html"
+                    >Server Setup</a
+                  >
+                  <a href="/docs/installation/github-runner.html"
+                    >GitHub Runner</a
+                  >
+                  <a href="/docs/installation/deployment.html"
+                    >Application Deployment</a
+                  >
+                  <a href="/docs/installation/configuration.html"
+                    >Configuration</a
+                  >
+                  <a href="/docs/installation/operations.html"
+                    >Operations & Maintenance</a
+                  >
+                  <a href="/docs/installation/troubleshooting.html"
+                    >Troubleshooting</a
+                  >
+                  <a href="/docs/installation/quick-reference.html"
+                    >Quick Reference</a
+                  >
+                </div>
+              </div>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Feature Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/features-index.html">Features Overview</a>
+                  <a href="/docs/features/register-signin.html"
+                    >Register & Sign In</a
+                  >
+                  <a href="/docs/features/profile.html"
+                    >Profile Creation & Editing</a
+                  >
+                  <a href="/docs/features/networking.html">Networking</a>
+                  <a href="/docs/features/favorites.html">Favorites</a>
+                </div>
+              </div>
+              <a href="/docs/development-index.html">Development Guide</a>
+              <a href="/docs/faq.html">FAQs</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Installation Guide: Troubleshooting</h2>
+
+        <p>
+          This section covers common issues you may encounter and their
+          solutions. If you don't find your issue here, check the
+          <a href="../faq.html" class="list-link">FAQs</a> or contact the
+          development team.
+        </p>
+
+        <h3>General Troubleshooting Steps</h3>
+        <p>
+          Before diving into specific issues, try these general troubleshooting
+          steps:
+        </p>
+
+        <ol>
+          <li>
+            <strong>Check service status:</strong>
+            <code>sudo systemctl status coe-alumni</code>
+          </li>
+          <li>
+            <strong>Review logs:</strong>
+            <code>sudo journalctl -u coe-alumni -n 100</code>
+          </li>
+          <li>
+            <strong>Verify runner is online:</strong> Check GitHub repository →
+            Settings → Actions → Runners
+          </li>
+          <li><strong>Check disk space:</strong> <code>df -h</code></li>
+          <li>
+            <strong>Restart the service:</strong>
+            <code>sudo systemctl restart coe-alumni</code>
+          </li>
+        </ol>
+
+        <h3>Service Issues</h3>
+
+        <h4>Service Won't Start</h4>
+        <div class="step">
+          <p>
+            <strong>Symptoms:</strong> Service shows as "failed" or "inactive"
+            status.
+          </p>
+
+          <p><strong>Diagnostic steps:</strong></p>
+          <div class="code-block">
+            <pre>
+sudo systemctl status coe-alumni
+sudo journalctl -u coe-alumni -n 100</pre
+            >
+          </div>
+
+          <p><strong>Common causes and solutions:</strong></p>
+          <ul>
+            <li>
+              <strong>Port 5000 already in use</strong>
+              <div class="code-block">
+                <pre>
+# Check what's using port 5000
+sudo lsof -i :5000
+
+# Kill the process (replace PID with actual process ID)
+sudo kill -9 PID</pre
+                >
+              </div>
+            </li>
+            <li>
+              <strong>Missing or incorrect application files</strong>
+              <div class="code-block">
+                <pre>
+# Verify files exist
+ls -la /var/www/coe-alumniDB/
+
+# Check for the main DLL
+ls -la /var/www/coe-alumniDB/coe-alumni-db-cs495.Server.dll</pre
+                >
+              </div>
+            </li>
+            <li>
+              <strong>Permission errors</strong>
+              <div class="code-block">
+                <pre>
+# Fix ownership
+sudo chown -R coe-alumni:coe-alumni /var/www/coe-alumniDB/</pre
+                >
+              </div>
+            </li>
+            <li>
+              <strong>Database locked or inaccessible</strong>
+              <div class="code-block">
+                <pre>
+# Check database permissions
+ls -la /var/www/coe-alumniDB/DB/
+
+# Fix database permissions if needed
+sudo chown coe-alumni:coe-alumni /var/www/coe-alumniDB/DB/AlumniDatabase.db
+sudo chmod 600 /var/www/coe-alumniDB/DB/AlumniDatabase.db</pre
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <h4>Service Keeps Restarting</h4>
+        <div class="step">
+          <p>
+            <strong>Symptoms:</strong> Service status shows constant restarts or
+            crashes.
+          </p>
+
+          <p><strong>Diagnostic steps:</strong></p>
+          <div class="code-block">
+            <pre>sudo journalctl -u coe-alumni -f</pre>
+          </div>
+
+          <p><strong>Common causes:</strong></p>
+          <ul>
+            <li>
+              Application crashes due to unhandled exceptions (check logs for
+              stack traces)
+            </li>
+            <li>Database connection issues</li>
+            <li>Missing dependencies or corrupted files</li>
+            <li>Configuration errors in appsettings.json</li>
+          </ul>
+
+          <p>
+            <strong>Solution:</strong> Review the application logs carefully for
+            error messages, then restore from a backup if necessary.
+          </p>
+        </div>
+
+        <h4>Service Slow to Respond</h4>
+        <div class="step">
+          <p>
+            <strong>Symptoms:</strong> Application is running but responds
+            slowly or times out.
+          </p>
+
+          <p><strong>Diagnostic steps:</strong></p>
+          <div class="code-block">
+            <pre>
+# Check resource usage
+top
+htop  # if installed
+
+# Check memory usage
+free -h
+
+# Check disk I/O
+iostat</pre
+            >
+          </div>
+
+          <p><strong>Common causes:</strong></p>
+          <ul>
+            <li>High CPU or memory usage</li>
+            <li>Disk space full or disk I/O bottleneck</li>
+            <li>Database queries taking too long</li>
+            <li>Too many concurrent connections</li>
+          </ul>
+        </div>
+
+        <h3>Deployment Issues</h3>
+
+        <h4>Deployment Fails in GitHub Actions</h4>
+        <div class="step">
+          <p>
+            <strong>Symptoms:</strong> GitHub Actions workflow shows red X or
+            failure status.
+          </p>
+
+          <p><strong>Diagnostic steps:</strong></p>
+          <ol>
+            <li>Go to GitHub → Actions tab</li>
+            <li>Click on the failed workflow run</li>
+            <li>Click on the build-and-deploy job</li>
+            <li>Review the logs to find where it failed</li>
+          </ol>
+
+          <p><strong>Common failure points:</strong></p>
+          <ul>
+            <li>
+              <strong>npm install fails</strong>
+              <ul>
+                <li>Check for package.json syntax errors</li>
+                <li>Verify Node.js version compatibility</li>
+                <li>Check internet connectivity on server</li>
+              </ul>
+            </li>
+            <li>
+              <strong>React build fails</strong>
+              <ul>
+                <li>Check for TypeScript compilation errors</li>
+                <li>Verify all imports are correct</li>
+                <li>Test build locally: <code>npm run build</code></li>
+              </ul>
+            </li>
+            <li>
+              <strong>dotnet restore fails</strong>
+              <ul>
+                <li>Check for NuGet package errors</li>
+                <li>Verify .NET 8 SDK is installed</li>
+                <li>Check internet connectivity</li>
+              </ul>
+            </li>
+            <li>
+              <strong>dotnet publish fails</strong>
+              <ul>
+                <li>Check for C# compilation errors</li>
+                <li>Verify all dependencies are restored</li>
+                <li>
+                  Test publish locally: <code>dotnet publish -c Release</code>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Deployment steps fail</strong>
+              <ul>
+                <li>Check runner has necessary sudo permissions</li>
+                <li>Verify coe-alumni user exists</li>
+                <li>Check disk space is available</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <h4>Deployment Succeeds but Application Doesn't Work</h4>
+        <div class="step">
+          <p>
+            <strong>Symptoms:</strong> GitHub Actions shows success, but
+            application has errors.
+          </p>
+
+          <p><strong>Diagnostic steps:</strong></p>
+          <div class="code-block">
+            <pre>
+# Check service status
+sudo systemctl status coe-alumni
+
+# View application logs
+sudo journalctl -u coe-alumni -n 200
+
+# Test locally
+curl http://localhost:5000</pre
+            >
+          </div>
+
+          <p><strong>Common causes:</strong></p>
+          <ul>
+            <li>React build not copied correctly to wwwroot</li>
+            <li>Database migrations not applied</li>
+            <li>Environment variables not set correctly</li>
+            <li>File permissions incorrect after deployment</li>
+          </ul>
+        </div>
+
+        <h3>GitHub Runner Issues</h3>
+
+        <h4>Runner Shows Offline</h4>
+        <div class="step">
+          <p>
+            <strong>Symptoms:</strong> Runner appears offline in GitHub
+            repository settings.
+          </p>
+
+          <p><strong>Diagnostic steps:</strong></p>
+          <div class="code-block">
+            <pre>
+sudo systemctl status actions.runner.*
+sudo journalctl -u actions.runner.* -n 50</pre
+            >
+          </div>
+
+          <p><strong>Common causes and solutions:</strong></p>
+          <ul>
+            <li>
+              <strong>Runner service stopped</strong>
+              <div class="code-block">
+                <pre>
+cd ~/actions-runner
+sudo ./svc.sh start</pre
+                >
+              </div>
+            </li>
+            <li>
+              <strong>Registration token expired</strong>
+              <ul>
+                <li>Generate new token from GitHub</li>
+                <li>Reconfigure runner with new token</li>
+                <li>
+                  See
+                  <a href="github-runner.html" class="list-link"
+                    >GitHub Runner Setup</a
+                  >
+                  for details
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Network connectivity issues</strong>
+              <ul>
+                <li>Check internet connection</li>
+                <li>Verify firewall allows outbound HTTPS connections</li>
+                <li>Test connection: <code>curl https://github.com</code></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <h4>Runner Permissions Errors</h4>
+        <div class="step">
+          <p>
+            <strong>Symptoms:</strong> Deployment fails with "permission denied"
+            errors.
+          </p>
+
+          <p><strong>Solution:</strong></p>
+          <div class="code-block">
+            <pre>
+# Verify sudoers file
+sudo visudo -c
+
+# Check your sudo permissions
+sudo -l</pre
+            >
+          </div>
+
+          <p>
+            Ensure the sudoers file contains the correct entry as specified in
+            the
+            <a href="github-runner.html" class="list-link"
+              >GitHub Runner Setup</a
+            >
+            guide.
+          </p>
+        </div>
+
+        <h3>Database Issues</h3>
+
+        <h4>Database File Not Found</h4>
+        <div class="step">
+          <p>
+            <strong>Symptoms:</strong> Application logs show "database not
+            found" errors.
+          </p>
+
+          <p><strong>Diagnostic steps:</strong></p>
+          <div class="code-block">
+            <pre>ls -la /var/www/coe-alumniDB/DB/</pre>
+          </div>
+
+          <p><strong>Solutions:</strong></p>
+          <ul>
+            <li>
+              <strong>If database doesn't exist:</strong> The application should
+              create it automatically on first run. Restart the service:
+              <code>sudo systemctl restart coe-alumni</code>
+            </li>
+            <li>
+              <strong>If directory doesn't exist:</strong>
+              <div class="code-block">
+                <pre>
+sudo mkdir -p /var/www/coe-alumniDB/DB
+sudo chown coe-alumni:coe-alumni /var/www/coe-alumniDB/DB</pre
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <h4>Database Locked</h4>
+        <div class="step">
+          <p>
+            <strong>Symptoms:</strong> Application logs show "database is
+            locked" errors.
+          </p>
+
+          <p><strong>Diagnostic steps:</strong></p>
+          <div class="code-block">
+            <pre>
+# Check for processes accessing the database
+sudo lsof /var/www/coe-alumniDB/DB/AlumniDatabase.db
+
+# Check for lock files
+ls -la /var/www/coe-alumniDB/DB/</pre
+            >
+          </div>
+
+          <p><strong>Solutions:</strong></p>
+          <ul>
+            <li>
+              Stop the service and ensure no other processes are accessing the
+              database
+            </li>
+            <li>
+              Remove any .db-shm or .db-wal files (SQLite temporary files)
+            </li>
+            <li>Restart the service</li>
+          </ul>
+        </div>
+
+        <h4>Database Corruption</h4>
+        <div class="step">
+          <p>
+            <strong>Symptoms:</strong> Application crashes with database
+            integrity errors.
+          </p>
+
+          <p><strong>Diagnostic steps:</strong></p>
+          <div class="code-block">
+            <pre>
+# Check database integrity
+sudo -u coe-alumni sqlite3 /var/www/coe-alumniDB/DB/AlumniDatabase.db "PRAGMA integrity_check;"</pre
+            >
+          </div>
+
+          <p><strong>Solution:</strong></p>
+          <ul>
+            <li>Restore from a recent backup</li>
+            <li>
+              If no backup available, attempt to recover data using SQLite
+              recovery tools
+            </li>
+          </ul>
+        </div>
+
+        <h3>Network and Connectivity Issues</h3>
+
+        <h4>Cannot Access Application via Browser</h4>
+        <div class="step">
+          <p>
+            <strong>Symptoms:</strong> Browser shows "connection refused" or
+            timeout.
+          </p>
+
+          <p><strong>Diagnostic steps:</strong></p>
+          <div class="code-block">
+            <pre>
+# Test from server
+curl http://localhost:5000
+
+# Check if port is listening
+sudo lsof -i :5000
+
+# Check service status
+sudo systemctl status coe-alumni</pre
+            >
+          </div>
+
+          <p><strong>Common causes:</strong></p>
+          <ul>
+            <li>Service not running</li>
+            <li>Firewall blocking port 5000</li>
+            <li>Nginx misconfigured (if using reverse proxy)</li>
+            <li>Application listening on wrong IP/port</li>
+          </ul>
+        </div>
+
+        <h4>Nginx Issues (if using reverse proxy)</h4>
+        <div class="step">
+          <p>
+            <strong>Symptoms:</strong> 502 Bad Gateway or other Nginx errors.
+          </p>
+
+          <p><strong>Diagnostic steps:</strong></p>
+          <div class="code-block">
+            <pre>
+# Check Nginx status
+sudo systemctl status nginx
+
+# Test Nginx configuration
+sudo nginx -t
+
+# Check Nginx error logs
+sudo tail -f /var/log/nginx/error.log</pre
+            >
+          </div>
+
+          <p><strong>Solutions:</strong></p>
+          <ul>
+            <li>Verify application is running on localhost:5000</li>
+            <li>Check Nginx configuration for syntax errors</li>
+            <li>Restart Nginx: <code>sudo systemctl restart nginx</code></li>
+          </ul>
+        </div>
+
+        <h3>Performance Issues</h3>
+
+        <h4>High Memory Usage</h4>
+        <div class="step">
+          <p><strong>Diagnostic steps:</strong></p>
+          <div class="code-block">
+            <pre>
+# Check memory usage
+free -h
+
+# Check service memory usage
+sudo systemctl status coe-alumni</pre
+            >
+          </div>
+
+          <p><strong>Solutions:</strong></p>
+          <ul>
+            <li>
+              Restart the service to clear memory:
+              <code>sudo systemctl restart coe-alumni</code>
+            </li>
+            <li>Review application logs for memory leaks</li>
+            <li>Consider increasing server RAM if consistently high</li>
+          </ul>
+        </div>
+
+        <h4>Disk Space Full</h4>
+        <div class="step">
+          <p><strong>Diagnostic steps:</strong></p>
+          <div class="code-block">
+            <pre>
+# Check disk usage
+df -h
+
+# Find large files/directories
+du -sh /var/www/* | sort -hr | head -20</pre
+            >
+          </div>
+
+          <p><strong>Solutions:</strong></p>
+          <ul>
+            <li>
+              Clean old backups:
+              <code
+                >find /var/www/ -name "coe-alumniDB.backup.*" -mtime +30 -exec
+                rm -rf {} \;</code
+              >
+            </li>
+            <li>
+              Clean system logs: <code>sudo journalctl --vacuum-time=30d</code>
+            </li>
+            <li>Check for and remove large unnecessary files</li>
+          </ul>
+        </div>
+
+        <h3>Getting More Help</h3>
+        <p>If your issue isn't covered here:</p>
+
+        <ul>
+          <li>
+            Check the <a href="../faq.html" class="list-link">FAQs</a> for
+            additional common questions
+          </li>
+          <li>
+            Review the
+            <a href="quick-reference.html" class="list-link">Quick Reference</a>
+            for command reminders
+          </li>
+          <li>Check GitHub Actions logs for detailed error messages</li>
+          <li>
+            Review application logs thoroughly:
+            <code>sudo journalctl -u coe-alumni -n 500</code>
+          </li>
+          <li>
+            Contact the development team with:
+            <ul>
+              <li>Description of the issue</li>
+              <li>Steps to reproduce</li>
+              <li>Relevant log excerpts</li>
+              <li>Service status output</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="nav-buttons">
+          <a href="operations.html">← Previous: Operations & Maintenance</a>
+          <a href="quick-reference.html">Next: Quick Reference →</a>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+  </body>
+</html>

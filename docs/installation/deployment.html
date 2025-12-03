@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Deployment - COE Alumni Database Documentation</title>
+    <link rel="stylesheet" href="../../resources/css/styles.css" />
+    <link rel="stylesheet" href="../../resources/css/docs-styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>College of Engineering Alumni Database</h1>
+      <nav>
+        <div class="navbar">
+          <a href="/index.html">Home</a>
+          <a href="/projectinfo.html">Project Info</a>
+          <div class="dropdown">
+            <button class="dropdown-button">Project Timeline</button>
+            <div class="dropdown-content">
+              <a href="/project-timeline/sprint1.html">Sprint 1</a>
+              <a href="/project-timeline/sprint2.html">Sprint 2</a>
+              <a href="/project-timeline/sprint3.html">Sprint 3</a>
+              <a href="/project-timeline/video.html">Project Demo</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">The Team</button>
+            <div class="dropdown-content">
+              <a href="/the-team/ethan.html">Ethan Busby</a>
+              <a href="/the-team/andy.html">Andy Fancher</a>
+              <a href="/the-team/marcus.html">Marcus Kelley</a>
+              <a href="/the-team/jacob.html">Jacob Santos</a>
+              <a href="/the-team/brodye.html">Brodye Stevens</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Docs</button>
+            <div class="dropdown-content">
+              <a href="/docs/docs-index.html">Documentation Home</a>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Installation Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/installation/overview.html"
+                    >Installation Overview</a
+                  >
+                  <a href="/docs/installation/server-setup.html"
+                    >Server Setup</a
+                  >
+                  <a href="/docs/installation/github-runner.html"
+                    >GitHub Runner</a
+                  >
+                  <a href="/docs/installation/deployment.html"
+                    >Application Deployment</a
+                  >
+                  <a href="/docs/installation/configuration.html"
+                    >Configuration</a
+                  >
+                  <a href="/docs/installation/operations.html"
+                    >Operations & Maintenance</a
+                  >
+                  <a href="/docs/installation/troubleshooting.html"
+                    >Troubleshooting</a
+                  >
+                  <a href="/docs/installation/quick-reference.html"
+                    >Quick Reference</a
+                  >
+                </div>
+              </div>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Feature Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/features-index.html">Features Overview</a>
+                  <a href="/docs/features/register-signin.html"
+                    >Register & Sign In</a
+                  >
+                  <a href="/docs/features/profile.html"
+                    >Profile Creation & Editing</a
+                  >
+                  <a href="/docs/features/networking.html">Networking</a>
+                  <a href="/docs/features/favorites.html">Favorites</a>
+                </div>
+              </div>
+              <a href="/docs/development-index.html">Development Guide</a>
+              <a href="/docs/faq.html">FAQs</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Installation Guide: Application Deployment</h2>
+
+        <p>
+          This section covers configuring the systemd service and deploying the
+          application for the first time using GitHub Actions.
+        </p>
+
+        <div class="info-box">
+          <strong>What You'll Do:</strong>
+          <ul>
+            <li>Create and configure the systemd service file</li>
+            <li>Trigger your first deployment from GitHub</li>
+            <li>Monitor the deployment process</li>
+            <li>Verify the application is running</li>
+          </ul>
+        </div>
+
+        <h3>Step 1: Create Systemd Service File</h3>
+        <p>
+          The systemd service manages the application lifecycle, automatically
+          starting it on boot and restarting it if it crashes.
+        </p>
+
+        <div class="step">
+          <h4>Create the service file</h4>
+          <div class="code-block">
+            <pre>sudo nano /etc/systemd/system/coe-alumni.service</pre>
+          </div>
+        </div>
+
+        <div class="step">
+          <h4>Add the service configuration</h4>
+          <p>Copy and paste the following configuration into the file:</p>
+          <div class="code-block">
+            <pre>
+[Unit]
+Description=COE Alumni Database Application
+After=network.target
+
+[Service]
+Type=notify
+User=coe-alumni
+Group=coe-alumni
+WorkingDirectory=/var/www/coe-alumniDB
+ExecStart=/usr/bin/dotnet /var/www/coe-alumniDB/coe-alumni-db-cs495.Server.dll
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=coe-alumni
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+Environment=ASPNETCORE_URLS=http://localhost:5000
+
+[Install]
+WantedBy=multi-user.target</pre
+            >
+          </div>
+          <div class="note-box">
+            <strong>Configuration Explanation:</strong>
+            <ul>
+              <li>
+                <code>User=coe-alumni</code> - Runs as the service account
+              </li>
+              <li>
+                <code>WorkingDirectory</code> - Application root directory
+              </li>
+              <li><code>ExecStart</code> - Command to start the application</li>
+              <li>
+                <code>Restart=always</code> - Automatically restart if it
+                crashes
+              </li>
+              <li>
+                <code>RestartSec=10</code> - Wait 10 seconds before restarting
+              </li>
+              <li>
+                <code>ASPNETCORE_URLS</code> - Application listens on
+                localhost:5000
+              </li>
+            </ul>
+          </div>
+          <p>
+            Save and exit (<code>Ctrl+X</code>, then <code>Y</code>, then
+            <code>Enter</code>).
+          </p>
+        </div>
+
+        <div class="step">
+          <h4>Set file permissions</h4>
+          <div class="code-block">
+            <pre>sudo chmod 644 /etc/systemd/system/coe-alumni.service</pre>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <strong>Note:</strong> The service will be enabled and started
+          automatically during the first deployment. You don't need to start it
+          manually now.
+        </div>
+
+        <h3>Step 2: Trigger First Deployment</h3>
+        <p>
+          Now that everything is configured, trigger your first deployment from
+          GitHub Actions.
+        </p>
+
+        <div class="step">
+          <h4>Trigger deployment via GitHub UI:</h4>
+          <ol>
+            <li>Go to your GitHub repository</li>
+            <li>Click on the <strong>Actions</strong> tab</li>
+            <li>
+              Select the <strong>Build and Deploy</strong> workflow from the
+              left sidebar
+            </li>
+            <li>Click the <strong>Run workflow</strong> dropdown button</li>
+            <li>Ensure <code>master</code> branch is selected</li>
+            <li>Click the green <strong>Run workflow</strong> button</li>
+          </ol>
+        </div>
+
+        <div class="step">
+          <h4>Alternative: Trigger by pushing to master</h4>
+          <p>
+            The workflow automatically triggers on any push to the master
+            branch. You can also trigger deployment by making a commit:
+          </p>
+          <div class="code-block">
+            <pre>git push origin master</pre>
+          </div>
+        </div>
+
+        <h3>Step 3: Monitor Deployment</h3>
+        <p>
+          Watch the deployment progress to ensure everything completes
+          successfully.
+        </p>
+
+        <div class="step">
+          <h4>In GitHub Actions:</h4>
+          <ol>
+            <li>Stay on the <strong>Actions</strong> tab</li>
+            <li>Click on the running workflow</li>
+            <li>Click on the <strong>build-and-deploy</strong> job</li>
+            <li>Watch the logs as each step completes</li>
+          </ol>
+        </div>
+
+        <h3>Step 4: Understanding the Deployment Process</h3>
+        <p>
+          The GitHub Actions workflow performs the following steps
+          automatically:
+        </p>
+
+        <table>
+          <tr>
+            <th>Step</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>1. Checkout code</td>
+            <td>Pulls the latest code from the repository</td>
+          </tr>
+          <tr>
+            <td>2. Install npm dependencies</td>
+            <td>Installs React frontend dependencies</td>
+          </tr>
+          <tr>
+            <td>3. Build React app</td>
+            <td>Creates production build of the frontend</td>
+          </tr>
+          <tr>
+            <td>4. Copy to wwwroot</td>
+            <td>Copies React build to .NET's static file directory</td>
+          </tr>
+          <tr>
+            <td>5. Remove client reference</td>
+            <td>Removes development-only project reference</td>
+          </tr>
+          <tr>
+            <td>6. Restore .NET dependencies</td>
+            <td>Restores NuGet packages</td>
+          </tr>
+          <tr>
+            <td>7. Publish .NET app</td>
+            <td>Builds and publishes the backend application</td>
+          </tr>
+          <tr>
+            <td>8. Copy DB scripts</td>
+            <td>Copies Python database scripts</td>
+          </tr>
+          <tr>
+            <td>9. Stop service</td>
+            <td>Stops the running application</td>
+          </tr>
+          <tr>
+            <td>10. Create backup</td>
+            <td>Backs up current deployment with timestamp</td>
+          </tr>
+          <tr>
+            <td>11. Deploy files</td>
+            <td>Copies new files to /var/www/coe-alumniDB/</td>
+          </tr>
+          <tr>
+            <td>12. Set permissions</td>
+            <td>Sets correct ownership and permissions</td>
+          </tr>
+          <tr>
+            <td>13. Start service</td>
+            <td>Starts the coe-alumni service</td>
+          </tr>
+          <tr>
+            <td>14. Verify deployment</td>
+            <td>Checks service status</td>
+          </tr>
+        </table>
+
+        <div class="success-box">
+          <strong>Successful Deployment:</strong> You should see a green
+          checkmark next to the workflow run and "✅ Service is running on the
+          server!" in the logs.
+        </div>
+
+        <h3>Step 5: Verify Deployment</h3>
+        <p>
+          After deployment completes, verify the application is running
+          correctly.
+        </p>
+
+        <div class="step">
+          <h4>Check service status</h4>
+          <div class="code-block">
+            <pre>sudo systemctl status coe-alumni</pre>
+          </div>
+          <div class="success-box">
+            <strong>Expected output:</strong> You should see
+            <code>active (running)</code> status.
+          </div>
+        </div>
+
+        <div class="step">
+          <h4>View application logs</h4>
+          <div class="code-block">
+            <pre>sudo journalctl -u coe-alumni -n 50</pre>
+          </div>
+          <p>Check for any errors or warnings in the logs.</p>
+        </div>
+
+        <div class="step">
+          <h4>Test application locally</h4>
+          <div class="code-block">
+            <pre>curl http://localhost:5000</pre>
+          </div>
+          <div class="success-box">
+            <strong>Expected output:</strong> You should see HTML content from
+            the application.
+          </div>
+        </div>
+
+        <div class="step">
+          <h4>Verify files were deployed</h4>
+          <div class="code-block">
+            <pre>ls -la /var/www/coe-alumniDB/</pre>
+          </div>
+          <p>
+            You should see the application DLL, wwwroot folder, and other files.
+          </p>
+        </div>
+
+        <div class="step">
+          <h4>Check database was created</h4>
+          <div class="code-block">
+            <pre>ls -la /var/www/coe-alumniDB/DB/</pre>
+          </div>
+          <p>The AlumniDatabase.db file should exist with 600 permissions.</p>
+        </div>
+
+        <h3>Deployment Backups</h3>
+        <p>
+          Every deployment automatically creates a backup of the previous
+          version.
+        </p>
+
+        <div class="info-box">
+          <strong>Backup Details:</strong>
+          <ul>
+            <li>
+              <strong>Location:</strong>
+              <code>/var/www/coe-alumniDB.backup.YYYYMMDD_HHMMSS/</code>
+            </li>
+            <li>
+              <strong>Format:</strong> Timestamped directory (e.g.,
+              coe-alumniDB.backup.20241130_143022)
+            </li>
+            <li>
+              <strong>Contents:</strong> Complete copy of application files
+              before deployment
+            </li>
+            <li>
+              <strong>Retention:</strong> Kept indefinitely (can be cleaned
+              manually)
+            </li>
+          </ul>
+        </div>
+
+        <div class="step">
+          <h4>View backups</h4>
+          <div class="code-block">
+            <pre>ls -la /var/www/ | grep backup</pre>
+          </div>
+        </div>
+
+        <h3>Future Deployments</h3>
+        <p>After the initial deployment, future deployments are automatic:</p>
+
+        <ul>
+          <li>
+            <strong>Automatic:</strong> Push to master branch triggers
+            deployment
+          </li>
+          <li>
+            <strong>Manual:</strong> Use "Run workflow" button in GitHub Actions
+          </li>
+          <li>
+            <strong>Pull Requests:</strong> Build-only (no deployment) to check
+            for errors
+          </li>
+        </ul>
+
+        <div class="note-box">
+          <strong>Best Practice:</strong> Always test changes in build mode
+          locally before pushing to master. The deployment runs in production
+          mode, which may behave differently than development mode.
+        </div>
+
+        <h3>Troubleshooting</h3>
+
+        <h4>Deployment fails at build step:</h4>
+        <ul>
+          <li>Check GitHub Actions logs for specific error messages</li>
+          <li>Verify code compiles locally before pushing</li>
+          <li>Check for missing dependencies or configuration issues</li>
+        </ul>
+
+        <h4>Service won't start:</h4>
+        <ul>
+          <li>Check logs: <code>sudo journalctl -u coe-alumni -n 100</code></li>
+          <li>
+            Verify port 5000 isn't already in use:
+            <code>sudo lsof -i :5000</code>
+          </li>
+          <li>Check file permissions in /var/www/coe-alumniDB/</li>
+          <li>Ensure database directory exists and has correct permissions</li>
+        </ul>
+
+        <h4>Deployment fails at permission step:</h4>
+        <ul>
+          <li>Verify sudoers file was configured correctly</li>
+          <li>Check runner has necessary sudo permissions</li>
+          <li>Ensure coe-alumni user exists</li>
+        </ul>
+
+        <h4>Application returns errors:</h4>
+        <ul>
+          <li>Check application logs for detailed error messages</li>
+          <li>Verify database connection string is correct</li>
+          <li>Ensure all required environment variables are set</li>
+          <li>Check that wwwroot folder contains the React build</li>
+        </ul>
+
+        <h3>Next Steps</h3>
+        <p>
+          With the application successfully deployed, you can now configure
+          optional features like reverse proxy, Python automation scripts, and
+          database management.
+        </p>
+
+        <div class="nav-buttons">
+          <a href="github-runner.html">← Previous: GitHub Runner</a>
+          <a href="configuration.html">Next: Configuration →</a>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+  </body>
+</html>

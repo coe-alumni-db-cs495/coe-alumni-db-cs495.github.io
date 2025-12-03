@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Reference - COE Alumni Database Documentation</title>
+    <link rel="stylesheet" href="../../resources/css/styles.css" />
+    <link rel="stylesheet" href="../../resources/css/docs-styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>College of Engineering Alumni Database</h1>
+      <nav>
+        <div class="navbar">
+          <a href="/index.html">Home</a>
+          <a href="/projectinfo.html">Project Info</a>
+          <div class="dropdown">
+            <button class="dropdown-button">Project Timeline</button>
+            <div class="dropdown-content">
+              <a href="/project-timeline/sprint1.html">Sprint 1</a>
+              <a href="/project-timeline/sprint2.html">Sprint 2</a>
+              <a href="/project-timeline/sprint3.html">Sprint 3</a>
+              <a href="/project-timeline/video.html">Project Demo</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">The Team</button>
+            <div class="dropdown-content">
+              <a href="/the-team/ethan.html">Ethan Busby</a>
+              <a href="/the-team/andy.html">Andy Fancher</a>
+              <a href="/the-team/marcus.html">Marcus Kelley</a>
+              <a href="/the-team/jacob.html">Jacob Santos</a>
+              <a href="/the-team/brodye.html">Brodye Stevens</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Docs</button>
+            <div class="dropdown-content">
+              <a href="/docs/docs-index.html">Documentation Home</a>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Installation Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/installation/overview.html"
+                    >Installation Overview</a
+                  >
+                  <a href="/docs/installation/server-setup.html"
+                    >Server Setup</a
+                  >
+                  <a href="/docs/installation/github-runner.html"
+                    >GitHub Runner</a
+                  >
+                  <a href="/docs/installation/deployment.html"
+                    >Application Deployment</a
+                  >
+                  <a href="/docs/installation/configuration.html"
+                    >Configuration</a
+                  >
+                  <a href="/docs/installation/operations.html"
+                    >Operations & Maintenance</a
+                  >
+                  <a href="/docs/installation/troubleshooting.html"
+                    >Troubleshooting</a
+                  >
+                  <a href="/docs/installation/quick-reference.html"
+                    >Quick Reference</a
+                  >
+                </div>
+              </div>
+              <div class="nested-dropdown">
+                <a href="#" class="nested-trigger">Feature Guide</a>
+                <div class="nested-dropdown-content">
+                  <a href="/docs/features-index.html">Features Overview</a>
+                  <a href="/docs/features/register-signin.html"
+                    >Register & Sign In</a
+                  >
+                  <a href="/docs/features/profile.html"
+                    >Profile Creation & Editing</a
+                  >
+                  <a href="/docs/features/networking.html">Networking</a>
+                  <a href="/docs/features/favorites.html">Favorites</a>
+                </div>
+              </div>
+              <a href="/docs/development-index.html">Development Guide</a>
+              <a href="/docs/faq.html">FAQs</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Installation Guide: Quick Reference</h2>
+
+        <p>
+          This page provides a quick reference for commonly used commands and
+          important information for managing the COE Alumni Database
+          application.
+        </p>
+
+        <h3>Service Management</h3>
+        <table>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><code>sudo systemctl start coe-alumni</code></td>
+            <td>Start the application</td>
+          </tr>
+          <tr>
+            <td><code>sudo systemctl stop coe-alumni</code></td>
+            <td>Stop the application</td>
+          </tr>
+          <tr>
+            <td><code>sudo systemctl restart coe-alumni</code></td>
+            <td>Restart the application</td>
+          </tr>
+          <tr>
+            <td><code>sudo systemctl status coe-alumni</code></td>
+            <td>Check application status</td>
+          </tr>
+          <tr>
+            <td><code>sudo systemctl enable coe-alumni</code></td>
+            <td>Enable start on boot</td>
+          </tr>
+        </table>
+
+        <h3>Viewing Logs</h3>
+        <table>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><code>sudo journalctl -u coe-alumni -n 50</code></td>
+            <td>View last 50 log entries</td>
+          </tr>
+          <tr>
+            <td><code>sudo journalctl -u coe-alumni -f</code></td>
+            <td>Follow logs in real-time</td>
+          </tr>
+          <tr>
+            <td><code>sudo journalctl -u coe-alumni --since today</code></td>
+            <td>View today's logs</td>
+          </tr>
+          <tr>
+            <td><code>sudo journalctl -u coe-alumni -p err</code></td>
+            <td>View error-level logs only</td>
+          </tr>
+        </table>
+
+        <h3>GitHub Runner Management</h3>
+        <table>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><code>sudo systemctl status actions.runner.*</code></td>
+            <td>Check runner status</td>
+          </tr>
+          <tr>
+            <td><code>sudo systemctl restart actions.runner.*</code></td>
+            <td>Restart runner service</td>
+          </tr>
+          <tr>
+            <td><code>sudo journalctl -u actions.runner.* -n 50</code></td>
+            <td>View runner logs</td>
+          </tr>
+          <tr>
+            <td><code>cd ~/actions-runner && sudo ./svc.sh status</code></td>
+            <td>Check runner service status</td>
+          </tr>
+        </table>
+
+        <h3>Application Files</h3>
+        <table>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><code>ls -la /var/www/coe-alumniDB/</code></td>
+            <td>View application files</td>
+          </tr>
+          <tr>
+            <td><code>ls -la /var/www/coe-alumniDB/DB/</code></td>
+            <td>View database files</td>
+          </tr>
+          <tr>
+            <td><code>du -sh /var/www/coe-alumniDB</code></td>
+            <td>Check application directory size</td>
+          </tr>
+        </table>
+
+        <h3>Backup and Restore</h3>
+        <table>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>
+              <code
+                >sudo cp -r /var/www/coe-alumniDB
+                /var/www/coe-alumniDB.backup.$(date +%Y%m%d_%H%M%S)</code
+              >
+            </td>
+            <td>Create manual backup</td>
+          </tr>
+          <tr>
+            <td><code>ls -la /var/www/ | grep backup</code></td>
+            <td>List available backups</td>
+          </tr>
+          <tr>
+            <td>
+              <code
+                >find /var/www/ -name "coe-alumniDB.backup.*" -mtime +30 -exec
+                rm -rf {} \;</code
+              >
+            </td>
+            <td>Clean backups older than 30 days</td>
+          </tr>
+        </table>
+
+        <h4>Restore from Backup</h4>
+        <div class="code-block">
+          <pre>
+sudo systemctl stop coe-alumni
+sudo rm -rf /var/www/coe-alumniDB
+sudo cp -r /var/www/coe-alumniDB.backup.YYYYMMDD_HHMMSS /var/www/coe-alumniDB
+sudo chown -R coe-alumni:coe-alumni /var/www/coe-alumniDB
+sudo systemctl start coe-alumni</pre
+          >
+        </div>
+
+        <h3>Database Management</h3>
+        <table>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>
+              <code
+                >sudo -u coe-alumni sqlite3
+                /var/www/coe-alumniDB/DB/AlumniDatabase.db</code
+              >
+            </td>
+            <td>Access database</td>
+          </tr>
+          <tr>
+            <td>
+              <code
+                >sudo -u coe-alumni cp
+                /var/www/coe-alumniDB/DB/AlumniDatabase.db
+                /var/www/coe-alumniDB/DB/AlumniDatabase.db.backup.$(date
+                +%Y%m%d_%H%M%S)</code
+              >
+            </td>
+            <td>Backup database</td>
+          </tr>
+        </table>
+
+        <h3>Monitoring</h3>
+        <table>
+          <tr>
+            <th>Command</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><code>df -h</code></td>
+            <td>Check disk space</td>
+          </tr>
+          <tr>
+            <td><code>free -h</code></td>
+            <td>Check memory usage</td>
+          </tr>
+          <tr>
+            <td><code>sudo lsof -i :5000</code></td>
+            <td>Check what's using port 5000</td>
+          </tr>
+          <tr>
+            <td><code>curl http://localhost:5000</code></td>
+            <td>Test application locally</td>
+          </tr>
+          <tr>
+            <td><code>top</code></td>
+            <td>View system resource usage</td>
+          </tr>
+        </table>
+
+        <h3>Deployment</h3>
+        <div class="info-box">
+          <strong>Trigger Deployment:</strong>
+          <ul>
+            <li>Go to GitHub repository</li>
+            <li>Click <strong>Actions</strong> tab</li>
+            <li>Select <strong>Build and Deploy</strong> workflow</li>
+            <li>
+              Click <strong>Run workflow</strong> → Select
+              <code>master</code> branch → <strong>Run workflow</strong>
+            </li>
+          </ul>
+          <p>
+            <strong>Alternative:</strong> Push to master branch triggers
+            automatic deployment
+          </p>
+        </div>
+
+        <h3>Important File Locations</h3>
+        <table>
+          <tr>
+            <th>Item</th>
+            <th>Location</th>
+          </tr>
+          <tr>
+            <td>Application Directory</td>
+            <td><code>/var/www/coe-alumniDB/</code></td>
+          </tr>
+          <tr>
+            <td>Database</td>
+            <td><code>/var/www/coe-alumniDB/DB/AlumniDatabase.db</code></td>
+          </tr>
+          <tr>
+            <td>Service File</td>
+            <td><code>/etc/systemd/system/coe-alumni.service</code></td>
+          </tr>
+          <tr>
+            <td>Nginx Config (if used)</td>
+            <td><code>/etc/nginx/sites-available/coe-alumni</code></td>
+          </tr>
+          <tr>
+            <td>Runner Directory</td>
+            <td><code>~/actions-runner/</code></td>
+          </tr>
+          <tr>
+            <td>Deployment Backups</td>
+            <td><code>/var/www/coe-alumniDB.backup.*</code></td>
+          </tr>
+        </table>
+
+        <h3>System Information</h3>
+        <table>
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+          </tr>
+          <tr>
+            <td>Service Name</td>
+            <td>coe-alumni</td>
+          </tr>
+          <tr>
+            <td>Service User</td>
+            <td>coe-alumni</td>
+          </tr>
+          <tr>
+            <td>Application Port</td>
+            <td>5000 (localhost)</td>
+          </tr>
+          <tr>
+            <td>Database Type</td>
+            <td>SQLite 3</td>
+          </tr>
+          <tr>
+            <td>.NET Version</td>
+            <td>8.0</td>
+          </tr>
+          <tr>
+            <td>Node.js Version</td>
+            <td>20.x</td>
+          </tr>
+        </table>
+
+        <h3>Common Troubleshooting</h3>
+        <table>
+          <tr>
+            <th>Issue</th>
+            <th>First Steps</th>
+          </tr>
+          <tr>
+            <td>Service won't start</td>
+            <td>
+              <code>sudo systemctl status coe-alumni</code><br />
+              <code>sudo journalctl -u coe-alumni -n 100</code>
+            </td>
+          </tr>
+          <tr>
+            <td>Deployment fails</td>
+            <td>
+              Check GitHub Actions logs<br />
+              Verify runner is online<br />
+              Check disk space: <code>df -h</code>
+            </td>
+          </tr>
+          <tr>
+            <td>Cannot access application</td>
+            <td>
+              <code>curl http://localhost:5000</code><br />
+              <code>sudo lsof -i :5000</code><br />
+              <code>sudo systemctl status coe-alumni</code>
+            </td>
+          </tr>
+          <tr>
+            <td>Database errors</td>
+            <td>
+              <code>ls -la /var/www/coe-alumniDB/DB/</code><br />
+              Check permissions (should be 600, owned by coe-alumni)
+            </td>
+          </tr>
+          <tr>
+            <td>Runner offline</td>
+            <td>
+              <code>sudo systemctl status actions.runner.*</code><br />
+              Check GitHub Settings → Actions → Runners
+            </td>
+          </tr>
+        </table>
+
+        <h3>Useful Commands Reference</h3>
+
+        <h4>Fix Common Issues</h4>
+        <div class="step">
+          <h4>Reset permissions</h4>
+          <div class="code-block">
+            <pre>
+sudo chown -R coe-alumni:coe-alumni /var/www/coe-alumniDB/
+sudo chmod 600 /var/www/coe-alumniDB/DB/AlumniDatabase.db</pre
+            >
+          </div>
+        </div>
+
+        <div class="step">
+          <h4>Clear port 5000</h4>
+          <div class="code-block">
+            <pre>
+sudo lsof -i :5000
+sudo kill -9 PID</pre
+            >
+          </div>
+        </div>
+
+        <div class="step">
+          <h4>Reload systemd after service file changes</h4>
+          <div class="code-block">
+            <pre>
+sudo systemctl daemon-reload
+sudo systemctl restart coe-alumni</pre
+            >
+          </div>
+        </div>
+
+        <h3>Maintenance Schedule</h3>
+        <table>
+          <tr>
+            <th>Frequency</th>
+            <th>Tasks</th>
+          </tr>
+          <tr>
+            <td>Daily</td>
+            <td>Check service status<br />Review error logs</td>
+          </tr>
+          <tr>
+            <td>Weekly</td>
+            <td>
+              Check disk usage<br />Review deployment logs<br />Verify runner is
+              online
+            </td>
+          </tr>
+          <tr>
+            <td>Monthly</td>
+            <td>
+              Update system packages<br />Clean old backups<br />Backup
+              database<br />Check for runner updates
+            </td>
+          </tr>
+          <tr>
+            <td>As Needed</td>
+            <td>
+              Manual backups before major changes<br />Log analysis for
+              troubleshooting
+            </td>
+          </tr>
+        </table>
+
+        <h3>Additional Resources</h3>
+        <ul>
+          <li>
+            <a href="overview.html" class="list-link">Installation Overview</a>
+            - Complete installation guide
+          </li>
+          <li>
+            <a href="operations.html" class="list-link"
+              >Operations & Maintenance</a
+            >
+            - Detailed operations guide
+          </li>
+          <li>
+            <a href="troubleshooting.html" class="list-link">Troubleshooting</a>
+            - Common issues and solutions
+          </li>
+          <li>
+            <a href="../faq.html" class="list-link">FAQs</a> - Frequently asked
+            questions
+          </li>
+        </ul>
+
+        <div class="nav-buttons">
+          <a href="troubleshooting.html">← Previous: Troubleshooting</a>
+          <a href="../docs-index.html">Back to Documentation →</a>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+  </body>
+</html>
